@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+  <head>
+   <link rel="openid.server" href="http://www.livejournal.com/openid/server.bml" />
+   <link rel="openid.delegate" href="http://paulproteus.livejournal.com/" />
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta name="author" content="root"/>
+    <meta name="generator" content="Bluefish 1.0.4"/>
+    <link rel="alternate" type="application/atom+xml" 
+    href="http://asheesh.org/index.atom" />
+
+    <!-- Navigational metadata for large websites (an accessibility feature): -->
+    <link rel="top"      href="./index.html" title="Homepage" />
+    <link rel="up"       href="./index.html" title="Up" />
+    <link rel="first"    href="./index.html" title="First page" />
+    <link rel="previous" href="./index.html" title="Previous page" />
+    <link rel="next"     href="./index.html" title="Next page" />
+    <link rel="last"     href="./index.html" title="Last page" />
+    <link rel="toc"      href="./index.html" title="Table of contents" />
+    <link rel="index"    href="./index.html" title="Site map" />
+
+<!-- Change the path to your .css file. This should reflect the weblocation -->
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-screen.css" media="screen" title="Gila (screen)" />
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-print.css" media="print" />
+	
+	<!--  title is pulled from blosxom -->
+    <title></title>
+  </head>
+
+  <body>
+    <!-- For non-visual user agents: -->
+      <div id="top"><a href="#main-copy" class="doNotDisplay doNotPrint">Skip to main content.</a></div>
+
+    <!-- ##### Header ##### -->
+
+    <div id="header">
+      <h1 class="headerTitle">
+     <!-- again the global variables are pulled from blosxom -->
+        <a href="/" title="Browse to homepage">Asheeshworld <span>where are you?</span></a>
+      </h1>
+
+      <div class="subHeader">
+        <span class="doNotDisplay">Navigation: </span>
+        <!-- change or add the following links to represent what you want -->
+        <a href="/about/">About</a> |
+        <a href="/mmm/">Mmm</a> |
+	<a href="/note/">Notes</a> |
+        <a href="/rmad/">RMAD</a> |
+        <a href="/dwad/">DWAD</a> |
+        <a href="/scribble/">Scribbles</a> |
+        <a href="/projects/">Projects</a>
+      </div>
+    </div>
+    <div id="side-bar">
+
+      <!-- ##### Left Sidebar ##### -->
+	<!-- If you want to use the Blosxom Plugin "menu" by Fletcher T. Penney, leave this area alone... put the menu file in your plugins dir-->
+      <div class="leftSideBar">
+        <p class="sideBarTitle">Menu</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li></li>
+        </ul>  
+        <p class="sideBarTitle">This section</p> 
+         <ul><li>Why are you here?</li></ul>
+   
+        <p class="sideBarTitle">Recycling the past</p>
+        <span class="sideBarText">
+          
+        </span>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments are welcome.  Email me.
+        </span>
+      </div>
+
+	<!-- if you want to manually set up your menus.. commnet above .. and uncomment the following and manipulate to your liking. -->
+	<!--
+      <div class="leftSideBar">
+        <p class="sideBarTitle">This Page</p>
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#cross-browser" title="Improved cross-browser compatibility">Cross-browser</a></li>
+          <li><a href="#stylesheets" title="Modified stylesheets">Stylesheets</a></li>
+          <li><a href="#accessibility" title="Improved accessibility">Accessibility</a></li>
+        </ul>
+
+        <p class="sideBarTitle">Branch Navigation</p>
+        <ul>
+          <li><a href="http://www.oswd.org/index.phtml">OSWD Home</a></li>
+          <li><a href="http://www.oswd.org/browse.php">Browse Designs</a></li>
+          <li><a href="http://www.oswd.org/userinfo.phtml?user=haran">haran&rsquo;s Designs</a></li>
+          <li><span class="thisPage" title="That's this page!">Gila Homepage</span></li>
+        </ul>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments and constructive criticisms are welcome
+          <a href="http://www.oswd.org/email.phtml?user=haran" title="Email form">via email</a>.
+        </span>
+      </div>
+	-->
+
+
+      <!-- ##### Right Sidebar ##### 
+
+      <div class="rightSideBar">
+        
+
+        <p class="sideBarTitle">Downloads</p>
+
+        <div class="sideBarText"><strong>"Gila" Skin for Blosxom</strong><br />
+
+      </div>
+      -->
+
+    </div>  
+         <div id="main-copy">
+        <!-- <h1 id="introduction" style="border-top: none; padding-top: 0;"></h1>
+       </div>
+       -->
+<h2>Fri, 04 Dec 2015</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/software/this-site.html">How this website gets published
+</a>
+       </h1>
+		<p>In case you're interested, here are the technical details on how this website gets published.
+</p>
+<ul><li> On my laptop, there's a directory, ~/projects/asheesh.org.
+</li></ul>
+<ul><li> It contains a <tt>git clone</tt> of a private git repository. That private git repository is hosted on my personal server, <tt>rose.makesad.us</tt>.
+</li></ul>
+<ul><li> I run a git hosting app called Gogs, using a web app package manager called Sandstorm, on my server which runs Debian GNU/Linux.
+</li></ul>
+<ul><li> Inside ~/projects/asheesh.org there is a directory called <tt>entries</tt>. Inside that, you'll find <tt>entries/note</tt>.
+</li></ul>
+<ul><li> I create a file called <tt>entries/note/software/this-site.mw</tt> which contains the content of this blog post, in MediaWiki markup format, because when I first put this publishing system   together, I was hopeful that MediaWiki markup format would win against Markdown. (I lost that battle.)
+</li></ul>
+<ul><li> I commit that file to git.
+</li></ul>
+<ul><li> I run <tt>make update-snapshot</tt> on my laptop, which uses Pyblosxom (a 2004-era static site publishing system that I'm happy to say is still being maintained) to convert the various Markdown files and template files into HTML. Pyblosxom uses the file's mtime on disk to generate the datestamp that you see, so I use a tool called <tt>git-set-mtime</tt> to automatically use the last git commit time as the file's mtime on disk.
+</li></ul>
+<ul><li> I run <tt>make deploy</tt> which uses the <tt>owncloudcmd</tt> program to push the static site content to a directory on rose.makesad.us. Specifically, it synchronizes to an instance of another app in my Sandstorm setup called Davros.
+</li></ul>
+<ul><li> Davros is shockingly convenient, because it contains the ability to receive files via <tt>owncloudcmd</tt> _and_ it has the ability to serve them out to the world. For this, it relies on the help of Sandstorm and Sandstorm's static publishing API.
+</li></ul>
+<ul><li> So when a request comes in, it hits <tt>nginx</tt> running in the Debian-ish world on my server, and nginx knows that for the asheesh.org host, to send the request to the Sandstorm service running on <tt>localhost:6080</tt>. Sandstorm then looks at the inbound request, notices it's for asheesh.org, and does a DNS lookup check to find out which _grain_ (the Sandstorm term for app instance) is responsible for serving static content for asheesh.org, finds the Davros grain, and then serves the HTML that Davros registerd with Sandstorm via the static publishing API.
+</li></ul>
+<ul><li> Savvy systems-minded people will appreciate that the Davros code isn't on the critical path for serving a web page.
+</li></ul>
+<p>That's a large collection of things, but I like how they fit together. And, moreover, the fact that
+you can see this content means that the whole pipeline is working!
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/software">/note/software</a>] 
+		<a href="http://www.asheesh.org/note/software/this-site.html">permanent link and comments</a></i>
+		</p>
+    
+</div> <!-- end main copy div  -->
+    <!-- ##### Footer ##### -->
+
+    <div id="footer">
+      <div class="doNotPrint">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" />
+</a>
+      </div>
+
+      <div>
+        Copyright &copy; <a href="http://www.asheesh.org/">Asheesh Laroia</a>.  This work is licensed under a 
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">by-sa</a>. <a href="http://www.openhatch.org/">Open Hatch</a> is my current project. You should enjoy my parents' <a href="http://amayabarandgrill.com/">Indian restaurant in Rochester</a>!
+      </div>
+    </div>
+  </body>
+</html>

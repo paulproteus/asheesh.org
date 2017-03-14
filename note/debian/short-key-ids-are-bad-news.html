@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+  <head>
+   <link rel="openid.server" href="http://www.livejournal.com/openid/server.bml" />
+   <link rel="openid.delegate" href="http://paulproteus.livejournal.com/" />
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta name="author" content="root"/>
+    <meta name="generator" content="Bluefish 1.0.4"/>
+    <link rel="alternate" type="application/atom+xml" 
+    href="http://asheesh.org/index.atom" />
+
+    <!-- Navigational metadata for large websites (an accessibility feature): -->
+    <link rel="top"      href="./index.html" title="Homepage" />
+    <link rel="up"       href="./index.html" title="Up" />
+    <link rel="first"    href="./index.html" title="First page" />
+    <link rel="previous" href="./index.html" title="Previous page" />
+    <link rel="next"     href="./index.html" title="Next page" />
+    <link rel="last"     href="./index.html" title="Last page" />
+    <link rel="toc"      href="./index.html" title="Table of contents" />
+    <link rel="index"    href="./index.html" title="Site map" />
+
+<!-- Change the path to your .css file. This should reflect the weblocation -->
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-screen.css" media="screen" title="Gila (screen)" />
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-print.css" media="print" />
+	
+	<!--  title is pulled from blosxom -->
+    <title></title>
+  </head>
+
+  <body>
+    <!-- For non-visual user agents: -->
+      <div id="top"><a href="#main-copy" class="doNotDisplay doNotPrint">Skip to main content.</a></div>
+
+    <!-- ##### Header ##### -->
+
+    <div id="header">
+      <h1 class="headerTitle">
+     <!-- again the global variables are pulled from blosxom -->
+        <a href="/" title="Browse to homepage">Asheeshworld <span>Notes you will like</span></a>
+      </h1>
+
+      <div class="subHeader">
+        <span class="doNotDisplay">Navigation: </span>
+        <!-- change or add the following links to represent what you want -->
+        <a href="/about/">About</a> |
+        <a href="/mmm/">Mmm</a> |
+	<a href="/note/">Notes</a> |
+        <a href="/rmad/">RMAD</a> |
+        <a href="/dwad/">DWAD</a> |
+        <a href="/scribble/">Scribbles</a> |
+        <a href="/projects/">Projects</a>
+      </div>
+    </div>
+    <div id="side-bar">
+
+      <!-- ##### Left Sidebar ##### -->
+	<!-- If you want to use the Blosxom Plugin "menu" by Fletcher T. Penney, leave this area alone... put the menu file in your plugins dir-->
+      <div class="leftSideBar">
+        <p class="sideBarTitle">Menu</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li></li>
+        </ul>  
+        <p class="sideBarTitle">This section</p> 
+         <ul><li>Jotted-down notes at the intersection of my mind and permanence</li></ul>
+   
+        <p class="sideBarTitle">Recycling the past</p>
+        <span class="sideBarText">
+          
+        </span>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments are welcome.  Email me.
+        </span>
+      </div>
+
+	<!-- if you want to manually set up your menus.. commnet above .. and uncomment the following and manipulate to your liking. -->
+	<!--
+      <div class="leftSideBar">
+        <p class="sideBarTitle">This Page</p>
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#cross-browser" title="Improved cross-browser compatibility">Cross-browser</a></li>
+          <li><a href="#stylesheets" title="Modified stylesheets">Stylesheets</a></li>
+          <li><a href="#accessibility" title="Improved accessibility">Accessibility</a></li>
+        </ul>
+
+        <p class="sideBarTitle">Branch Navigation</p>
+        <ul>
+          <li><a href="http://www.oswd.org/index.phtml">OSWD Home</a></li>
+          <li><a href="http://www.oswd.org/browse.php">Browse Designs</a></li>
+          <li><a href="http://www.oswd.org/userinfo.phtml?user=haran">haran&rsquo;s Designs</a></li>
+          <li><span class="thisPage" title="That's this page!">Gila Homepage</span></li>
+        </ul>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments and constructive criticisms are welcome
+          <a href="http://www.oswd.org/email.phtml?user=haran" title="Email form">via email</a>.
+        </span>
+      </div>
+	-->
+
+
+      <!-- ##### Right Sidebar ##### 
+
+      <div class="rightSideBar">
+        
+
+        <p class="sideBarTitle">Downloads</p>
+
+        <div class="sideBarText"><strong>"Gila" Skin for Blosxom</strong><br />
+
+      </div>
+      -->
+
+    </div>  
+         <div id="main-copy">
+        <!-- <h1 id="introduction" style="border-top: none; padding-top: 0;"></h1>
+       </div>
+       -->
+<h2>Mon, 26 Dec 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/short-key-ids-are-bad-news.html">Short key IDs are bad news (with OpenPGP and GNU Privacy Guard)
+</a>
+       </h1>
+		<p><b>Summary</b>: It is important that we (the Debian community that relies on OpenPGP through
+GNU Privacy Guard) stop using short key IDs. There is no vulnerability in OpenPGP and GPG.
+However, using short key IDs (like 0x70096AD1) is
+fundementally insecure; it is easy to generate collisions for short key IDs.
+We should <i>always use 64-bit</i> (or longer) key IDs, like: 0x37E1C17570096AD1
+or 0xEC4B033C70096AD1.
+</p><p><b>TL;DR</b>: This now gives two results: <tt>gpg --recv-key 70096AD1</tt>
+</p>
+<h3 id="w_some-background-and-my-two-keys">Some background, and my two keys</h3>
+<p>Years ago, I read
+<a href="http://www.debian-administration.org/users/dkg/weblog/48">dkg's instructions</a>
+on migrating the Debian OpenPGP infrastructure. It told me that the time and
+effort I had spent getting my key into the strong set wasn't as useful as I
+thought it had been.
+</p><p>I felt deflated. I had put in quite a bit of effort over the years to strongly-connect my
+key to a variety of signatures, and I had helped people get their own keys into
+the strong set this way. If I migrated off my old key and revoked it, I'd be abandoning some
+people for whom I was their only link into the strong set. And what fun it was
+to first become part of the strong set! And all the eyebrows I raised when I told
+people I was going meet up with people I met on a website called
+<a href="http://www.biglumber.com/">Biglumber</a>... I even made it my
+<a href="https://www.facebook.com/0x70096AD1">Facebook.com user ID</a>. So if I had to generate a
+new key, I decided I had better really love the short key ID.
+</p><p>But at that point,
+I already felt pretty attached to the number 0x70096AD1. And I couldn't come up with
+anything better. So that settled it: no key upgrade
+until I had a new key whose ID is the same as my old key.
+</p><p>That dream has become a reality. Search for my old key ID, and you get two keys!
+<pre>$ gpg --keyserver pgp.mit.edu --recv-key 0x70096AD1
+gpg: requesting key 70096AD1 from hkp server pgp.mit.edu
+gpg: key 70096AD1: public key "Asheesh Laroia &lt;asheesh@asheesh.org&gt;" imported
+gpg: key 70096AD1: public key "Asheesh Laroia &lt;asheesh@asheesh.org&gt;" imported
+gpg: no ultimately trusted keys found
+gpg: Total number processed: 2
+gpg:               imported: 2  (RSA: 1)
+</pre>
+<p>I also saw it as an opportunity: I know that cryptography tools are tragically easy
+to mis-use. The use of 32-bit key IDs is fundamentally incorrect -- too little entropy.
+Maybe shocking people by creating two "identical" keys will help speed the transition
+away from this mis-use.
+</p>
+<h3 id="w_a-neat-stunt-abusing-refresh-keys">A neat stunt abusing --refresh-keys</h3>
+<p>Thanks to a GNU Privacy Guard bug, it is super easy to get my
+new key. Let's say that, like many people, you only have my old key
+on your workstation:
+<pre>$ gpg --list-keys | grep 70096AD1
+pub   1024D/70096AD1 2005-12-28
+</pre>
+<p>Just ask GPG to refresh:
+<pre>$ gpg --keyserver pgp.mit.edu --refresh-keys
+gpg: refreshing 1 key from hkp://pgp.mit.edu
+gpg: requesting key 70096AD1 from hkp server pgp.mit.edu
+gpg: key 70096AD1: public key "Asheesh Laroia &lt;asheesh@asheesh.org&gt;" imported
+gpg: key 70096AD1: "Asheesh Laroia &lt;asheesh@asheesh.org&gt;" not changed
+gpg: Total number processed: 2
+gpg:               imported: 1  (RSA: 1)
+gpg:              unchanged: 1
+gpg: no ultimately trusted keys found
+</pre>
+<p>You can see that it set out to refresh just 1 key. It did that by querying
+the keyserver for the <i>short ID</i>. The keyserver provided two hits for that
+query. In the end, GPG refreshes one key and actually <i>imports</i> a new key
+into the keyring!
+</p><p>Now you have two:
+<pre>$ gpg --list-keys | grep 70096AD1
+pub   1024D/70096AD1 2005-12-28
+pub   4096R/70096AD1 2011-03-11
+</pre>
+<p>There is a
+<a href="https://bugs.g10code.com/gnupg/issue1340">bug</a> filed in GNU Privacy Guard about this.
+It has a patch attached. There is, at the moment, no plan for a new release.
+</p>
+<h3 id="w_a-faster-attack-but-nothing-truly-new">A faster attack, but nothing truly new</h3>
+<p>My friend <a href="http://endeavour.zapto.org">Venkatesh</a> tells me there is an apocryphal old Perl script that
+could be used to generate key ID collisions.
+Here in the twenty-first century, l33t h4x0rz like Georgi Guninski are
+<a href="http://seclists.org/fulldisclosure/2011/Sep/207">trying to create collisions</a>.
+</p><p>In May 2010, "halfdog" posted a note to the full-disclosure list that generates PGP keys 
+with chosen short key IDs. I haven't benchmarked or tested that tool, but I have used a 
+different tool (private for now) that can generate collisions in a similar fashion.
+It takes about 3 hours to loop through all key IDs on a dinky little netbook.
+</p><p>You don't have to use any of these tools. You can just rent time on an elastic
+computing service or a botnet, or your own personal computer, and generate keys
+until you have a match.
+</p><p>I think that it's easy to under-estimate the seriousness of this problem: tools
+like the <a href="http://pgp.cs.uu.nl/">PGP Key Pathfinder</a> should be updated to only
+accept 64-bit (or longer) key IDs if we want to trust their output.
+</p>
+<h3 id="w_my-offer-i-will-make-you-a-key">My offer: I will make you a key</h3>
+<p>I've been spending some time wondering: What sort of exciting demonstration
+can I create to highlight that this is a real problem? Some ideas I've had:
+</p>
+<ul><li> Publish a private/public key pair whose key ID is the same as Phil Zimmerman's, original author of PGP
+</li><li> Publish a private/public key pair whose key ID is the same as Werner Koch's, maintainer of GNU Privacy Guard
+</li><li> Publish a set of public keys that mimic the entire PGP strong set, except where I control the private key of all these keys
+</li></ul>
+<p>The last one would be extremely amusing, and would be a
+hat-tip to some work discussed in Raph Levien's 
+<a href="http://video.google.com/videoplay?docid=-5092930485716426869">Google Tech Talk about Advogato</a>.
+</p><p>For now, here is my offer: If you send me a request signed with a key in the strong
+set, I will create a 4096-bit RSA public/private key pair whose 32-bit key ID is <i>one greater</i>
+than yours. So if you are 0x517DD4E4 I will generate 0x517DD4E5.
+</p><p>I will post the keys here, along a note about who requested it, and instructions on how
+to import them into your keyring. (Note: I will politely decline to create a new key whose 32-bit key ID would create a collision; 
+apologies if your key ID is just one away from someone else's.)
+</p><p>P.S. The prize for best sarcastic retort goes to Ian Jackson. He said, "I should go and create a lot of keys with your key ID. I'll set the real name to 'Not Asheesh Laroia' so everyone is totally clear about what is going on."
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/debian/short-key-ids-are-bad-news.html">permanent link and comments</a></i>
+		</p>
+    
+<div class="blosxomEntry">
+  <div id="comments" class="blosxomComments">
+</div>
+<div class="blosxomCommentForm">
+
+  <p><strong>Comment form</strong></p>
+  <ul>
+    <li>
+      The following HTML is supported: &lt;a href&gt;, &lt;em&gt;,
+      &lt;i&gt;, &lt;b&gt;, &lt;blockquote&gt;, &lt;br/&gt;,
+      &lt;p&gt;, &lt;abbr&gt;, &lt;acronym&gt;, &lt;big&gt;,
+      &lt;cite&gt;, &lt;code&gt;, &lt;dfn&gt;, &lt;kbd&gt;,
+      &lt;pre&gt;, &lt;small&gt; &lt;strong&gt;, &lt;sub&gt;,
+      &lt;sup&gt;, &lt;tt&gt;, &lt;var&gt;
+    </li>
+    <li>
+      I do not display your email address.  It is for my personal use
+      only.
+    </li>
+  </ul>
+
+  <a name="comment_anchor" id="comment-anchor"></a>
+
+  <p id="blosxomCommentStatus"></p>
+
+  <form method="post" action="http://www.asheesh.org/note/debian/short-key-ids-are-bad-news#comment_anchor"
+        id="comments_form" onsubmit="updateStatus();">
+    <fieldset>
+      <input type="hidden" name="secretToken" value="pleaseDontSpam" />
+      <input name="parent" type="hidden" value="note/debian/short-key-ids-are-bad-news" />
+      <input name="title" type="hidden" value="Short key IDs are bad news (with OpenPGP and GNU Privacy Guard)
+" />
+      <table width="100%">
+        <tr>
+          <td>Name:&nbsp;</td>
+          <td><input name="author" size="40" type="text"
+                     value="" /></td>
+        </tr><tr>
+          <td>Your email address:&nbsp;</td>
+          <td><input name="email" size="40" type="text"
+                     value="" /></td>
+        </tr><tr>
+          <td>Your website:&nbsp;</td>
+          <td><input name="url" size="40" type="text"
+                     value="" /></td>
+        </tr><tr><td>&nbsp;</td></tr><tr>
+          <td colspan="2">Comment:</td>
+        </tr><tr>
+          <td colspan="2">
+            <textarea name="body" rows="10" cols="72"></textarea>
+          </td>
+        </tr>
+        <tr><td>
+            <input value="Preview" name="preview" type="submit"
+                   id="preview-post" />
+            <input value="Post" name="post" type="submit" id="post-post" />
+        </td></tr>
+      </table>
+    </fieldset>
+  </form>
+
+</div> <!-- ends blosxomCommentForm div -->
+
+</div> <!-- ends blosxomComments div -->
+</div> <!-- end main copy div  -->
+    <!-- ##### Footer ##### -->
+
+    <div id="footer">
+      <div class="doNotPrint">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" />
+</a>
+      </div>
+
+      <div>
+        Copyright &copy; <a href="http://www.asheesh.org/">Asheesh Laroia</a>.  This work is licensed under a 
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">by-sa</a>. <a href="http://www.openhatch.org/">Open Hatch</a> is my current project. You should enjoy my parents' <a href="http://amayabarandgrill.com/">Indian restaurant in Rochester</a>!
+      </div>
+    </div>
+  </body>
+</html>

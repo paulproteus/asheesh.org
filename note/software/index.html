@@ -1,0 +1,537 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+  <head>
+   <link rel="openid.server" href="http://www.livejournal.com/openid/server.bml" />
+   <link rel="openid.delegate" href="http://paulproteus.livejournal.com/" />
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta name="author" content="root"/>
+    <meta name="generator" content="Bluefish 1.0.4"/>
+    <link rel="alternate" type="application/atom+xml" 
+    href="http://asheesh.org/index.atom" />
+
+    <!-- Navigational metadata for large websites (an accessibility feature): -->
+    <link rel="top"      href="./index.html" title="Homepage" />
+    <link rel="up"       href="./index.html" title="Up" />
+    <link rel="first"    href="./index.html" title="First page" />
+    <link rel="previous" href="./index.html" title="Previous page" />
+    <link rel="next"     href="./index.html" title="Next page" />
+    <link rel="last"     href="./index.html" title="Last page" />
+    <link rel="toc"      href="./index.html" title="Table of contents" />
+    <link rel="index"    href="./index.html" title="Site map" />
+
+<!-- Change the path to your .css file. This should reflect the weblocation -->
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-screen.css" media="screen" title="Gila (screen)" />
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-print.css" media="print" />
+	
+	<!--  title is pulled from blosxom -->
+    <title></title>
+  </head>
+
+  <body>
+    <!-- For non-visual user agents: -->
+      <div id="top"><a href="#main-copy" class="doNotDisplay doNotPrint">Skip to main content.</a></div>
+
+    <!-- ##### Header ##### -->
+
+    <div id="header">
+      <h1 class="headerTitle">
+     <!-- again the global variables are pulled from blosxom -->
+        <a href="/" title="Browse to homepage">Asheeshworld <span>Notes you will like</span></a>
+      </h1>
+
+      <div class="subHeader">
+        <span class="doNotDisplay">Navigation: </span>
+        <!-- change or add the following links to represent what you want -->
+        <a href="/about/">About</a> |
+        <a href="/mmm/">Mmm</a> |
+	<a href="/note/">Notes</a> |
+        <a href="/rmad/">RMAD</a> |
+        <a href="/dwad/">DWAD</a> |
+        <a href="/scribble/">Scribbles</a> |
+        <a href="/projects/">Projects</a>
+      </div>
+    </div>
+    <div id="side-bar">
+
+      <!-- ##### Left Sidebar ##### -->
+	<!-- If you want to use the Blosxom Plugin "menu" by Fletcher T. Penney, leave this area alone... put the menu file in your plugins dir-->
+      <div class="leftSideBar">
+        <p class="sideBarTitle">Menu</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li></li>
+        </ul>  
+        <p class="sideBarTitle">This section</p> 
+         <ul><li>Jotted-down notes at the intersection of my mind and permanence</li></ul>
+   
+        <p class="sideBarTitle">Recycling the past</p>
+        <span class="sideBarText">
+          
+        </span>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments are welcome.  Email me.
+        </span>
+      </div>
+
+	<!-- if you want to manually set up your menus.. commnet above .. and uncomment the following and manipulate to your liking. -->
+	<!--
+      <div class="leftSideBar">
+        <p class="sideBarTitle">This Page</p>
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#cross-browser" title="Improved cross-browser compatibility">Cross-browser</a></li>
+          <li><a href="#stylesheets" title="Modified stylesheets">Stylesheets</a></li>
+          <li><a href="#accessibility" title="Improved accessibility">Accessibility</a></li>
+        </ul>
+
+        <p class="sideBarTitle">Branch Navigation</p>
+        <ul>
+          <li><a href="http://www.oswd.org/index.phtml">OSWD Home</a></li>
+          <li><a href="http://www.oswd.org/browse.php">Browse Designs</a></li>
+          <li><a href="http://www.oswd.org/userinfo.phtml?user=haran">haran&rsquo;s Designs</a></li>
+          <li><span class="thisPage" title="That's this page!">Gila Homepage</span></li>
+        </ul>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments and constructive criticisms are welcome
+          <a href="http://www.oswd.org/email.phtml?user=haran" title="Email form">via email</a>.
+        </span>
+      </div>
+	-->
+
+
+      <!-- ##### Right Sidebar ##### 
+
+      <div class="rightSideBar">
+        
+
+        <p class="sideBarTitle">Downloads</p>
+
+        <div class="sideBarText"><strong>"Gila" Skin for Blosxom</strong><br />
+
+      </div>
+      -->
+
+    </div>  
+         <div id="main-copy">
+        <!-- <h1 id="introduction" style="border-top: none; padding-top: 0;"></h1>
+       </div>
+       -->
+<h2>Fri, 04 Dec 2015</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/software/this-site.html">How this website gets published
+</a>
+       </h1>
+		<p>In case you're interested, here are the technical details on how this website gets published.
+</p>
+<ul><li> On my laptop, there's a directory, ~/projects/asheesh.org.
+</li></ul>
+<ul><li> It contains a <tt>git clone</tt> of a private git repository. That private git repository is hosted on my personal server, <tt>rose.makesad.us</tt>.
+</li></ul>
+<ul><li> I run a git hosting app called Gogs, using a web app package manager called Sandstorm, on my server which runs Debian GNU/Linux.
+</li></ul>
+<ul><li> Inside ~/projects/asheesh.org there is a directory called <tt>entries</tt>. Inside that, you'll find <tt>entries/note</tt>.
+</li></ul>
+<ul><li> I create a file called <tt>entries/note/software/this-site.mw</tt> which contains the content of this blog post, in MediaWiki markup format, because when I first put this publishing system   together, I was hopeful that MediaWiki markup format would win against Markdown. (I lost that battle.)
+</li></ul>
+<ul><li> I commit that file to git.
+</li></ul>
+<ul><li> I run <tt>make update-snapshot</tt> on my laptop, which uses Pyblosxom (a 2004-era static site publishing system that I'm happy to say is still being maintained) to convert the various Markdown files and template files into HTML. Pyblosxom uses the file's mtime on disk to generate the datestamp that you see, so I use a tool called <tt>git-set-mtime</tt> to automatically use the last git commit time as the file's mtime on disk.
+</li></ul>
+<ul><li> I run <tt>make deploy</tt> which uses the <tt>owncloudcmd</tt> program to push the static site content to a directory on rose.makesad.us. Specifically, it synchronizes to an instance of another app in my Sandstorm setup called Davros.
+</li></ul>
+<ul><li> Davros is shockingly convenient, because it contains the ability to receive files via <tt>owncloudcmd</tt> _and_ it has the ability to serve them out to the world. For this, it relies on the help of Sandstorm and Sandstorm's static publishing API.
+</li></ul>
+<ul><li> So when a request comes in, it hits <tt>nginx</tt> running in the Debian-ish world on my server, and nginx knows that for the asheesh.org host, to send the request to the Sandstorm service running on <tt>localhost:6080</tt>. Sandstorm then looks at the inbound request, notices it's for asheesh.org, and does a DNS lookup check to find out which _grain_ (the Sandstorm term for app instance) is responsible for serving static content for asheesh.org, finds the Davros grain, and then serves the HTML that Davros registerd with Sandstorm via the static publishing API.
+</li></ul>
+<ul><li> Savvy systems-minded people will appreciate that the Davros code isn't on the critical path for serving a web page.
+</li></ul>
+<p>That's a large collection of things, but I like how they fit together. And, moreover, the fact that
+you can see this content means that the whole pipeline is working!
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/software/this-site.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sat, 02 Nov 2013</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/software/facebook.html">Censored on Facebook</a>
+       </h1>
+		
+<style type="text/css">#img_wrap #static, #img_wrap:hover #animated {
+    display: inline;
+}
+#img_wrap #animated, #img_wrap:hover #static {
+    display: none;
+}</style>
+<p>For the first time in what feels like years, I wanted to share
+something with my friends on Facebook.
+</p><p>The background was that I read a note on Slashdot that Linus Torvalds thought
+a presidential candidate's remarks on a topic related to airline security were
+"moron"ic. So I did my own research, and I disagreed. I figured this was a topic
+of general enough interest that all my Facebook friends might be interested in
+knowing my position, so I wanted to share that.
+</p><p>Facebook didn't let me.
+</p><p>I tried first with a link to snopes.com, which blocked me with the
+rationale that http://snopes.com/images/template/snopes.gif is "spammy
+or unsafe":
+</p><p><img src="/pub/image/facebook/snopes-bad.png" alt="You can't post this because it has a blocked link. The content you're trying to share includes a link that's been blocked for being spammy or unsafe. http://snopes.com/images/template/snopes.gif For more information, visit the Help Center. If you think you're seeing this by mistake, please let us know." height="226" width="478" />
+</p><p>Then I thought I'd be clever, and I linked to the
+<a href="http://coralcdn.org/">.nyud.net</a> version of the snopes page on the topic. I
+earned the same message that my post included a blocked link.
+</p><p>So then I tried again, with a link to a video on YouTube of the same
+clip.
+</p><p>That's when I first got the extremely generic message that "The message
+could not be posted to this Wall." You can see the animation of what happened
+next by hovering below.
+</p><p id="img_wrap"><img id="animated" src="/pub/image/censored-on-facebook.gif" height="395" width="738" /><img id="static" src="/pub/image/facebook/censored-on-facebook-0.png" height="395" width="738" />
+</p><p>Finally, I removed all the links, and kept the first bit of text. For this,
+I got the same generic error: "The message could not be posted to this Wall."
+</p><p><b>Update</b>: Patrick points out I should link to the 
+<a href="http://www.youtube.com/watch?v=43z2NGHS2tI&t=32s">actual video</a>. Here it is, embedded:
+</p><p><iframe width="560" height="315" src="http://www.youtube.com/embed/43z2NGHS2tI?start=32" frameborder="0" allowfullscreen></iframe>
+</p><p>(BTW: The first thing I did was to click "let us know" to indicate that I think I'm seeing 
+this by mistake. I filled out the form to indicate there was a problem in an honest, 
+respectful way. I got back an email autoresponse that said, "Thanks for taking the time to 
+submit this report. While we don't currently provide individual support for this issue, 
+this information will help us identify bugs on our site.")
+</p>
+
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/software/facebook.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Tue, 11 Jun 2013</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/software/antispam.html">De-spammed this blog (with Naive Bayes)
+</a>
+       </h1>
+		<p>This morning, I was trying to decrease the amount of email in my inbox. I had a few messages with
+subjects like:
+</p>
+<ul><li> comment on http://www.asheesh.org/note/debian/freed-software
+</li><li> comment on http://www.asheesh.org/note/sysop/comments
+</li><li> comment on http://www.asheesh.org/note/debian/freed-software
+</li></ul>
+<p>But all the comments in this case were spam. I'm using an Akismet API plugin
+for pyblosxom, but that has a few shortcomings. Like anything else, it misses
+some spam, but moreover, it doesn't help me find and remove old spam comments
+in bulk.
+</p><p>My pattern with email is basically to ignore it for a while, and then deal with
+it in bulk, sometimes missing messages from the past. The result is that I have
+often missed these comment notifications, and it was a bit of a drag to figure out
+which comments I had dealt with already.
+</p><p>So I wrote a small tool this morning. Here is how it works:
+</p>
+<ul><li> It loops over the comments directory.
+</li><li> A script reads each comment and prints it to standard out in mailbox format, piping the message to spambayes for processing.
+</li><li> The main script shows me spambayes' guess as to if the message is spam, as well as spambayes' certainty, and asks me to confirm. If I confirm it is spam, it asks if I want to delete it. (If it notices spambayes got it wrong, it retrains spambayes.)
+</li><li> After I have dealt with the comment, it creates a stamp file next to the comment so that it won't ask me about that the next time I run the tool.
+</li></ul>
+<p>Voila! A spam moderation queue with artificial intelligence.
+</p><p>You can find it here, on my Github account: <a href="https://github.com/paulproteus/spambayes-pyblosxom">https://github.com/paulproteus/spambayes-pyblosxom</a>
+</p><p>Permission to re-use the code is granted under the terms of CC Zero or Apache License 2.0, at your option.
+</p><p>Moreover, now I believe there are zero spam comments left lying around this blog!
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/software/antispam.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Fri, 08 Feb 2013</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/software/mediawiki-git.html">Notes from attempting to despam a wiki with git-remote-mediawiki
+</a>
+       </h1>
+		<p>I just tried to despam a mediawiki instance with git-remote-mediawiki.
+</p><p>The idea is as follows:
+</p>
+<ul><li> Use <a href="https://github.com/Bibzball/Git-Mediawiki/wiki/User-manual">git-remote-mediawiki</a> to clone the wiki into a local git repo.
+</li></ul>
+<ul><li> Make a list of bad users, either by skimming Special:RecentChanges, or by some other more automated means. For example, use 'git log' to get everyone since the last time you felt the wiki was clean:
+</li></ul>
+<pre>git log --since='Wed Dec 5 22:57:06 2012 +0000'
+</pre>
+<p>(You can process that with either 'grep ^Author' and so on, or you can use an <a href="https://github.com/openhatch/oh-antispam/blob/master/wikispam/handle_spam.py">overwrought Python script</a> I wrote.)
+</p>
+<ul><li> Get a list of their commits:
+</li></ul>
+<pre>git log --author=bad_user_1 --author=bad_user_2 --pretty="format:%H"
+</pre>
+<p>Here's where things start to go wrong.
+</p><p>You might try to revert them all:
+<pre>git log --author=bad_user_1 --author=bad_user_2 --pretty="format:%H" |
+xargs -n1 git revert
+</pre>
+<p>That works great until the first merge conflict.
+</p><p>So then you write a wrapper script that does "git revert $1 || git revert --abort",
+and you can still only revert the first few hundred (out of ~800) spam edits because
+one of the commits causes a conflict when you try to revert it.
+</p><p>Why a conflict? I suspect it's because there are spam edits that I neglected to 
+include in the revert stream. (<b>Update</b>: The conflict was actually a real conflict --
+some kind soul on the web had already reverted a bunch of the spam edits!)
+</p><p>In our case, there are fairly few <i>pages</i> getting spammed, so it'd be simpler to 'git 
+log' the pages we care about and revert back to the commit IDs that look clean. 'git 
+revert' could still be useful in the case of tangled history, but (apparently) there 
+is a limit to how useful it can be, anyway.
+</p><p>Oh, also:
+</p><p>It'd be useful to be able to create MediaWiki dump files from git-remote-mediawiki 
+exports. That way, I could use 'git rebase -i' to clean up history. (That would break 
+links *unless* the MediaWiki revision IDs somehow stayed constant for the revisions
+with the same content. Maybe that's feasible. Actually, the simplest way might be
+to write a tool that filters the dump file itself, rather than exporting straight from
+git-remote-mediawiki.)
+</p><p>Also also, I <a href="http://article.gmane.org/gmane.comp.version-control.git/215740">fixed a format string bug</a> in
+git mergetool, one of my favorite little pieces of git.
+</p><p>P.S. In this corpus, of the IP address editors (i.e., not logged in), 0 (of 16) 
+are spammers. About 80% of the logged-in editors are spammers. (Admittedly our wiki does
+require you to log in if you are posting new URLs to a page.)
+</p><p><b>Update</b>: It is <i>way</i> faster if you run it with low latency to the MediaWiki server
+in question. It probably could be adjusted to make fewer API calls, and to make more of them
+in parallel.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/software/mediawiki-git.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sun, 29 Jul 2012</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/software/twisted-high-scores.html">Twisted high scores
+</a>
+       </h1>
+		<p>Living in the Boston area, I've had the chance to spend time with
+the lovely maintainers of the <a href="http://twistedmatrix.com/">Twisted project</a>.
+</p><p>Twisted is an event-driven network programming framework in Python. It's also
+a community of people for whom software is never good enough -- and they're right.
+</p><p>I visited the <a href="http://labs.twistedmatrix.com/2011/12/november-sprint-report.html">Twisted November sprint</a>
+at the Smarterer.com office a few weeks ago and reviewed a ticket. So now I am
+on the
+<a href="http://twistedmatrix.com/highscores/?time=2011-11-01">Twisted high scores list</a>
+for November!
+</p><p>It was one of the most rewarding short periods of time I've ever spent
+contributing to an open source project. I took someone's contribution
+and turned it into a patch, and also gave some feedback. This counted as
+reviewing a ticket, for which I was immediately and strongly socially
+rewarded: J.P. (exarkun) turned  to me and say, "Thanks for contributing
+to Twisted."
+</p><p>An IRC bot pinged me with a note saying my ticket review
+was complete. And now I appear in the high scores list for November!
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/software/twisted-high-scores.html">permanent link and comments</a></i>
+		</p>
+    
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/software/rhel-7-gnome-3.html">RHEL 7 will (probably) have GNOME 3
+</a>
+       </h1>
+		<p>While chatting with Greg Price earlier this evening about
+the coming Linpocalypse, I said something I wanted to research.
+Upon further review, it seems that Red Hat Enterprise Linux 7
+will ship GNOME 3.
+</p><p>You can see a <a href="http://www.youtube.com/watch?v=H-cDorXHO5U&feature=player_detailpage#t=2505s">video of Jonathan Blandford talking about it</a>, where he says:
+</p>
+<blockquote>
+And then looking forward to the future, RHEL 7....
+We're giving demos of GNOME3, and the new desktop
+is a huge change; we're doing some pretty exciting things there.
+So if you're interested in it, please come by and take a look!
+</blockquote>
+<p>"CubedRoot" on fedoraforum.org
+<a href="http://fedoraforum.org/forum/showthread.php?p=1590603#post1590603">did</a> take a look, and (s)he wries:
+</p>
+<blockquote>
+
+I went down to the Partner Pavillion and spent over an hour 
+with Jonathan and the RHEL7 demo they had running. Besides 
+a new wallpaper (Which was very beautiful BTW) they were 
+running Gnome 3.5 on the demo, an the only other major 
+changes were a few more account service providers and chat 
+plugins (like Sametime, Yahoo, and stuff). It did not 
+handle multi-monitors with different resolutions worth a 
+flip (but it is beta after all). This is when I asked him 
+if they planned on putting XFCE or LXDE or even Cinnamon in 
+the Extra's channel, and they very confidently said they 
+would not be in there. They had no plans to offer them.
+
+</blockquote>
+
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/software/rhel-7-gnome-3.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Mon, 06 Jun 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/software/consulting.html">How much do I charge?</a>
+       </h1>
+		
+<p>A conversation between me and a wiser housemate, when I lived in
+San Francicsco.</p>
+
+<blockquote>
+<p>
+
+Asheesh: "Hey, so I'm going to do some consulting work.
+It's the first time I've done this as a professional,
+like, not a student.
+How much should I be charging per hour?"
+</p>
+<p>
+Matt: "It's easy; do what I do. Think of the biggest amount you
+can ask for with a straight face, then double it."
+</p>
+</blockquote>
+
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/software/consulting.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sat, 23 Apr 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/software/scala-crash-course.html">Announcing the Scala Crash Course (for women & their friends)
+</a>
+       </h1>
+		<p>Here is an email I just sent to the email list for PHASE,
+the Philly Area Scala Enthusiasts:
+</p>
+<blockquote>
+<p>First, let me introduce myself: Hi, everybody!</p>
+<p>I'm Asheesh Laroia, as the "From:" header on this email message indicates. 
+I'm also a Python user, former ocaml user in college, and Debian 
+developer. (Maybe none of those will make me any friends in PHASE....)</p>
+<p>I'm writing this because Yuvi and I are planning an event on the Friday 
+evening before Scalathon: a low-cost Scala crash course.</p>
+<p>http://www.meetup.com/scala-phase/events/17397558/ says a little more; I 
+can, too:</p>
+<p>My goal (I won't claim to speak for Yuvi) is to help encourage a diverse 
+Scalathon that brings new people into the community. By being a "crash 
+course" for people who already know some Scala or another functional 
+programming language, we aim to select for people who can contribute 
+during the big hackathon on so many Scala projects during the weekend. By 
+insisting that attendees of the crash course attend Scalathon, we hope to 
+use the time to enrich the Scalathon event.</p>
+<p>The event has a stipulation that I'm borrowing from an effort called 
+RailsBridge: to attend, you must either be a woman, or find a woman who 
+will bring you as her guest. The idea here is to simultaneously make sure 
+anyone who wants to can attend, while also inviting women to join 
+Scala-based communities.</p>
+<p>The event is separate from Scalathon; it's an effort to feed people into 
+Scalathon.</p>
+<p>If you are a woman who is thinking about attending Scalathon but wants to 
+make sure you have time to sharpen your Scala chops, this event is for 
+you. If you know such a person, please send her a copy of this email. If 
+you're a man in the same situation, we hope you can find the woman in your 
+life who is, too, so that she can invite you.</p>
+<p>So -- that's what I'm working with Yuvi.</p>
+<p>A bit more personally, I met Yuvi because I work on an open source 
+community outreach website called OpenHatch: http://openhatch.org/. He and 
+I met at a meet-up for that site last year, when I lived in West Philly (on 
+a beautiful street called Hazel). He and I organized a Penn-based open 
+source hackathon you can read about at 
+http://opensource.com/life/10/11/introducing-students-world-open-source-day-1 
+. Right now I'm based in the Boston area, in Somerville, MA.</p>
+<p>I'd love to hear what you all think.</p>
+<p>-- <br />
+-- Asheesh.<br />
+<br />
+http://asheesh.org/<br /></p>
+<p>FORTUNE PROVIDES QUESTIONS FOR THE GREAT ANSWERS: #4<br />
+A:	Go west, young man, go west!<br />
+Q:	What do wabbits do when they get tiwed of wunning awound?
+</blockquote>
+</p>
+</blockquote>
+
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/software/scala-crash-course.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Thu, 24 Sep 2009</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/software/bsod.html">Award for the best clickable button in a mobile app
+</a>
+       </h1>
+		<p>I just saw a screenshot of one of my favorite Android apps - at least, as far as user interface design goes.
+</p><p><img src="http://3.bp.blogspot.com/_kxcfDrUncpE/Sqw9iccLzdI/AAAAAAAAAAM/L39W1sOUPeA/s320/Screenshot.png" />
+</p><p>A simple interface, and a single button that creates a Blue Screen of Death. My compliments to the chef.
+</p><p>(Found via [http://forum.xda-developers.com/showthread.php?t=563891 the XDA-Developers forum.
+It appears to be a UI-improved version of someone else's vulnerability tester called
+<a href="http://forum.xda-developers.com/showthread.php?t=558558">BSODroid</a>.)
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/software/bsod.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sat, 25 Apr 2009</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/software/explainer-www.html">Explainer: "Why do some URLs have www in them, and what difference does it make?"
+</a>
+       </h1>
+		<p>Katy (who I know from the CC internship in 2006) asked me this question recently:
+</p>
+<blockquote>Why do different pages show up depending on whether there's a www or not in the URL?</blockquote>
+<p>To understand, I have to explain how a browser gets a web page from the Internet. When a browser is asked
+to load a URL like 
+&lt;a href="http://www.asheesh.org/scribble/enlightened-but-confused.html&gt;
+http://www.asheesh.org/scribble/enlightened-but-confused.html&lt;/a&gt;, it breaks it apart into components.
+</p>
+<ul><li> "http" is the the <i>scheme</i>
+</li><li> "www.asheesh.org" is the <i>domain name</i>
+</li><li> /scribble/enlightened-but-confused.html is the <i>path</i>
+</li></ul>
+<p>HTTP, the "scheme", tells the browser what protocol (or network language) to speak
+when it requests the page from the server.
+</p><p>The domain name is where things get interesting. This <i>alone</i> tells the browser
+who to ask for the page. The browser looks up <i>www.asheesh.org</i> in the domain name system,
+an Internet phone book service that converts names to numbers (so-called "IP addresses").
+Once it knows the IP address for that name, it connects to it and prepares to speak HTTP.
+</p><p>The browser connects to that IP address, and asks (in the network language of HTTP):
+</p>
+<ul><li> Hey, I'm trying to get a page from the website called <i>www.asheesh.org</i>.
+</li><li> Please give me <i>/scribble/enlightened-but-confused.html</i>
+</li></ul>
+<p>So now, let's think about how http://www.asheesh.org/ and http://google.com/ differ:
+Their <i>scheme</i> is the same, and their <i>path</i> is the same. But the <i>domain name</i> is different.
+</p><p>The same is true for http://asheesh.org/ and http://www.asheesh.org/. You get the same content
+because, as luck has it, the administrator for asheesh.org is the same as the administrator
+for www.asheesh.org, and I decided to make them work the same way.
+</p><p>For some websites, if you add the www component, you do get different contents back: for example,
+http://cs.rochester.edu/ does not load, whereas http://www.cs.rochester.edu/ does.
+</p><p>So the final answer to Katy's question: You're lucky you <i>ever</i> get the same page
+for two URLs that are different, even if just by "www".
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/software/explainer-www.html">permanent link and comments</a></i>
+		</p>
+    
+</div> <!-- end main copy div  -->
+    <!-- ##### Footer ##### -->
+
+    <div id="footer">
+      <div class="doNotPrint">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" />
+</a>
+      </div>
+
+      <div>
+        Copyright &copy; <a href="http://www.asheesh.org/">Asheesh Laroia</a>.  This work is licensed under a 
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">by-sa</a>. <a href="http://www.openhatch.org/">Open Hatch</a> is my current project. You should enjoy my parents' <a href="http://amayabarandgrill.com/">Indian restaurant in Rochester</a>!
+      </div>
+    </div>
+  </body>
+</html>

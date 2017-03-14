@@ -1,0 +1,46 @@
+http://inside.openhatch.org/crawl-logs/scrapy.2013-05-10.UVZ6.log is log
+
+Curiously it doesn't have any mention of mediagoblin at all.
+
+Remotely, running the bugimporter on just the goblin snippet does show lots of 
+output.
+
+...
+
+No particular thoughts except, "Run it in the test suite."
+
+That, or PDB the part that loads the input. I'll try that.
+
+PDBing the input part shows that self.input_data contains a working 
+mediagoblin stanza. Tested by pdb-ing at the end of the __init__ or something 
+and modifying self.input_data.
+
+Next I'll PDB the part where it uses self.input_data and see if the 
+mediagoblin object comes out of the self.get_bugimporters() call.
+
+...
+
+(This line and after are editor's notes, addenda written so you can see what
+happened after I stopped writing in my "notebook" and kept fixing the bug.)
+
+Interesting, it doesn't. So there is something wrong inside the 
+get_bugimporters() function, where it stores the data within input_data but 
+doesn't provide a corresponding bugimporter object.
+
+There wasn't much output (which is a good thing in this case; too much output 
+is hard to read, like the published log file), and it mentioned an exception.
+
+The exception was related to a crash in the 
+grab_bugimporter_attribute_via_string function, where a user-provided string 
+was missing a "." (which is implicitly a precondition of that function).
+
+So I wrapped both calls to that function with a try/catch and logged the 
+error, plus skipped whichever datum from input_data was being processed.
+
+Re-ran, and...
+
+Hooray! It gets to MediaGoblin now!
+
+In that case, I'll reproduce this error in the test suite and push a patch and 
+deploy it.
+

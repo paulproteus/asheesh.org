@@ -1,0 +1,667 @@
+
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-42685392-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>Quantitative Community Management &mdash; Scrape the web with scrapy OSCON documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/single.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     'OSCON',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    <link rel="top" title="Scrape the web with scrapy OSCON documentation" href="#" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  <article class="slide level-1" id="quantitative-community-management">
+<h1>Quantitative Community Management<a class="headerlink" href="../index.html#quantitative-community-management" title="View HTML">§</a></h1>
+<p>Asheesh Laroia &lt;<a class="reference external" href="mailto:asheesh&#37;&#52;&#48;openhatch&#46;org">asheesh<span>&#64;</span>openhatch<span>&#46;</span>org</a>&gt;</p>
+<p>Executive Director, OpenHatch</p>
+
+</article>
+<article class="slide level-2" id="about-me">
+<h2>About me<a class="headerlink" href="../index.html#about-me" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>2000: DeCSS</li>
+<li>2001: Seth David Schoen</li>
+<li>2006: Met him</li>
+<li>2007: Concluded the community is too small</li>
+<li>2009: Founded OpenHatch</li>
+</ul>
+
+</article>
+<article class="slide level-1" id="topic-who-we-are-as-a-community">
+<h1>Topic: Who we are, as a community<a class="headerlink" href="../index.html#topic-who-we-are-as-a-community" title="View HTML">§</a></h1>
+
+</article>
+<article class="slide level-2" id="all-sourceforge-projects-n-145-850">
+<h2>All SourceForge Projects (n=145,850)<a class="headerlink" href="../index.html#all-sourceforge-projects-n-145-850" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/wlVqwLt.png" class="fill" src="_images/wlVqwLt.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="mature-and-production-sourceforge-projects-n-29-821">
+<h2>“Mature” and “Production” SourceForge Projects (n=29,821)<a class="headerlink" href="../index.html#mature-and-production-sourceforge-projects-n-29-821" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/TVPFa6q.png" class="fill" src="_images/TVPFa6q.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="sf-net-projects-downloaded-99-times-90th-ile">
+<h2>SF.net Projects Downloaded &gt;=99 times (90th %ile)<a class="headerlink" href="../index.html#sf-net-projects-downloaded-99-times-90th-ile" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/1iqWE6y.png" class="fill" src="_images/1iqWE6y.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="scratch-projects-1-year-after-publication-n-249-428">
+<h2>Scratch projects 1+ year after publication (n=249,428)<a class="headerlink" href="../index.html#scratch-projects-1-year-after-publication-n-249-428" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/LmkyNCP.png" class="fill" src="_images/LmkyNCP.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="google-code-projects-n-195-834">
+<h2>Google Code Projects (n=195,834)<a class="headerlink" href="../index.html#google-code-projects-n-195-834" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/ose4Wa6.png" class="fill" src="_images/ose4Wa6.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="active-google-code-projects-n-74-398">
+<h2>Active Google Code Projects (n=74,398)<a class="headerlink" href="../index.html#active-google-code-projects-n-74-398" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/cjgyEiH.png" class="fill" src="_images/cjgyEiH.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="github-public-projects-developers-are-watchers-n-265-088">
+<h2>Github public projects (developers are “watchers”) (n=265,088)<a class="headerlink" href="../index.html#github-public-projects-developers-are-watchers-n-265-088" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/fJIZYxB.png" class="fill" src="_images/fJIZYxB.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="floss-survey-2001">
+<h2>FLOSS survey, 2001<a class="headerlink" href="../index.html#floss-survey-2001" title="View HTML">§</a></h2>
+<p>Rishab Aiyer Ghosh</p>
+<p>Rüdiger Glott</p>
+<p>Bernhard Krieger</p>
+<p>Gregorio Robles</p>
+<p>International Institute of Infonomics, Maastricht</p>
+
+</article>
+<article class="slide level-2" id="image">
+<h2>Image<a class="headerlink" href="../index.html#image" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/Rl6VbNk.png" class="fill" src="_images/Rl6VbNk.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="gender-stats">
+<h2>Gender stats<a class="headerlink" href="../index.html#gender-stats" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>1.1% women in FLOSS survey</li>
+<li>1.6% in separate FLOSS-US survey</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="survey-methodology">
+<h2>Survey methodology<a class="headerlink" href="../index.html#survey-methodology" title="View HTML">§</a></h2>
+<p>&quot;Rather than selecting out a small, well-controlled sample...</p>
+<p>we allowed respondents to decide for themselves whether they should be considered “developers”...&quot;</p>
+<p>&quot;Our goal has been to analyze the entire... community.&quot;</p>
+
+</article>
+<article class="slide level-2" id="reaction">
+<h2>Reaction<a class="headerlink" href="../index.html#reaction" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/picard-facepalm-o.gif" class="fill" src="_images/picard-facepalm-o.gif" />
+</div>
+
+</article>
+<article class="slide level-2" id="questions-about-ghosh-results">
+<h2>Questions about Ghosh results<a class="headerlink" href="../index.html#questions-about-ghosh-results" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>Does Ghosh's survey find fewer women because it mostly surveyed people who start projects?</li>
+<li>Are the men in FLOSS and the women generally using separate hosting services?</li>
+<li>Are women under-represented because, as a group, they were less likely to fill out the survey?</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="tbirdimage">
+<h2>Tbirdimage<a class="headerlink" href="../index.html#tbirdimage" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/thunderbird-screenshot.png" class="fill" src="_images/thunderbird-screenshot.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="who-writes-linux-report">
+<h2>&quot;Who Writes Linux?&quot; report<a class="headerlink" href="../index.html#who-writes-linux-report" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>Yearly from the Linux Foundation (these numbers re: 2.6.30)</li>
+<li>Changes per hour: 6</li>
+<li># of lines: 11 million</li>
+<li># of companies: 240</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="reflections-what-are-we-measuring-and-why">
+<h2>Reflections: What are we measuring, and why?<a class="headerlink" href="../index.html#reflections-what-are-we-measuring-and-why" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>Academic factoids<ul>
+<li>Not actionable</li>
+</ul>
+</li>
+<li>Being measured by people who don't have an interest in the results.</li>
+<li>Opt-in surveys are hopelessly broken, unless you know, very clearly, who has responded and who did not.<ul>
+<li>-- Benjamin Mako Hill</li>
+</ul>
+</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="reflections-maybe">
+<h2>Reflections: Maybe...<a class="headerlink" href="../index.html#reflections-maybe" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>± 50% is good enough for activists</li>
+<li>But do we know it's +/- 50%?</li>
+<li>How do we measure progress?</li>
+</ul>
+<p>Going forward, let's think about how to be useful.</p>
+
+</article>
+<article class="slide level-2" id="wikipedia-survey">
+<h2>2008 Wikipedia survey<a class="headerlink" href="../index.html#wikipedia-survey" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>For 1 week, a link on the top of every page</li>
+<li>(I don't remember seeing it)</li>
+<li>Goals of suvey: Answer...<ul>
+<li>Why do people start+stop editing?</li>
+<li>Do people know WMF is a non-profit?</li>
+<li>What are Wikipedia editors' demographics?</li>
+</ul>
+</li>
+<li>Collaboration between WMF and UNU-MERIT (Ghosh et al.)</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="basic-demographics">
+<h2>Basic demographics<a class="headerlink" href="../index.html#basic-demographics" title="View HTML">§</a></h2>
+<p>Age</p>
+<ul class="build simple">
+<li>25% younger than 18</li>
+<li>50% younger than 22</li>
+</ul>
+<p>Gender</p>
+<ul class="build simple">
+<li>Readers: 31% female, 69% male</li>
+<li>Editors: 13% female, 87% male</li>
+</ul>
+<p>Language</p>
+<ul class="build simple">
+<li>26% Russian</li>
+<li>25% English</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="wikipedia-editor-survey-2011">
+<h2>Wikipedia Editor Survey, 2011<a class="headerlink" href="../index.html#wikipedia-editor-survey-2011" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>The first ever semi-annual survey of Wikipedia editors</li>
+<li>&quot;Conducted on Wikipedia and presented to logged-in users&quot;</li>
+<li>Results: 8.5% female</li>
+<li>Is it getting worse?</li>
+<li>Will we ever know?</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="comscore-vs-unu-merit">
+<h2>comScore vs. UNU-MERIT<a class="headerlink" href="../index.html#comscore-vs-unu-merit" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>UNU-MERIT: 26% Russian</li>
+<li>comScore: 2.5% Russian</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="pew-survey-2010">
+<h2>Pew Survey, 2010<a class="headerlink" href="../index.html#pew-survey-2010" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>Goal: Understand Internet use and adoption in the United States</li>
+<li>Method: Call random USians over 18</li>
+<li>Results: % of US (not % of Wikipedia)</li>
+<li>Afterward: Publish everything</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="pew-s-wikipedia-demographics">
+<h2>Pew's Wikipedia demographics<a class="headerlink" href="../index.html#pew-s-wikipedia-demographics" title="View HTML">§</a></h2>
+<p>Age</p>
+<ul class="build simple">
+<li>Of 18-29 year olds: 62% read it</li>
+<li>Of 30-49 year olds: 52% read it</li>
+<li>Of 50-64 year olds: 49% read it</li>
+<li>Of 65+ year olds: 33% read it</li>
+</ul>
+<p>Gender</p>
+<ul class="build simple">
+<li>Of Males: 56% read it</li>
+<li>Of Females: 50% read it</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="pew-vs-unu-merit">
+<h2>Pew vs. UNU-MERIT<a class="headerlink" href="../index.html#pew-vs-unu-merit" title="View HTML">§</a></h2>
+<p>Gender:</p>
+<ul class="build simple">
+<li>UNU-MERIT: 31% female, 69% male</li>
+<li>Pew: 47% female, 53% male</li>
+</ul>
+<p>Other discrepancies:</p>
+<ul class="simple">
+<li>Age</li>
+<li>Marital status</li>
+<li>Education level</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="data-recovery">
+<h2>Data recovery<a class="headerlink" href="../index.html#data-recovery" title="View HTML">§</a></h2>
+<p>Adjust response data to match Pew demographics, using logistic &quot;propensity score&quot; to model non-random selection.</p>
+<ul class="build simple">
+<li>Female editors: 12.7% -&gt; 16.1%</li>
+<li>Female editors in US: 17.8% -&gt; 22.7%</li>
+<li>Credit: Benj. Mako Hill and Aaron Shaw (Search: [hill shaw gender wikipedia pew])</li>
+<li>Conclusion: So close to 25% goal!</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="what-they-say-vs-what-they-do">
+<h2>What they say vs. What they do<a class="headerlink" href="../index.html#what-they-say-vs-what-they-do" title="View HTML">§</a></h2>
+<p>Wikipedia editor survey 2011:</p>
+<ul class="simple">
+<li>70% say receiving a Barnstar makes them more likely to edit.</li>
+</ul>
+<p>Shaw &amp; Hill, 2012 (Shaw dissertation)</p>
+<ul class="build simple">
+<li>Measure edit range over 5 weeks before and after receiving Barnstar</li>
+<li>Net: -1.72 edits per week change</li>
+<li>People who moved star to personal page: +3</li>
+<li>People who did not move star: -5</li>
+<li>Search: [shaw interactional account dissertation]</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="wikihow-demographics-survey-motivation">
+<h2>wikiHow demographics survey: motivation<a class="headerlink" href="../index.html#wikihow-demographics-survey-motivation" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>Inspired and shocked by Wikipedia Editor Survey results</li>
+<li>Wondered if they had same lack of gender diversity</li>
+<li>Ran a survey!</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="wikihow-demographics-survey-methodology">
+<h2>wikiHow demographics survey: methodology<a class="headerlink" href="../index.html#wikihow-demographics-survey-methodology" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>Over three weeks, find active users</li>
+<li>Send them a talk page message</li>
+<li>50% response rate; N=126</li>
+<li>Sent by the wikiHow community manager</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="wikihow-demographics-survey-results">
+<h2>wikiHow demographics survey: results<a class="headerlink" href="../index.html#wikihow-demographics-survey-results" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>56% of respondents were female</li>
+<li>52% are 15 or younger</li>
+<li>24% are 16-25</li>
+<li>The older the contributor, the more likely to be male.</li>
+<li>The more experienced the contributor, the more likely to be male.</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="how-to-increase-data-quality-for-opt-in-surveys">
+<h2>How to increase data quality for opt-in surveys<a class="headerlink" href="../index.html#how-to-increase-data-quality-for-opt-in-surveys" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>Ask readers to fill out the same survey</li>
+<li>Adjust contributor response rate using known demographics of readers</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="questions-about-wikihow-data">
+<h2>Questions about wikiHow data<a class="headerlink" href="../index.html#questions-about-wikihow-data" title="View HTML">§</a></h2>
+<p>Questions:</p>
+<ul class="build simple">
+<li>50% of survey respondents under 15?</li>
+<li>Was gender mandatory to fill in?</li>
+<li>Which editing levels were more/less likely to respond?</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="id1">
+<h2>Questions about wikiHow data<a class="headerlink" href="../index.html#id1" title="View HTML">§</a></h2>
+<p>Questions and answers:</p>
+<ul class="simple">
+<li>50% of survey respondents under 15?</li>
+<li>Was gender mandatory to fill in?</li>
+<li>Which editing levels were more/less likely to respond?</li>
+</ul>
+<ul class="build simple">
+<li>19/123 people did not fill out age.</li>
+<li>Gender was required.</li>
+<li>We may never know which editing levels responded better.</li>
+<li>Overall: Great!</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="open-source-comes-to-campus-survey-notes">
+<h2>Open Source Comes to Campus survey notes<a class="headerlink" href="../index.html#open-source-comes-to-campus-survey-notes" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>Gender as a text field has 100% response rate</li>
+<li>(Some) undergrads really don't know git</li>
+</ul>
+
+</article>
+<article class="slide level-1" id="topic-behavioral-studies">
+<h1>Topic: Behavioral studies<a class="headerlink" href="../index.html#topic-behavioral-studies" title="View HTML">§</a></h1>
+
+</article>
+<article class="slide level-2" id="debian-mentorship-2010-four-days">
+<h2>Debian mentorship, 2010: &quot;Four days&quot;<a class="headerlink" href="../index.html#debian-mentorship-2010-four-days" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>Can we review new contributors' packages within four days?</li>
+<li>If so, they know what to expect.</li>
+<li>Package review increased sharply at the start...</li>
+<li>and then we failed to meet our commitment...</li>
+<li>...and flatlined to its old amount.</li>
+<li>Follow through is hard.</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="gnome-women-s-outreach-project">
+<h2>GNOME Women's Outreach Project<a class="headerlink" href="../index.html#gnome-women-s-outreach-project" title="View HTML">§</a></h2>
+<p>Or: The First Great FLOSS Behavioral Study</p>
+<ul class="build simple">
+<li>GSoC 2006: 181 applicants</li>
+<li>Women's Summer Outreach Program, started by Hanna Wallach and Chris Ball</li>
+<li>100 (women) applicants</li>
+<li>Structure: Same as GSoC: mentored coding internship. (Separate funding.)</li>
+<li>Conclusion: Targeted outreach changes the behaviors we see!</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="id2">
+<h2>GNOME Women's Outreach Project<a class="headerlink" href="../index.html#id2" title="View HTML">§</a></h2>
+<p>Open questions:</p>
+<ul class="build simple">
+<li>Do Women's Outreach Project particpants stick around in GNOME similarly to other summer interns?</li>
+<li>(Maybe more. Maybe less.)</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="the-study-no-one-has-done-yet">
+<h2>The study no one has done yet<a class="headerlink" href="../index.html#the-study-no-one-has-done-yet" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>Select 200 random users on e.g. Github</li>
+<li>Find out their demographic information</li>
+<li>Watch their activity levels</li>
+<li>(This is hypothetical for now. Your project?)</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="open-source-comes-to-campus">
+<h2>2010: Open Source Comes to Campus<a class="headerlink" href="../index.html#open-source-comes-to-campus" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>30% of applicants were women</li>
+<li>and 30% of most excited applicants!</li>
+<li>so, 30% of attendees</li>
+<li>No gender-specific outreach</li>
+<li>Great two-day event</li>
+<li>...though, did we leave an impact?</li>
+<li>To track: Compare Github activity against other similar population</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="railsbridge1">
+<h2>RailsBridge1<a class="headerlink" href="../index.html#railsbridge1" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/rpQQgPK.png" class="fill" src="_images/rpQQgPK.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="railsbridge2">
+<h2>RailsBridge2<a class="headerlink" href="../index.html#railsbridge2" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/TqU6yKC.jpg" class="fill" src="_images/TqU6yKC.jpg" />
+</div>
+
+</article>
+<article class="slide level-2" id="railsbridge3">
+<h2>RailsBridge3<a class="headerlink" href="../index.html#railsbridge3" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/oV6FE8r.png" class="fill" src="_images/oV6FE8r.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="it-worked-in-boston">
+<h2>It worked in Boston<a class="headerlink" href="../index.html#it-worked-in-boston" title="View HTML">§</a></h2>
+<p>Clones popping up</p>
+<ul class="build simple">
+<li>PyStar Philly</li>
+<li>Chicago Python Workshop</li>
+<li>Columbus Python Workshop</li>
+<li>Beginners &amp; Friends Python Programming Workshop in Auckland, NZ</li>
+<li>Tying them all together as OpenHatch Affiliated Events</li>
+</ul>
+<p>Probable limitation(s):</p>
+<ul class="build simple">
+<li>Only applies if you can hijack existing group</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="set-goals-and-then-achieve-them">
+<h2>Set goals, and then achieve them<a class="headerlink" href="../index.html#set-goals-and-then-achieve-them" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>PSF grant to OpenHatch: program began June 1</li>
+<li>Six new intro/diversity events</li>
+<li>Eight groups see improved speaker diversity</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="wikipedia-bot-messages-does-niceness-matter">
+<h2>Wikipedia bot messages -- does niceness matter?<a class="headerlink" href="../index.html#wikipedia-bot-messages-does-niceness-matter" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>Huggle!</li>
+<li>N approx 10,000</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="wikipedia-bot-messages">
+<h2>Wikipedia bot messages<a class="headerlink" href="../index.html#wikipedia-bot-messages" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>&quot;Changing the tone and language of the generic vandalism warning..&quot;</li>
+<li>increasing the personalization (active voice rather than passive, explicitly stating that the sender of the warning is also a volunteer editor, including an explicit invitation to contact them with questions)</li>
+<li>decreasing the number of directives and links</li>
+<li>and decreasing the length of the message</li>
+<li>...led to more users editing articles in the short term.</li>
+<li>More: <a class="reference external" href="http://meta.wikimedia.org/wiki/Template_A/B_testing/Results">http://meta.wikimedia.org/wiki/Template_A/B_testing/Results</a></li>
+<li>Clarity, not niceness.</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="meego-community-health">
+<h2>Meego community health<a class="headerlink" href="../index.html#meego-community-health" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>2011: Dave Neary and Dawn Foster</li>
+<li>Goal: Illuminate community activity</li>
+<li>Bugzilla, mailing list submissions, wiki edits</li>
+<li><a class="reference external" href="http://wiki.meego.com/Metrics/Dashboard">http://wiki.meego.com/Metrics/Dashboard</a></li>
+<li>A thrilling ball of Tomcat, Pentaho, and MySQL</li>
+<li>Primary goal: Show managers what &quot;community&quot; is</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="mediawiki-community-health">
+<h2>MediaWiki community health<a class="headerlink" href="../index.html#mediawiki-community-health" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>What are the areas with more activity?</li>
+<li>Are we expanding or shrinking?</li>
+<li>Custom gerrit stats: <a class="reference external" href="http://gerrit-stats.wmflabs.org/">http://gerrit-stats.wmflabs.org/</a></li>
+<li>Bitergia's MetricsGrimoire project:<ul>
+<li>2012 November preview: bugzilla &lt;<a class="reference external" href="http://bitergia.com/public/previews/2012_11_mediawiki/its.html">http://bitergia.com/public/previews/2012_11_mediawiki/its.html</a>&gt;</li>
+<li>2012 November preview: mailing list statistics &lt;<a class="reference external" href="http://bitergia.com/public/previews/2012_11_mediawiki/mls.html">http://bitergia.com/public/previews/2012_11_mediawiki/mls.html</a></li>
+<li>Now, monthly reports + dashboard &lt;<a class="reference external" href="https://blog.wikimedia.org/2013/07/12/engineering-june-2013-report/">https://blog.wikimedia.org/2013/07/12/engineering-june-2013-report/</a>&gt; &lt;<a class="reference external" href="http://korma.wmflabs.org/browser/">http://korma.wmflabs.org/browser/</a>&gt;</li>
+</ul>
+</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="id3">
+<h2>MediaWiki community health<a class="headerlink" href="../index.html#id3" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>Engineering metrics in June<ul>
+<li>116 unique committers contributed patchsets of code to MediaWiki.</li>
+<li>The total number of unresolved commits remained stable around 960.</li>
+<li>About 30 shell requests were processed.</li>
+<li>Wikimedia Labs now hosts 166 projects and 1520 users; to date 2052 instances have been created.</li>
+<li>The tools project in Labs now hosts 222 tools and 193 members.</li>
+</ul>
+</li>
+<li>Exploring dashboard: &lt;<a class="reference external" href="http://korma.wmflabs.org/browser/">http://korma.wmflabs.org/browser/</a>&gt;</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="ubuntu-developer-advisory-team">
+<h2>Ubuntu Developer Advisory Team<a class="headerlink" href="../index.html#ubuntu-developer-advisory-team" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>This team in terms of UbuntuDevelopment, tries to fulfill the following tasks in the Ubuntu world:</li>
+<li>Reach out to new contributors, thank them for their work and get feedback.</li>
+<li>Reach out to people who might be ready to apply for upload rights and help them.</li>
+<li>Reach out to contributors that went inactive and get feedback from them and offer help.</li>
+</ul>
+<p>Source: their homepage, last edited 2012-04-02.</p>
+
+</article>
+<article class="slide level-2" id="ubuntu-dat-new-contributor-report">
+<h2>Ubuntu DAT: New Contributor Report<a class="headerlink" href="../index.html#ubuntu-dat-new-contributor-report" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>DAT asked open-ended questions; 63% response rate</li>
+<li>9 love Launchpad; 9 dislike it</li>
+<li>Reviews are &quot;surprisingly painless&quot;</li>
+<li>Docs are troublesome: &quot;overwhelmed at all the information&quot; and by &quot;contradictory information&quot; that is &quot;difficult to follow in a logical manner&quot;</li>
+<li>Contributing is a &quot;surprisingly painless process&quot;</li>
+<li>Real magic is in the Trello cards...</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="ubuntu-dat-continous-tracking">
+<h2>Ubuntu DAT: Continous tracking<a class="headerlink" href="../index.html#ubuntu-dat-continous-tracking" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>Data from Ultimate Debian Database</li>
+<li>General approach: Make people happy, rather than tell them what to do</li>
+<li>...but does it work?</li>
+<li>To answer that question: OpenHatch Greenhouse</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="to-manage-your-own-projects">
+<h2>To manage your own projects<a class="headerlink" href="../index.html#to-manage-your-own-projects" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>e.g. <a class="reference external" href="http://www.ohloh.net/p/openhatch">http://www.ohloh.net/p/openhatch</a></li>
+<li>e.g. <a class="reference external" href="https://github.com/openhatch/oh-mainline">https://github.com/openhatch/oh-mainline</a></li>
+</ul>
+
+</article>
+<article class="slide level-2" id="gsoc-meta-mentorship-pipe-dream">
+<h2>GSoC meta mentorship (pipe dream)<a class="headerlink" href="../index.html#gsoc-meta-mentorship-pipe-dream" title="View HTML">§</a></h2>
+<ul class="build simple">
+<li>What makes GSoC better?</li>
+<li>What does a good GSoC mean?</li>
+<li>More failed students!</li>
+<li>Students still active 3-6 mo later.</li>
+<li>Happy mentors.</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="id4">
+<h2>GSoC meta mentorship (pipe dream)<a class="headerlink" href="../index.html#id4" title="View HTML">§</a></h2>
+<p>Theory:</p>
+<ul class="build simple">
+<li>Mentors would benefit from being in touch with each other.</li>
+<li>Mentors would benefit from being asked to report on status.</li>
+<li>Test: create opt-in meta mentorship.</li>
+<li>ENOSPC</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="thanks-to">
+<h2>Thanks to...<a class="headerlink" href="../index.html#thanks-to" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>Benjamin Mako Hill, for graphs (and FLOSSmole for source data)</li>
+<li>Ubuntu DAT for giving me access</li>
+<li>Karen Rustad, for conversations and help with slide prep</li>
+<li>David Lu, Greenhouse maintainer</li>
+<li>Sarah Mei for slide piracy</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="next-steps">
+<h2>Next steps<a class="headerlink" href="../index.html#next-steps" title="View HTML">§</a></h2>
+<p>Stay in touch:</p>
+<ul class="build simple">
+<li><a class="reference external" href="mailto:asheesh&#37;&#52;&#48;openhatch&#46;org">asheesh<span>&#64;</span>openhatch<span>&#46;</span>org</a></li>
+<li><a class="reference external" href="http://lists.openhatch.org/events">http://lists.openhatch.org/events</a></li>
+<li>Sponsor us!</li>
+<li>Q&amp;A.</li>
+</ul>
+
+</article>
+
+
+</section>
+  </body>
+</html>

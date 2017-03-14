@@ -1,0 +1,61 @@
+</div>
+<div class="blosxomCommentForm">
+
+  <p><strong>Comment form</strong></p>
+  <ul>
+    <li>
+      The following HTML is supported: &lt;a href&gt;, &lt;em&gt;,
+      &lt;i&gt;, &lt;b&gt;, &lt;blockquote&gt;, &lt;br/&gt;,
+      &lt;p&gt;, &lt;abbr&gt;, &lt;acronym&gt;, &lt;big&gt;,
+      &lt;cite&gt;, &lt;code&gt;, &lt;dfn&gt;, &lt;kbd&gt;,
+      &lt;pre&gt;, &lt;small&gt; &lt;strong&gt;, &lt;sub&gt;,
+      &lt;sup&gt;, &lt;tt&gt;, &lt;var&gt;
+    </li>
+    <li>
+      I do not display your email address.  It is for my personal use
+      only.
+    </li>
+  </ul>
+
+  <a name="comment_anchor" id="comment-anchor"></a>
+
+  <p id="blosxomCommentStatus">$comment_message</p>
+
+  <form method="post" action="$base_url/$file_path#comment_anchor"
+        id="comments_form" onsubmit="updateStatus();">
+    <fieldset>
+      <input type="hidden" name="secretToken" value="pleaseDontSpam" />
+      <input name="parent" type="hidden" value="$file_path" />
+      <input name="title" type="hidden" value="$title" />
+      <table width="100%">
+        <tr>
+          <td>Name:&nbsp;</td>
+          <td><input name="author" size="40" type="text"
+                     value="$cmt_author" /></td>
+        </tr><tr>
+          <td>Your email address:&nbsp;</td>
+          <td><input name="email" size="40" type="text"
+                     value="$cmt_email" /></td>
+        </tr><tr>
+          <td>Your website:&nbsp;</td>
+          <td><input name="url" size="40" type="text"
+                     value="$cmt_link" /></td>
+        </tr><tr><td>&nbsp;</td></tr><tr>
+          <td colspan="2">Comment:</td>
+        </tr><tr>
+          <td colspan="2">
+            <textarea name="body" rows="10" cols="72">$cmt_description</textarea>
+          </td>
+        </tr>
+        <tr><td>
+            <input value="Preview" name="preview" type="submit"
+                   id="preview-post" />
+            <input value="Post" name="post" type="submit" id="post-post" />
+        </td></tr>
+      </table>
+    </fieldset>
+  </form>
+
+</div> <!-- ends blosxomCommentForm div -->
+
+</div> <!-- ends blosxomComments div -->

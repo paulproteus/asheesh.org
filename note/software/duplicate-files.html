@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+  <head>
+   <link rel="openid.server" href="http://www.livejournal.com/openid/server.bml" />
+   <link rel="openid.delegate" href="http://paulproteus.livejournal.com/" />
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta name="author" content="root"/>
+    <meta name="generator" content="Bluefish 1.0.4"/>
+    <link rel="alternate" type="application/atom+xml" 
+    href="http://asheesh.org/index.atom" />
+
+    <!-- Navigational metadata for large websites (an accessibility feature): -->
+    <link rel="top"      href="./index.html" title="Homepage" />
+    <link rel="up"       href="./index.html" title="Up" />
+    <link rel="first"    href="./index.html" title="First page" />
+    <link rel="previous" href="./index.html" title="Previous page" />
+    <link rel="next"     href="./index.html" title="Next page" />
+    <link rel="last"     href="./index.html" title="Last page" />
+    <link rel="toc"      href="./index.html" title="Table of contents" />
+    <link rel="index"    href="./index.html" title="Site map" />
+
+<!-- Change the path to your .css file. This should reflect the weblocation -->
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-screen.css" media="screen" title="Gila (screen)" />
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-print.css" media="print" />
+	
+	<!--  title is pulled from blosxom -->
+    <title></title>
+  </head>
+
+  <body>
+    <!-- For non-visual user agents: -->
+      <div id="top"><a href="#main-copy" class="doNotDisplay doNotPrint">Skip to main content.</a></div>
+
+    <!-- ##### Header ##### -->
+
+    <div id="header">
+      <h1 class="headerTitle">
+     <!-- again the global variables are pulled from blosxom -->
+        <a href="/" title="Browse to homepage">Asheeshworld <span>Notes you will like</span></a>
+      </h1>
+
+      <div class="subHeader">
+        <span class="doNotDisplay">Navigation: </span>
+        <!-- change or add the following links to represent what you want -->
+        <a href="/about/">About</a> |
+        <a href="/mmm/">Mmm</a> |
+	<a href="/note/">Notes</a> |
+        <a href="/rmad/">RMAD</a> |
+        <a href="/dwad/">DWAD</a> |
+        <a href="/scribble/">Scribbles</a> |
+        <a href="/projects/">Projects</a>
+      </div>
+    </div>
+    <div id="side-bar">
+
+      <!-- ##### Left Sidebar ##### -->
+	<!-- If you want to use the Blosxom Plugin "menu" by Fletcher T. Penney, leave this area alone... put the menu file in your plugins dir-->
+      <div class="leftSideBar">
+        <p class="sideBarTitle">Menu</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li></li>
+        </ul>  
+        <p class="sideBarTitle">This section</p> 
+         <ul><li>Jotted-down notes at the intersection of my mind and permanence</li></ul>
+   
+        <p class="sideBarTitle">Recycling the past</p>
+        <span class="sideBarText">
+          
+        </span>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments are welcome.  Email me.
+        </span>
+      </div>
+
+	<!-- if you want to manually set up your menus.. commnet above .. and uncomment the following and manipulate to your liking. -->
+	<!--
+      <div class="leftSideBar">
+        <p class="sideBarTitle">This Page</p>
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#cross-browser" title="Improved cross-browser compatibility">Cross-browser</a></li>
+          <li><a href="#stylesheets" title="Modified stylesheets">Stylesheets</a></li>
+          <li><a href="#accessibility" title="Improved accessibility">Accessibility</a></li>
+        </ul>
+
+        <p class="sideBarTitle">Branch Navigation</p>
+        <ul>
+          <li><a href="http://www.oswd.org/index.phtml">OSWD Home</a></li>
+          <li><a href="http://www.oswd.org/browse.php">Browse Designs</a></li>
+          <li><a href="http://www.oswd.org/userinfo.phtml?user=haran">haran&rsquo;s Designs</a></li>
+          <li><span class="thisPage" title="That's this page!">Gila Homepage</span></li>
+        </ul>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments and constructive criticisms are welcome
+          <a href="http://www.oswd.org/email.phtml?user=haran" title="Email form">via email</a>.
+        </span>
+      </div>
+	-->
+
+
+      <!-- ##### Right Sidebar ##### 
+
+      <div class="rightSideBar">
+        
+
+        <p class="sideBarTitle">Downloads</p>
+
+        <div class="sideBarText"><strong>"Gila" Skin for Blosxom</strong><br />
+
+      </div>
+      -->
+
+    </div>  
+         <div id="main-copy">
+        <!-- <h1 id="introduction" style="border-top: none; padding-top: 0;"></h1>
+       </div>
+       -->
+<h2>Sat, 09 Aug 2008</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/software/duplicate-files.html">Finding duplicate files
+</a>
+       </h1>
+		<p>Every once in a while, I know one file is duplicated in many places. 
+This happens, for example, when I have imported photos from my camera 
+into a photo management program and also stored a copy of them somewhere 
+else. Sometimes I have downloaded files twice from the web.
+</p><p>Detecting duplicate files is not hard - you just compare the file 
+contents. The problem is that with large files, and a large number of 
+files, it can take a long time if you compare every file to every other 
+file.
+</p><p>Because I needed to do this for a few gigabytes of photos, and 
+everything I found I either didn't trust or ran too slowly, I wrote my 
+own.  Once you detect duplicate files, you generally want to either 
+delete all but one, or to "merge them" via hardlinks so that all the files
+exist, but they share storage space on disk.
+</p><p>Summary: I had a fairly good approach, but everyone should use rdfind 
+instead of my code.
+</p>
+<h3 id="w_my-approach">My approach</h3>
+<p>You can check out (using Subversion or a web browser) my code at 
+http://svn.asheesh.org/svn/public/code/merge_dups/ .
+</p>
+<ul><li> Organize all the files grouped by size (since only files of equal size can have equal contents).
+</li><li> For each size that contains more than one file, calculate a hash (MD5) of all the files.
+<ul><li> If any of the files have the same size and MD5, delete the one with a longer filename.
+</li><li> Continue to the next file size.
+</li></ul>
+</li></ul>
+<p>This approach has to stat() every file at least once, but many files 
+don't have to be read at all.  For my photos, this was a huge 
+time-saver.
+</p><p>(Why delete the one with a longer filename?  Usually that's the one in 
+some obscure directory named "camera-backup" or 
+"recovered-from-some-dying-computer".)
+</p><p>I trust my code.  Plus, it is verbose, printing out what it is doing and 
+why.  And the entire program with comments, status message print-outs, 
+and vertical spacing easily fits on my screen.
+</p>
+<h3 id="w_other-implementations">Other implementations</h3>
+<p>Today, I decided to go through Freshmeat to see if I could retire my code
+and just rely on someone else's.  So I checked out the reasonable contenders
+from <a href="http://freshmeat.net/search/?q=%2Bduplicate+%2Bfiles">this search</a>.
+</p>
+<h4 id="w_find-duplicates-by-fredrik-hubinette">find_duplicates by Fredrik Hubinette</h4>
+<ul><li> Homepage: http://fredrik.hubbe.net/hacks/
+</li><li> License: GPL v2 (good)
+</li><li> Efficiency: Good (uses file sizes the way I do)
+</li><li> Language: Pike (weird, but seems okay)
+</li><li> Strategy: Check sizes; hash; verify by reading file; merge via hardlinks
+</li><li> Sanity: High
+</li><li> Rating: Good
+</li></ul>
+<p>It uses the first few kilobytes of the string as a hash,
+which is probably more efficient that reading the whole thing.  It
+is safe and reads the whole files before marking them as duplicates.
+</p>
+<h4 id="w_dmerge-cpp-by-jonathan-h-lundquist">dmerge.cpp by Jonathan H Lundquist</h4>
+<ul><li> Homepage: http://www.fluxsmith.com/cgi-bin/twiki/view/Jonathan/DMerge
+</li><li> License: X11-like (good)
+</li><li> Efficiency: Good (uses file sizes the way I do)
+</li><li> Language: C++ (bearable)
+</li><li> Strategy: Check sizes; hash by calling an external program; verify by calling "cmp"; ...
+</li><li> Sanity: Low
+</li><li> Rating: Don't use
+</li></ul>
+<p>I stopped caring when I realized it calls external programs.  I doubt it 
+does it in a correct/secure way, so forget it.
+</p>
+<h4 id="w_duff-by-camilla-berglund">duff by Camilla Berglund</h4>
+<ul><li> Homepage: http://duff.sourceforge.net/
+</li><li> License: zlib/libpng (MIT-esque) (good)
+</li><li> Efficiency: Good
+</li><li> Language: C (okay)
+</li><li> Strategy: Check sizes; hash with first few bytes; verify by SHA1 or actual 
+</li><li> Sanity: High (comes with a man page; very tunable; great web site)
+</li><li> Rating: Don't use
+</li></ul>
+<p>This looks really good, but it doesn't actually do the merging. It 
+relies on a shell script to do the merging, and I don't trust the 
+correctness of the shell script's handling of filenames (due to the 
+whitespace-separated output format of duff itself).
+</p><p>Note to Camilla: If you provided a -z option (like find -print0) to 
+duff, and made sure the shell script respected it, then it would be 
+practically perfect.
+</p>
+<h4 id="w_fslint-2-14">fslint 2.14</h4>
+<ul><li> Efficiency: Seemed lame
+</li><li> Rating: Don't use
+</li><li> Explanation: I tried it, and then I said, "That's it, I'm writing my own."
+</li></ul>
+<p>It was so litlte fun to use I don't even want to talk about it.  The 
+benchmarks on the rdfind web page confirm this with data.
+</p>
+<h4 id="w_rdfind-by-paul-sundvall-winner">rdfind by Paul Sundvall (WINNER!)</h4>
+<ul><li> Homepage: http://www2.paulsundvall.net/rdfind/rdfind.html
+</li><li> License: GPL (v2, probably) (good)
+</li><li> Efficiency: Excellent
+</li><li> Language: C++ (okay)
+</li><li> Strategy: Check sizes; check first bytes; calculate SHA1s; delete dups or create symlinks or create hardlinks or print report
+</li><li> Sanity: High - object-oriented, well-commented, includes man page, includes benchmarks
+</li><li> Self-importance: High, but seems deserved
+</li><li> Rating: Excellent, use it
+</li></ul>
+<p>Finding software like this is why I look for software not written by me.
+</p>
+<h4 id="w_other-tools-i-didnt-fully-review">Other tools I didn't fully review</h4>
+<ul><li> finddup by Heiner Steven &lt;http://www.shelldorado.com/scripts/cmds/finddup&gt;
+<ul><li> Language: Shell, which probably means it has problems with complicated filenames
+</li></ul>
+</li><li> clink by Michael Opdenacker &lt;http://free-electrons.com/community/tools/utils/clink/&gt;
+<ul><li> Language: Python (yay!)
+</li><li> Does not support hard links, only symlinks, thereby (to the author's own admission) creates permissions problems
+</li></ul>
+</li><li> dupfinder by Matthias Böhm &lt;http://doubles.sourceforge.net/&gt;
+<ul><li> Sanity: Moderate to Low - thinks that not using hash functions makes it "much faster" than other programs
+</li></ul>
+</li><li> dupmerge2 by Rolf Freitag (continuation of work from Phil Karn) &lt;http://sourceforge.net/projects/dupmerge/&gt;
+<ul><li> Sanity: Moderate to Low: Bundles a pre-compiled binary, which is just weird
+</li></ul>
+</li><li> dupseek by Antonio Bellezza &lt;http://www.beautylabs.net/software/dupseek.html&gt;
+<ul><li> Focus on interactive duplicate file removal.  Probably good at that; I want correct, unattended operation.
+</li></ul>
+</li><li> freedup by William Stearns &lt;http://freedup.org/&gt;
+<ul><li> Looks fairly good, even though it's written in bash (freaks me out)
+</li><li> Offers an option to strip metadata and compare only file *contents* for MP3, MPEG4, MPC, JPEG, and Ogg (not FLAC, I guess), which is great.
+</li></ul>
+</li></ul>
+<h3 id="w_conclusion">Conclusion</h3>
+<p>rdfind looks great.  Every once in a while, two hours are better spent 
+doing research rather than re-inventing the wheel.  This is one of those 
+times where I was more useful to my life as a secretary rather than by 
+trying to be a programmer.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/software/duplicate-files.html">permanent link and comments</a></i>
+		</p>
+    
+<div class="blosxomEntry">
+  <div id="comments" class="blosxomComments">
+</div>
+<div class="blosxomCommentForm">
+
+  <p><strong>Comment form</strong></p>
+  <ul>
+    <li>
+      The following HTML is supported: &lt;a href&gt;, &lt;em&gt;,
+      &lt;i&gt;, &lt;b&gt;, &lt;blockquote&gt;, &lt;br/&gt;,
+      &lt;p&gt;, &lt;abbr&gt;, &lt;acronym&gt;, &lt;big&gt;,
+      &lt;cite&gt;, &lt;code&gt;, &lt;dfn&gt;, &lt;kbd&gt;,
+      &lt;pre&gt;, &lt;small&gt; &lt;strong&gt;, &lt;sub&gt;,
+      &lt;sup&gt;, &lt;tt&gt;, &lt;var&gt;
+    </li>
+    <li>
+      I do not display your email address.  It is for my personal use
+      only.
+    </li>
+  </ul>
+
+  <a name="comment_anchor" id="comment-anchor"></a>
+
+  <p id="blosxomCommentStatus"></p>
+
+  <form method="post" action="http://www.asheesh.org/note/software/duplicate-files#comment_anchor"
+        id="comments_form" onsubmit="updateStatus();">
+    <fieldset>
+      <input type="hidden" name="secretToken" value="pleaseDontSpam" />
+      <input name="parent" type="hidden" value="note/software/duplicate-files" />
+      <input name="title" type="hidden" value="Finding duplicate files
+" />
+      <table width="100%">
+        <tr>
+          <td>Name:&nbsp;</td>
+          <td><input name="author" size="40" type="text"
+                     value="" /></td>
+        </tr><tr>
+          <td>Your email address:&nbsp;</td>
+          <td><input name="email" size="40" type="text"
+                     value="" /></td>
+        </tr><tr>
+          <td>Your website:&nbsp;</td>
+          <td><input name="url" size="40" type="text"
+                     value="" /></td>
+        </tr><tr><td>&nbsp;</td></tr><tr>
+          <td colspan="2">Comment:</td>
+        </tr><tr>
+          <td colspan="2">
+            <textarea name="body" rows="10" cols="72"></textarea>
+          </td>
+        </tr>
+        <tr><td>
+            <input value="Preview" name="preview" type="submit"
+                   id="preview-post" />
+            <input value="Post" name="post" type="submit" id="post-post" />
+        </td></tr>
+      </table>
+    </fieldset>
+  </form>
+
+</div> <!-- ends blosxomCommentForm div -->
+
+</div> <!-- ends blosxomComments div -->
+</div> <!-- end main copy div  -->
+    <!-- ##### Footer ##### -->
+
+    <div id="footer">
+      <div class="doNotPrint">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" />
+</a>
+      </div>
+
+      <div>
+        Copyright &copy; <a href="http://www.asheesh.org/">Asheesh Laroia</a>.  This work is licensed under a 
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">by-sa</a>. <a href="http://www.openhatch.org/">Open Hatch</a> is my current project. You should enjoy my parents' <a href="http://amayabarandgrill.com/">Indian restaurant in Rochester</a>!
+      </div>
+    </div>
+  </body>
+</html>

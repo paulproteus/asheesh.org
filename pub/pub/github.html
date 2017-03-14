@@ -1,0 +1,31 @@
+<html>
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+<script type="text/javascript">
+function add_one_pull(datum) {
+    var li = $("<li></li>");
+    var link = $("<a></a>");
+    link.attr('href', datum['html_url']);
+    link.text(datum['title'] + ' by ' + datum['user']['login']);
+    li.append(datum['head']['repo']['name'] + ": ");
+    li.append(link);
+    $('ul').append(li);
+}
+function list_open_pulls(response) {
+    var data = response['data'];
+    for (var datum in data) {
+        if (data.hasOwnProperty(datum)) {
+            add_one_pull(data[datum]);
+        }
+    }
+}
+</script>
+</head>
+<body>
+<p>Pull requests you might care about:</p>
+<ul class="pulls"></ul>
+</body>
+<script src="https://api.github.com/repos/openhatch/oh-mainline/pulls?callback=list_open_pulls"></script>
+<script src="https://api.github.com/repos/openhatch/oh-bugimporters/pulls?callback=list_open_pulls"></script>
+<script src="https://api.github.com/repos/openhatch/oh-greenhouse/pulls?callback=list_open_pulls"></script>
+</html>

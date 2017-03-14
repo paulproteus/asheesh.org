@@ -1,0 +1,1675 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+  <head>
+   <link rel="openid.server" href="http://www.livejournal.com/openid/server.bml" />
+   <link rel="openid.delegate" href="http://paulproteus.livejournal.com/" />
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta name="author" content="root"/>
+    <meta name="generator" content="Bluefish 1.0.4"/>
+    <link rel="alternate" type="application/atom+xml" 
+    href="http://asheesh.org/index.atom" />
+
+    <!-- Navigational metadata for large websites (an accessibility feature): -->
+    <link rel="top"      href="./index.html" title="Homepage" />
+    <link rel="up"       href="./index.html" title="Up" />
+    <link rel="first"    href="./index.html" title="First page" />
+    <link rel="previous" href="./index.html" title="Previous page" />
+    <link rel="next"     href="./index.html" title="Next page" />
+    <link rel="last"     href="./index.html" title="Last page" />
+    <link rel="toc"      href="./index.html" title="Table of contents" />
+    <link rel="index"    href="./index.html" title="Site map" />
+
+<!-- Change the path to your .css file. This should reflect the weblocation -->
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-screen.css" media="screen" title="Gila (screen)" />
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-print.css" media="print" />
+	
+	<!--  title is pulled from blosxom -->
+    <title></title>
+  </head>
+
+  <body>
+    <!-- For non-visual user agents: -->
+      <div id="top"><a href="#main-copy" class="doNotDisplay doNotPrint">Skip to main content.</a></div>
+
+    <!-- ##### Header ##### -->
+
+    <div id="header">
+      <h1 class="headerTitle">
+     <!-- again the global variables are pulled from blosxom -->
+        <a href="/" title="Browse to homepage">Asheeshworld <span>where are you?</span></a>
+      </h1>
+
+      <div class="subHeader">
+        <span class="doNotDisplay">Navigation: </span>
+        <!-- change or add the following links to represent what you want -->
+        <a href="/about/">About</a> |
+        <a href="/mmm/">Mmm</a> |
+	<a href="/note/">Notes</a> |
+        <a href="/rmad/">RMAD</a> |
+        <a href="/dwad/">DWAD</a> |
+        <a href="/scribble/">Scribbles</a> |
+        <a href="/projects/">Projects</a>
+      </div>
+    </div>
+    <div id="side-bar">
+
+      <!-- ##### Left Sidebar ##### -->
+	<!-- If you want to use the Blosxom Plugin "menu" by Fletcher T. Penney, leave this area alone... put the menu file in your plugins dir-->
+      <div class="leftSideBar">
+        <p class="sideBarTitle">Menu</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li></li>
+        </ul>  
+        <p class="sideBarTitle">This section</p> 
+         <ul><li>Why are you here?</li></ul>
+   
+        <p class="sideBarTitle">Recycling the past</p>
+        <span class="sideBarText">
+          
+        </span>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments are welcome.  Email me.
+        </span>
+      </div>
+
+	<!-- if you want to manually set up your menus.. commnet above .. and uncomment the following and manipulate to your liking. -->
+	<!--
+      <div class="leftSideBar">
+        <p class="sideBarTitle">This Page</p>
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#cross-browser" title="Improved cross-browser compatibility">Cross-browser</a></li>
+          <li><a href="#stylesheets" title="Modified stylesheets">Stylesheets</a></li>
+          <li><a href="#accessibility" title="Improved accessibility">Accessibility</a></li>
+        </ul>
+
+        <p class="sideBarTitle">Branch Navigation</p>
+        <ul>
+          <li><a href="http://www.oswd.org/index.phtml">OSWD Home</a></li>
+          <li><a href="http://www.oswd.org/browse.php">Browse Designs</a></li>
+          <li><a href="http://www.oswd.org/userinfo.phtml?user=haran">haran&rsquo;s Designs</a></li>
+          <li><span class="thisPage" title="That's this page!">Gila Homepage</span></li>
+        </ul>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments and constructive criticisms are welcome
+          <a href="http://www.oswd.org/email.phtml?user=haran" title="Email form">via email</a>.
+        </span>
+      </div>
+	-->
+
+
+      <!-- ##### Right Sidebar ##### 
+
+      <div class="rightSideBar">
+        
+
+        <p class="sideBarTitle">Downloads</p>
+
+        <div class="sideBarText"><strong>"Gila" Skin for Blosxom</strong><br />
+
+      </div>
+      -->
+
+    </div>  
+         <div id="main-copy">
+        <!-- <h1 id="introduction" style="border-top: none; padding-top: 0;"></h1>
+       </div>
+       -->
+<h2>Mon, 26 Dec 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/short-key-ids-are-bad-news.html">Short key IDs are bad news (with OpenPGP and GNU Privacy Guard)
+</a>
+       </h1>
+		<p><b>Summary</b>: It is important that we (the Debian community that relies on OpenPGP through
+GNU Privacy Guard) stop using short key IDs. There is no vulnerability in OpenPGP and GPG.
+However, using short key IDs (like 0x70096AD1) is
+fundementally insecure; it is easy to generate collisions for short key IDs.
+We should <i>always use 64-bit</i> (or longer) key IDs, like: 0x37E1C17570096AD1
+or 0xEC4B033C70096AD1.
+</p><p><b>TL;DR</b>: This now gives two results: <tt>gpg --recv-key 70096AD1</tt>
+</p>
+<h3 id="w_some-background-and-my-two-keys">Some background, and my two keys</h3>
+<p>Years ago, I read
+<a href="http://www.debian-administration.org/users/dkg/weblog/48">dkg's instructions</a>
+on migrating the Debian OpenPGP infrastructure. It told me that the time and
+effort I had spent getting my key into the strong set wasn't as useful as I
+thought it had been.
+</p><p>I felt deflated. I had put in quite a bit of effort over the years to strongly-connect my
+key to a variety of signatures, and I had helped people get their own keys into
+the strong set this way. If I migrated off my old key and revoked it, I'd be abandoning some
+people for whom I was their only link into the strong set. And what fun it was
+to first become part of the strong set! And all the eyebrows I raised when I told
+people I was going meet up with people I met on a website called
+<a href="http://www.biglumber.com/">Biglumber</a>... I even made it my
+<a href="https://www.facebook.com/0x70096AD1">Facebook.com user ID</a>. So if I had to generate a
+new key, I decided I had better really love the short key ID.
+</p><p>But at that point,
+I already felt pretty attached to the number 0x70096AD1. And I couldn't come up with
+anything better. So that settled it: no key upgrade
+until I had a new key whose ID is the same as my old key.
+</p><p>That dream has become a reality. Search for my old key ID, and you get two keys!
+<pre>$ gpg --keyserver pgp.mit.edu --recv-key 0x70096AD1
+gpg: requesting key 70096AD1 from hkp server pgp.mit.edu
+gpg: key 70096AD1: public key "Asheesh Laroia &lt;asheesh@asheesh.org&gt;" imported
+gpg: key 70096AD1: public key "Asheesh Laroia &lt;asheesh@asheesh.org&gt;" imported
+gpg: no ultimately trusted keys found
+gpg: Total number processed: 2
+gpg:               imported: 2  (RSA: 1)
+</pre>
+<p>I also saw it as an opportunity: I know that cryptography tools are tragically easy
+to mis-use. The use of 32-bit key IDs is fundamentally incorrect -- too little entropy.
+Maybe shocking people by creating two "identical" keys will help speed the transition
+away from this mis-use.
+</p>
+<h3 id="w_a-neat-stunt-abusing-refresh-keys">A neat stunt abusing --refresh-keys</h3>
+<p>Thanks to a GNU Privacy Guard bug, it is super easy to get my
+new key. Let's say that, like many people, you only have my old key
+on your workstation:
+<pre>$ gpg --list-keys | grep 70096AD1
+pub   1024D/70096AD1 2005-12-28
+</pre>
+<p>Just ask GPG to refresh:
+<pre>$ gpg --keyserver pgp.mit.edu --refresh-keys
+gpg: refreshing 1 key from hkp://pgp.mit.edu
+gpg: requesting key 70096AD1 from hkp server pgp.mit.edu
+gpg: key 70096AD1: public key "Asheesh Laroia &lt;asheesh@asheesh.org&gt;" imported
+gpg: key 70096AD1: "Asheesh Laroia &lt;asheesh@asheesh.org&gt;" not changed
+gpg: Total number processed: 2
+gpg:               imported: 1  (RSA: 1)
+gpg:              unchanged: 1
+gpg: no ultimately trusted keys found
+</pre>
+<p>You can see that it set out to refresh just 1 key. It did that by querying
+the keyserver for the <i>short ID</i>. The keyserver provided two hits for that
+query. In the end, GPG refreshes one key and actually <i>imports</i> a new key
+into the keyring!
+</p><p>Now you have two:
+<pre>$ gpg --list-keys | grep 70096AD1
+pub   1024D/70096AD1 2005-12-28
+pub   4096R/70096AD1 2011-03-11
+</pre>
+<p>There is a
+<a href="https://bugs.g10code.com/gnupg/issue1340">bug</a> filed in GNU Privacy Guard about this.
+It has a patch attached. There is, at the moment, no plan for a new release.
+</p>
+<h3 id="w_a-faster-attack-but-nothing-truly-new">A faster attack, but nothing truly new</h3>
+<p>My friend <a href="http://endeavour.zapto.org">Venkatesh</a> tells me there is an apocryphal old Perl script that
+could be used to generate key ID collisions.
+Here in the twenty-first century, l33t h4x0rz like Georgi Guninski are
+<a href="http://seclists.org/fulldisclosure/2011/Sep/207">trying to create collisions</a>.
+</p><p>In May 2010, "halfdog" posted a note to the full-disclosure list that generates PGP keys 
+with chosen short key IDs. I haven't benchmarked or tested that tool, but I have used a 
+different tool (private for now) that can generate collisions in a similar fashion.
+It takes about 3 hours to loop through all key IDs on a dinky little netbook.
+</p><p>You don't have to use any of these tools. You can just rent time on an elastic
+computing service or a botnet, or your own personal computer, and generate keys
+until you have a match.
+</p><p>I think that it's easy to under-estimate the seriousness of this problem: tools
+like the <a href="http://pgp.cs.uu.nl/">PGP Key Pathfinder</a> should be updated to only
+accept 64-bit (or longer) key IDs if we want to trust their output.
+</p>
+<h3 id="w_my-offer-i-will-make-you-a-key">My offer: I will make you a key</h3>
+<p>I've been spending some time wondering: What sort of exciting demonstration
+can I create to highlight that this is a real problem? Some ideas I've had:
+</p>
+<ul><li> Publish a private/public key pair whose key ID is the same as Phil Zimmerman's, original author of PGP
+</li><li> Publish a private/public key pair whose key ID is the same as Werner Koch's, maintainer of GNU Privacy Guard
+</li><li> Publish a set of public keys that mimic the entire PGP strong set, except where I control the private key of all these keys
+</li></ul>
+<p>The last one would be extremely amusing, and would be a
+hat-tip to some work discussed in Raph Levien's 
+<a href="http://video.google.com/videoplay?docid=-5092930485716426869">Google Tech Talk about Advogato</a>.
+</p><p>For now, here is my offer: If you send me a request signed with a key in the strong
+set, I will create a 4096-bit RSA public/private key pair whose 32-bit key ID is <i>one greater</i>
+than yours. So if you are 0x517DD4E4 I will generate 0x517DD4E5.
+</p><p>I will post the keys here, along a note about who requested it, and instructions on how
+to import them into your keyring. (Note: I will politely decline to create a new key whose 32-bit key ID would create a collision; 
+apologies if your key ID is just one away from someone else's.)
+</p><p>P.S. The prize for best sarcastic retort goes to Ian Jackson. He said, "I should go and create a lot of keys with your key ID. I'll set the real name to 'Not Asheesh Laroia' so everyone is totally clear about what is going on."
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/debian">/note/debian</a>] 
+		<a href="http://www.asheesh.org/note/debian/short-key-ids-are-bad-news.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sun, 25 Dec 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/music/russian-nonsemble.html">Learning baritone again (for the Russian Nonsemble)
+</a>
+       </h1>
+		<p>In fifth and sixth grade, I used to play the baritone horn. A few weekends ago,
+I played a show with the Russian Nonsemble. Look for me in a blue shirt and tie:
+</p><p><img src="/pub/image/music/img-photo-87130.jpg" width="500" height="373" />
+</p><p>When I joined the Brighton public school system in fifth grade, other students had been
+playing musical instruments for a year. I tried a few different options, and I
+settled on the baritone. Maybe I really liked the sound, or how buzzing works with
+a mouthpiece and combines with the entire horn. Maybe I was suggestible and accepted
+something that the band needed.
+</p><p>I learned the instrument on bass clef, which was its own oddity. It was a little confusing
+to use bass clef in band and treble clef in chorus, but I managed. (Maybe this exercise
+taught me something about the concept of equivalence.)
+</p><p>There is something relaxing about playing the baritone: I am not keeping
+the melody. The tone quality I send out is not, at least in a fifth grade
+band, make or break the performance. One downside is that, with the highly
+repetitious lines, it can be easy to get lost.
+</p><p>Early in the sixth grade, our band director asked for volunteers to learn
+the French horn. Steve Marler picked it up for the musical challenge. I picked
+it up because I was willing to fill an institutional need.
+</p><p>It was a lot of fun to play French horn. Well, it was a challenge, at least.
+Every single group performance setting I had for the French horn -- from
+sixth grade through high school, through the Johns Hopkins concert band --
+there was someone sitting next to me who was a full notch better at me.
+It was disheartening, to be honest.
+</p><p>I stopped playing horn somewhere in college. For a while I played mellophone
+in the Johns Hopkins pep band, but that wound down eventually.
+</p><p>About a year ago, my friend Irina invited me to be part of a band,
+for which she lent me a baritone.
+</p><p>Halfway through the concert you see above,
+I began to do more than just read the music. I listened to the sound of the band
+and looked at my bandmates, making <i>bom-pom</i> sounds on the horn while bobbing
+up and down with the rhythm of the song we were playing.
+</p><p>Thanks to Jess Schumann for taking the picture!
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/music">/note/music</a>] 
+		<a href="http://www.asheesh.org/note/music/russian-nonsemble.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sat, 17 Dec 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/corporations/illegal-takedowns.html">Computer fraud and abuse by Universal Music Group
+</a>
+       </h1>
+		<p>It seems that Universal Music Group
+willfully misrepresented its copyright interest and probably
+violated its service contract with YouTube. By my understanding
+of the Computer Fraud and Abuse Act, UMG likely took actions
+that <a href="http://ilt.eff.org/index.php/Computer_Fraud_and_Abuse_Act_%28CFAA%29">exceed authorized access</a>,
+subjecting it to criminal prosecution. (I am just a computer enthusiast
+and not a lawyer, so I welcome corrections from others.)
+</p><p>The emerging details, reported by Wired.com's Threat Level blog,
+are <a href="http://www.wired.com/threatlevel/2011/12/youtube-universal-megaupload/">as follows</a>:
+</p>
+<blockquote>YouTube said Friday that Universal Music abused the video-sharing site’s piracy filters when it employed them to take down a controversial video of celebrities and pop superstars singing and praising the notorious file-sharing service Megaupload.</blockquote>
+<p>In particular, Google created a system for antipiracy that is being abused
+by UMG:
+</p>
+<blockquote>“Our partners do not have the right to take down videos from YT unless they own the rights to them or they are live performances controlled through exclusive agreements with their artists, which is why we reinstated it,” Google-owned YouTube said.</blockquote>
+<p>I look forward to a speedy criminal prosecution of the employees
+or board of Universal Music Group. If that is not feasible,
+perhaps the organization itself should be
+<a href="http://www.asheesh.org/note/corporations/behind-bars-draft.html">put behind bars</a>.
+</p><p>Even if Megaupload.com fails in its own lawsuit against UMG,
+I eagerly await the criminal prosecution of UMG as in
+<a href="http://www.wired.com/threatlevel/2011/07/swartz-arrest/">another case where Federal prosecutors had to get involved</a>.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/corporations">/note/corporations</a>] 
+		<a href="http://www.asheesh.org/note/corporations/illegal-takedowns.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sun, 04 Dec 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/bike/vertical.html">Vertical
+</a>
+       </h1>
+		<p>After the
+<a href="http://meetup.bostonpython.com/events/37948602/">November Python Project Night</a>,
+<a href="http://www.flickr.com/photos/paulproteus/6208418008/in/set-72157627810249912/">Noah</a>
+and I unlocked our bicycles.
+</p><p><img src="http://asheesh.org.nyud.net/pub/image/bike/vertical.jpg" width="600" height="900" />
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/bike">/note/bike</a>] 
+		<a href="http://www.asheesh.org/note/bike/vertical.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sun, 27 Nov 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/oot-killer.html">The OOT Killer
+</a>
+       </h1>
+		<p>Commitments require care, and recently I have been suffering from the delusion
+that making more commitments will make me more able to achieve them.
+</p><p>When overcommit reaches a certain point, the OOT (out of time) killer comes and
+reaps time from whatever it finds, often with disappointing consequences.
+</p><p>(See also: <a href="http://linux-mm.org/OOM_Killer">OOM Killer</a>.)
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/debian">/note/debian</a>] 
+		<a href="http://www.asheesh.org/note/debian/oot-killer.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sun, 13 Nov 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/corporations/behind-bars-draft.html">How To Put Corporations in Jail and Prison (draft)
+</a>
+       </h1>
+		<p>In the U.S., some crimes carry jail or prison terms for the persons who commit them. Some of the persons
+who commit these crimes are so-called "natural persons" -- people like you and me. Some of them
+are corporations. This brief essay explains how and why to apply prison sentences to these artificial persons.
+</p><p>I am not a lawyer. I do live in a country with laws, and I worry that these "artificial persons" can skirt
+the law by being structured to avoid jail time. So I propose this draft, and I am interested in feedback.
+</p>
+<h3 id="w_1-a-brief-summary-of-jail-and-prison">1. A brief summary of jail and prison</h3>
+<p>First, let us review life for natural persons when they are convicted of a crime with a prison term.
+Prisoners may find themselves in a minimum-security institution, where they are given some small
+degree of autonomy, limited (but non-zero) access to communication systems like postal mail,
+telephones, and in-person visits, and are put to work. Persons who commit violent crimes and constitute
+a risk to other inmates may be incarcerated in a medium- or high-security facility; in these,
+inmates are carefully tracked and intensive barriers and check-points prevent too-great movement.
+</p><p>It can be disruptive for a person to find himself or herself behind bars, but it is a disruption
+that the legal system is willing to make so that the public can enjoy a law-abiding society.
+</p><p>Life in prisons is still <i>life</i>: inmates may always eat, drink water, think to
+themselves, and (as far as I know) make written notes to themselves. Many famous activists have spent
+time in jail or prison and gone on to continue their careers. Prisoners in low-security
+facilities may enjoy lots of communication with other persons, so long as it does not require
+the use of communication technology.
+</p><p>Persons spending time in prison may continue to own property outside of the prison.
+Their ability to use it while incarcerated is minimal to nonexistent, but they may have bank accounts,
+investments, or other financial instruments that appreciate in value.
+</p>
+<h3 id="w_2-how-the-structure-of-corporations-makes-law-enforcement-harder">2. How the structure of corporations makes law enforcement harder</h3>
+<p>Now that we have a concept of what prison is like, let us carefully consider what it means to
+be a corporation. Corporations are legal constructions, created to
+achieve a specific end. They have a primary place of business where individual natural persons meet
+to do work to help the corporation achieve those ends. Most corporations are created for the
+private profit of their founders.
+</p><p>The corporation is, fundamentally, a legally-approved
+veil over the collective activity of individual persons.
+This corporate veil limits the <i>financial</i> liability for its Directors; if the corporation owes
+rent on its property, for example, the Directors are not responsible personally for this debt.
+Virtually all actions of corporations are about the transfer of money. The existence of
+this structure is widely-considered a good, efficient thing.
+</p><p>Some actions of a corporation go beyond the transfer of money; some actions are criminal.
+At the moment, individual natural persons who commit crimes as part of their
+duties to the corporation may find themselves in court and possibly in jail. This can
+flow all the way up the chain to the Directors.
+</p><p>But if an employee is asked by her manager to commit a crime for the private
+inurement of the corporation, she is the one most at-risk for criminal proceedings.
+If a corporation profits from check fraud, the fines may be smaller than the profits
+earned.
+</p><p>The incentives are mis-aligned: if an investor calculates that the financial punishment for
+breaking the law will not hurt the corporation, he might urge the corporation to flout
+the law. The result might be dramatically increased profits with a side-effect of
+an employee or a Director in jail.
+</p><p>There is an elegant solution to this problem: when an agent for the corporation commits a
+crime with a jail term, the corporation should spend some time incarcerated as well.
+This brings us to the final part: the mechanics of applying jail and prison terms to
+corporations.
+</p>
+<h3 id="w_3-how-to-put-companies-behind-bars">3. How to put companies behind bars</h3>
+<p>Rather than painstakingly identify the employees most responsible for lawbreaking
+within a corporation, it may be simpler to put the corporation behind bars.
+Practically speaking, this means moving the primary place of business of the
+corporation to a jail or prison.
+</p><p>In this regime, when a company is in jail, the employees must go to the jail
+and subject themselves to the standard restrictions of the jail as they go about
+their business. If the company has committed a violent offense (perhaps
+the calculated murder of citizens who live near its place of toxic waste dumping),
+then while employees are contributing their time to the corporation, they
+would be subject to highly-secured perimeter fences and close supervision.
+</p><p>Just like a natural person, the corporation can continue its life while in prison.
+It may have limited access to communication technology, but (depending on
+the security level of the facility) employees will be able to take notes
+on paper, send checks in the mail, plan the corporation's future actions, and possibly
+attend meetings with each other. If this is not enough to maintain the
+corporation's activities, it should have considered that before committing
+criminal acts.
+</p><p>One downside to this system is that as corporations are increasingly convicted
+of crimes, their employees could fill up our already-stretched prison capacity.
+This, and other practical problems, are easy to address if you consider the
+spirit of this proposal. The restrictions of prison life could be applied by
+sending jail wardens to corporate headquarters, where employees are scrutinized
+and restricted under the same rules as they would be in prison. The warden
+can be responsible for ensuring limits on communication technology use are
+enforced.
+</p><p>It can be disruptive for a corporation to find itself
+behind bars, but it is a disruption
+that the legal system should be willing to make so that the public can enjoy a law-abiding society.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/corporations">/note/corporations</a>] 
+		<a href="http://www.asheesh.org/note/corporations/behind-bars-draft.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Thu, 03 Nov 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/reflection/important-problems.html">Work on important problems
+</a>
+       </h1>
+		<p>A friend pointed me to a
+<a href="http://www.cs.virginia.edu/~robins/YouAndYourResearch.html">transcript</a>
+of Richard Hamming's motivational
+speech, "You and your research." In the speech, Hamming (the famous inventor of
+the Hamming code, an early and vital error-correction algorithm) discusses points
+that make a researcher generate <i>important</i> results for the field. (<strike>I think it was Blake who sent me the link.</strike> I seem to have no idea how I found it initially.)
+</p><p>I'll now take a moment and mis-quote Hamming, pretending he's giving advice to activists rather
+than scientists:
+</p>
+<blockquote>
+If you do not work on an important problem, it’s unlikely you’ll do important work. It’s
+perfectly obvious. Great activists have thought through, in a careful way, a number of
+important problems in their field, and they keep an eye on wondering how to attack
+them. Let me warn you, ‘important problem’ must be phrased carefully. The three
+outstanding problems in physics, in a certain sense, were never worked on while I was at
+Bell Labs. By important I mean guaranteed a Nobel Prize and any sum of money you
+want to mention. We didn’t work on (1) time travel, (2) teleportation, and (3) antigravity.
+They are not important problems because we do not have an attack. It’s not the
+consequence that makes a problem important, it is that you have a reasonable attack.
+That is what makes a problem important. When I say that most activists don’t work on
+important problems, I mean it in that sense. The average activist, so far as I can make
+out, spends almost all his time working on problems which he believes will not be
+important and he also doesn’t believe that they will lead to important problems.
+</blockquote>
+<p>He tells great stories, and you should read the transcript. Here, however,
+is a summary of his points:
+</p>
+<ul><li> A handful of people do excellent science repeatedly. It does not boil down to pure luck (though luck does remain important). Courage and hard-work are huge factors.
+</li><li> As you grow older, you will be tempted to only work on large problems. Instead, Shannon urges us to "continue to plant the little acorns from which the mighty oak trees grow."
+</li><li> Necessity is the mother of invention. When you have a resource constraint, you will be forced to address it, perhaps in a novel and generally-useful way.
+</li><li> Be committed to your research question, not your current results. Take note of the places where your data disagree with your theory. You'll need those places later.
+</li><li> When you see a good attack, drop everything and focus on it until you find out if it will work.
+</li><li> If you work with your office as an open door, within a decade you will know where the field has moved-to in a way that closed-door workers will not.
+</li><li> When solving a problem, consider how it can be "characteristic of a class" of problem rather than just one isolated problem.
+</li><li> You must become good at presenting ("selling") your work as well as your motivations.
+</li><li> Avoid the personality defect of wanting total control. This prevents other people from helping you. Generally, learn how to use the system. That includes being willing to <i>appear to conform</i>.
+</li><li> Avoid the personality defect of excessive ego assertion. "Which do you want to be? The person who changes the system or the person who does first−class science?"
+</li><li> Gain the personality boon of seeing the positive side of things, even constraints. Especially self-set constraints.
+</li><li> Know thyself.
+</li></ul>
+<p>The Q&A, and the full speech, get the blood pumping. <a href="http://www.cs.virginia.edu/~robins/YouAndYourResearch.html">Give it a read</a>.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/reflection">/note/reflection</a>] 
+		<a href="http://www.asheesh.org/note/reflection/important-problems.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sun, 23 Oct 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/rfbp.html">RFBP: Request for birthday present/package
+</a>
+       </h1>
+		<p>There is a program that I love: <tt>bb</tt>.
+</p><p><tt>bb</tt> is a demo of the famous ASCII Art library, aalib.
+</p>
+<center><pre>     dT8  8Tb     
+    dT 8  8 Tb    
+   dT  8  8  Tb   
+&lt;PROJECT&gt;&lt;PROJECT&gt;
+ dT    8  8    Tb 
+dT     8  8     Tb
+</pre>
+</center>
+
+<tt>bb</tt> is a demo-scene-type program that shows how <em>awesome</em>
+automatic ASCII art is. The personalities of the people who made <tt>bb</tt>
+shine through. It's surely one of my favorite programs in Debian, up there
+with alpine. It's been in Debian since 1998.
+
+<p><tt>bb</tt> has a serious bug, however:
+<a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=123150">BB's "graphics" freeze when music starts</a>.</p>
+<p>Here's the issue.
+</p>
+<ul><li> <tt>bb</tt> uses libmikmod to play sound.
+</li><li> Back in the twentieth century, many of us thought it would be cool to have applications play sound through a system service called <a href="http://www.tux.org/~ricdude/EsounD.html">EsounD</a>. To enable that, the libmikmod maintainers added the ability for libmikmod to send audio to that daemon.
+</li><li> libmikmod detects if your system uses esound, and if so, sends sound there by default.
+</li><li> libmikmod's esound support is broken, and <tt>bb</tt> half-crashes (as per #123150) when it gets used.
+</li><li> Today, nearly everyone's sound output goes through pulseaudio, which supports ALSA as well as the old esound protocol for backwards-compatibility.
+</li></ul>
+<p>So if your system (like most GNU/Linux systems) uses pulseaudio for sound, then
+<tt>bb</tt> is broken. That means every Ubuntu user and most desktop Debian users can't use it.</p>
+<p>There are a few possible fixes, depending on where you'd want to solve the problem. If you just
+want bb to run on your own machine, without recompiling anything, you can adjust pulseaudio's configuration
+(in /etc/pulse/default.pa) to disable esound support. If you want to do that, just comment out this line:</p>
+<pre> load-module module-esound-protocol-unix</pre>
+<p>We could also possibly patch <tt>bb</tt> so that it asks libmikmod not to use its esound "support."</p>
+<p>I think the smarter thing to do is to adjust libmikmod. Since its esound support seems to be just plain broken,
+it should be removed. At very least, it should not be the default when ALSA output is available. There
+<i>is</i> a new upstream release of libmikmod, maybe the esound output is fixed.</p>
+<p>In Debian, libmikmod is
+<a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=628162">orphaned</a>.
+When a package is orphaned,
+it means that a new person must step in and <i>adopt</i> the package.
+Debian packages need ongoing care
+and commitment to fix issues and make changes like this that benefit the users.</p>
+<p>In this case, you'd need to understand some C and be willing to maintain a shared library.
+Maintaining a library in Debian requires attention to detail, but it is quite doable. Since you would be adopting an existing package, most of the work is already done for you.
+I would also be quite willing to answer questions. If you're not a Debian developer, I would happily sponsor uploads of this package
+into Debian so that the fixes are part of the distribution.</p>
+<p>So: who will maintain libmikmod and fix <tt>bb</tt>? Could it be you?</p>
+<p>It would make a <a href="http://www.asheesh.org/note/event/2011-bday.html">really great birthday present</a>
+if the amazing <tt>bb</tt> program worked in the next Debian release. Leave a comment if you
+have questions or are interested!</p>
+<p>P.S. In a pinch, I can be convinced to maintain libmikmod myself, but I think this is a great opportunity for someone new to Debian to make a big difference.</p>
+
+		<p style="text-align: right;">
+		<i>[<a href="/note/debian">/note/debian</a>] 
+		<a href="http://www.asheesh.org/note/debian/rfbp.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Thu, 20 Oct 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/event/2011-bday.html">Herbert's Birthday is October 21
+</a>
+       </h1>
+		<p>So if you want to come to 
+<a href="http://maps.google.com/maps?q=november,ma,us">November</a>
+(91 Belmont St, #2, 02143) on Fri Oct 21, at 7:30 PM, there will be snacks and drinks.
+</p><p>My beloved stuffed dog will be nine human years old, which is 
+plenty old!
+</p><p>If you bring things, potluck-style, that will make things super great. You
+can show up without potluck-type things, too.
+</p><p>Representative photos of Herbert:
+</p>
+<ul><li> <a href="http://www.flickr.com/photos/skyfaller/20181995/">A young Herbert's trip to the District of Columbia</a> (look below the house)
+</li></ul>
+<ul><li> <a href="http://www.flickr.com/photos/keenduck/1414164219/">A young Herbert's trip to Boston</a>
+</li></ul>
+<ul><li> <a href="http://www.flickr.com/photos/keenduck/1439028820/">Herbert promotes vegetarianism on the quad at Hopkins</a>
+</li></ul>
+<ul><li> <a href="http://www.flickr.com/photos/joi/917308278/">Romantic Herbert near the Bay</a>
+</li></ul>
+<ul><li> <a href="http://www.flickr.com/photos/rubin110/5155773147/">Extreme San Francisco Herbert, 1.5y ago</a>
+</li></ul>
+<p>Herbert has no need for material posessions, so gifts will be roundly
+rejected. Herbert and I are tourists in the dunya.
+</p><p>Also, I will be showing a music video once per hour. Mostly R.E.M. with
+maybe a sprinkling of They Might Be Giants. Bad Religion, too? Who knows.
+</p><p>You are all quite invited to invite people I would like!
+</p><p>Yours truly,
+</p><p>-- Asheesh.
+</p><p>P.S. Herbert's birthday is one day after mine.
+</p><p>P.P.S. ZIP code matters!
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/event">/note/event</a>] 
+		<a href="http://www.asheesh.org/note/event/2011-bday.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Mon, 10 Oct 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/nano.html">nano the all-powerful</a>
+       </h1>
+		
+<p>I admit it, I use nano for text editing from time to time.  Like 
+right now, with this post.<p>
+
+<p>nano is a simple text editor widely derided as being simple.  It also 
+has most of the features I want:</p>
+
+<ul>
+<li>Regular expression find/replace</li>
+<li>Fast loading</li>
+<li>Automatic word wrap when you want it, and easily-disabled word wrap 
+when you don't</li>
+<li>No insane modal-ness like vi</li>
+<li>Ability to easily insert the results of shell commands into 
+files</li>
+<li>Really easy to use with context help all the time</li>
+<li>Real ultimate freedom</li>
+<li>Syntax highlighting</li>
+</ul>
+
+<h4>Syntax highlighting?</h4>
+
+<p>Yeah.  <a href="http://forums.gentoo.org/viewtopic-t-86562.html">Some 
+Gentoo dudes</a> pointed out it had it in 2003.  The nano changelog 
+indicates (from a quick skimming) that version nano-1.1.4 - 12/11/2001 
+was the first with "Preliminary syntax highlighting support".</p>
+
+<p>Also:</p>
+
+<blockquote>
+
+&lt;helix&gt; I think it got syntax highlighting around the same time 
+the hurd managed to be able to use shared memory
+
+</blockquote>
+
+<p>Also also (from <a 
+href="http://freshmeat.net/projects/nano/">Freshmeat</a>:</p>
+
+<blockquote>
+
+This looks just like Pico. Truly this is a good editor. I'm impressed. 
+Toga! Toga! Toga!
+
+</blockquote>
+
+		<p style="text-align: right;">
+		<i>[<a href="/note">/note</a>] 
+		<a href="http://www.asheesh.org/note/nano.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Fri, 07 Oct 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/people/emily-clough.html">Inspired by Emily Clough</a>
+       </h1>
+		
+<p style="text-align: center;"><img src="//asheesh.org/pub/image/emily-clough/EmilyCloughBW.jpg" width="200" height="225">
+<p>Emily Clough asks sharp questions.</p>
+<p>Academically speaking, Emily <a href="http://www.gov.harvard.edu/people/emily-clough">is</a> a doctoral candidate in the Department of Government at Harvard. She studies comparative politics and the political economy of development with a special research focus on private governance and child labor. But this is a personal story, written to celebrate <a href="http://findingada.com/">Ada Lovelace Day</a>.</p>
+</p>
+<p>In 2007, I had just graduated from college and was working for Creative Commons as a programmer. I was awed by my sudden position near the center of a whirlwhind of copyright activism; at the same time, I wondered about what kind of impact the <a href="http://freeculture.org/">free culture movement</a> was making. Were we really empowering people? How many? Which ones?</p>
+<p>For Thanksgiving Day 2007, I was planning to be on a flight to New Delhi to visit some family. The night before, I stayed up all night chatting with <a href="http://abhay.tumblr.com/">Abhay</a>, expecting to sleep on the plane. When I got to the airport, I discovered I didn't have a visa for India in my passport. Groggy and confused, I managed to visit the consulate and get a new visa.</p>
+<p>So on Thanksgiving evening, a day usually filled with family and feasts, I had no plans. I explained this to my roommate Matt Baggott, and he invited me to a vegan Thanksgiving dinner hosted by his friend <a href="http://www.maenad.net/">Nori Heikkinen</a>. That was where I met Emily Clough.</p>
+<p>Emily was interested in international development, and I told her about the <a href="http://wiki.laptop.org/go/License">activity</a> I was making to teach kids about Creative Commons. This was November 2007, and like much of the tech world, I was excited about <a href="http://laptop.org/">One Laptop Per Child</a>. OLPC was creating inexpensive, highly-interactive learning computers to distribute to children all over the developing world. They would have free software on them, which kids could edit, and my activity was going to maybe ship with them.</p>
+<p>Emily, ever thoughtfully critical, wondered about the possibility of gender bias.</p>
+<blockquote>
+<p>Emily: "How are they identifying which children get computers?"</p>
+<p>Asheesh: "I think they ask schools to go through their rosters and ask for that many computers."</p>
+<p>Emily: "Don't you think that under-privileges girls?"</p>
+<p>Asheesh: "I don't see why it would."</p>
+<p>Emily: "It's an empirical question. Girls are under-represented on school rosters in much of the developing world."</p>
+</blockquote>
+<p><em>Huh</em>, I thought.</p>
+<p>Emily's remark taught me that the effects of sexism can be magnified if we act unaware of it.</p>
+<p>Nowadays, I work on <a href="https://openhatch.org/">growing the free software community</a>. What I want is user empowerment.</p>
+<p>I spend much of that time organizing <a href="http://www.asheesh.org/note/software/scala-crash-course.html">events</a> to <a href="http://openhatch.org/wiki/Boston_Python_Workshop">address</a> gender diversity issues in free software. When growing the free software community, it's not enough to find more contributors; we have to make sure we're reaching people of all kinds. Gender is one place where there's still work to be done.</p>
+
+		<p style="text-align: right;">
+		<i>[<a href="/note/people">/note/people</a>] 
+		<a href="http://www.asheesh.org/note/people/emily-clough.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Wed, 28 Sep 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/free-culture/network.html">Why it's important to defeat the network management infrastructure
+</a>
+       </h1>
+		<p>I see the Internet as an ongoing conversation between millions of computers. Some of these computers are
+controlled by me or by my friends. When network administrators make it harder for our computers
+to send messages to each other, I get upset.
+</p><p>Angry, actually.
+</p>
+<h2 id="w_high-school">High school</h2>
+<p>I didn't always feel quite so strongly about this.
+</p><p>Twelve years ago, I was enjoying a foray into running a server at home. I was excited to connect to
+it from the Brighton High School computer network. I couldn't connect, though; I discovered that the high school's Internet
+connection was filtered through a proxy that only would connect to web servers.
+</p><p>I had an SSH server I wanted to connect to, so I could read my email in
+<a href="http://packages.debian.org/sid/alpine">PINE</a>. SSH isn't the web, so the proxy
+wouldn't let me through.
+</p><p>Then I learned about <a href="http://nocrew.org/software/httptunnel.html">GNU httptunnel</a>. This is a pair of
+programs:
+</p>
+<ul><li> a <i>server</i>, that sits on my server at home and runs a fake web server; and
+</li><li> a <i>client</i>, that I run at school, that lets me connect through the fake web server to the SSH service.
+</li></ul>
+<p>After some experimentation, I got the tools working.
+</p><p>From time to time, I would work on a file at home
+and forget to bring a copy to school. Now I could use the tunnel to connect to my desktop and download it.
+</p><p>From this experience, I took two lessons:
+</p>
+<ol><li> Whatever network restrictions there are, I probably want to circumvent them.
+</li><li> It will probably be reasonably easy to do so.
+</li></ol>
+<p>The experience reminds me of John Gilmore's famous quote:
+</p>
+<blockquote>The Net interprets censorship as damage and routes around it.</blockquote>
+<p>I enjoyed reading my email from school. I never felt I was endangering the high school network. I did
+try to set up my tunnels as fast as possible in case a teacher wandered by.
+</p>
+<h2 id="w_a-conversation-between-computers">A conversation between computers</h2>
+<p>To many people, the Internet is a set of resources that humans can access.
+</p><p>To me, this is wrong for two important reasons:
+</p>
+<ol><li> It is factually incorrect.
+</li><li> It is a political mistake.
+</li></ol>
+<p>Factually speaking, every time you request a web page, you send a request to a remote computer to send it to you. That computer, upon receiving
+the request, can do whatever it wants.  It is, approximately, sheer luck that when you visit <a href="http://i.imgur.com/zvak0.jpg">an image like this</a> twice,
+you see the same thing.
+</p><p>Politically speaking, this perspective hides one of the real crimes committed by Internet censors: fraud.
+</p><p>Four years ago or so, Comcast famously used <a href="https://www.eff.org/wp/packet-forgery-isps-report-comcast-affair">heavy-handed techniques</a> to prevent users
+from effectively using the BitTorrent file sharing software. If you belive in the Internet as a set of resources, there isn't all <i>that</i> much
+to complain about. After all, they let users access the whole World-Wide Web.
+</p><p>To see the world the way I do, you'll need some basic knowledge of Internet protocols. As a refresher,
+if you are on computer A, sending a file to computer B, Internet traffic between them generally
+looks like this.
+</p><p>First, a handshake:
+</p>
+<ul><li> A -&gt; B: Hi
+</li><li> B -&gt; A: Oh, hi!
+</li><li> A -&gt; B: I'm going to send you a file
+</li><li> B -&gt; A: Cool, go ahead.
+</li></ul>
+<p>Then the file transfer begins, sending chunks until they are all sent:
+</p>
+<ul><li> A -&gt; B: Here's one chunk
+</li><li> B -&gt; A: Great, send more chunks
+</li><li> A -&gt; B: All done sending
+</li><li> B -&gt; A: Hooray! I just <a href="http://www.youtube.com/watch?v=dWBmaKk32fE">love receiving files</a>!
+</li><li> B -&gt; A: Okay, bye!
+</li><li> A -&gt; B: Bye!
+</li></ul>
+<p>Comcast does something exciting: in order to make the file transfer fail,
+Comcast sends you a specially-crafted message that appears to come from
+computer B. It says, "Okay, bye!"
+</p><p>So your computer stops sending.
+</p><p>From a user's perspective, the file transfer stops. At the network perspective, Comcast lied.
+Comcast is <i>impersonating</i> a remote party in a conversation.
+</p><p>Imagine with me, <a href="http://www.youtube.com/watch?v=bDOYN-6gdRE">for a moment</a>, that this is a phone conversation.
+When you call certain people, your phone operator is interrupting the conversation to play a message specially crafted
+to sound like your friend saying, "I have to go now!" You might hang up, thinking the call is over.
+</p><p>As it happens, in the Comcast BitTorrent blocking case, you can work around the tactic: if you configure your computer to ignore all "Okay, bye!" messages,
+the file transfer works fine.
+</p><p>If you see the web as a collection of resources, you might ask why your ISP is blocking access to a
+particular site. You might wonder why they're blocking BitTorrent.
+</p><p>If you're me, you'd ask: <a href="http://www.youtube.com/watch?v=gGMc3tWhuY0">What gives them the right</a> to lie about their identity when
+talking to you? To impersonate the computer operated by your friend across the 'net?
+</p><p>It strikes me as commercial fraud. Whatever sysadmin deployed this
+automated fraud technology needs to be put in jail -- if not him, then his boss.
+</p>
+<h2 id="w_port-blocking">Port blocking</h2>
+<p>Instead of actively impersonating a remote computer, another common tactic is to simply
+drop certain messages on the floor. This is most of what we ask "firewalls" to do.
+(Unless the network notifies you it did this,
+you can consider this a lie by omission.)
+</p><p>Many guest wifi networks drop Internet messages between computers based on the port number.
+</p><p>Different ports, for readers who don't know, are typically used for different kinds of services.
+A computer on the Internet can provide web service by listening on port number 80, and provide
+inbound email service at the same time by listening on port 25. The secure login service ("SSH")
+is usually found on port 22.
+</p><p>One of my housemates recently sent me an email complaining that she couldn't connect to her
+web hosting service. She was on someone else's wifi network. We eventually determined
+the cause: the network was dropping messages her computer sent to the hosting service
+on port 22. (Also, the organization in question outsourced their network management
+services, so there was no one in the building she could complain to.)
+</p><p>At this point, I got angry. The network admins are not making their network safer, but they are
+making it harder for her to do what she wants. Port 22 is <i>not</i> a dangerous thing
+to permit people to use.
+</p><p>So I configured one of my servers to listen on a port she <i>could</i> access. Like the
+GNU HTTP tunnel configuration I used in high school, the machine would relay messages
+from her limited network into the real Internet. In this case, we used
+<a href="http://www.rutschle.net/tech/sslh.shtml">sslh</a> on the server, and
+<a href="http://www.statusq.org/archives/2008/07/03/1916/">configured her computer</a>'s SSH client
+to use a "ProxyCommand."
+</p><p>Moments like this remind me that the Internet -- that is, the routing of messages between computers,
+between (inter) networks (net) -- is vanishing before my eyes. I'm lucky in that I remember the old way; I started to use the Internet
+in an era where you could expect that packets would actually
+be sent to their destination, not rudely dropped on the floor or impersonated.
+</p>
+<h2 id="w_summary">Summary</h2>
+<p>Now, it is normal to see packets mangled by Internet service providers. ISPs forge IP headers,
+sometimes
+<a href="http://en.wikipedia.org/wiki/Virgin_Media#Proxy_servers">to make the network seem faster</a>,
+other times to insert advertisements into other people's web pages. Usually
+there is no way to opt out.
+</p><p>What all these network tricks have in common is that the ISP impersonates one party in the conversation.
+</p><p>When I ask the network to please send a message to another computer for me, I'm not asking to be lied-to.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/free-culture">/note/free-culture</a>] 
+		<a href="http://www.asheesh.org/note/free-culture/network.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Fri, 02 Sep 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/sep-2011-bsp.html">Debian bug squashing party at SIPB, MIT</a>
+       </h1>
+		
+<p style="width: 600; text-align: right;"><img src="http://www.asheesh.org/pub/image/debian-bsp/arthur.jpg" width="600" height="125" /><br />
+(Photo credit: Obey Arthur Liu; <span old_href="https://picasaweb.google.com/lh/photo/rojWvmxk2BAOxrNijtzE4fl-7_ynySStRGVX0SVR8xY">originally on Picasa</span>, <a href="http://creativecommons.org/licenses/by-sa/3.0/">license</a>.)
+</p>
+<p>Three weekends ago, I participated in a <a href="http://www.debian.org/events/2011/0821-debub-bsp">Debian bug squashing party</a>. It was more fun than I had guessed!</p>
+<p>The event worked: we squashed bugs. Geoffrey Thomas (geofft) organized it as an event for MIT's student computing group, SIPB. In this post, I'll review the good parts and the bad. I'll conclude with beaming photos of my two mentees and talk about the bugs they fixed.</p>
+<p>So, the good:</p>
+<ul><li><strong>Attendance</strong>. As <a href="https://luke.faraone.cc/">Luke</a> put it, when he arrived, there was hardly anyone there.  “Then people showed up! And then mentorship and pedagogy happened!” In all, 14 people attended, seven of whom are active in Debian or its derivatives (Ubuntu, Debathena).</li>
+<li><strong>We took photos</strong>. Arthur took a wide panoramic photo, and I snapped a few good ones, too. (Thanks to Jessica McKellar for letting me borrow her camera.) Here's my <a href="http://www.flickr.com/photos/paulproteus/sets/72157627510089068/with/6076878743/">full photo set</a>.</li>
+<li><strong>Good, free pizza</strong>. Props to geofft for ordering from <a href="http://beautys-pizza.com/">Beauty's</a>, and props to SIPB for picking up the tab.</li>
+<li><strong>We fixed bugs</strong>! I mentored two new Debian contributors through their first release-critical bug fix. Both of them said they would attend similar events in the future. One of my mentees is now idling and asking questions in the #debian-mentors IRC channel.</li>
+<li><strong>The Debian Events team republished the event</strong>. MadameZou <a href="http://www.debian.org/events/2011/0821-debub-bsp">posted</a> the event to debian.org, giving it a nice stable URL.</li>
+<li><strong>geofft made a good list of bugs to work on</strong>. He worked from the release-critical bug list, categorized the bugs by expected difficulty, and made somee short notes about how to fix the bug. This turned out quite useful.</li>
+<li><strong>People printed music to the speakers</strong>. If this sounds weird, you should read the <a href="http://sipb.mit.edu/doc/using-sipbmp3/">SIPB documentation for how to use Gutenbach</a> (written by <a href="http://lizdenys.com/">Liz Denys</a>).</li>
+<li><strong>We had a good ratio of developers to newcomers</strong>. This was hugely helpful; from what I saw, new people rarely waited very long for their questions to be answered. Thanks to Luke Faraone, Sam Hartman, Obey Arthur Liu, Karl Ramm, and Christine Spang from Debian, and Geoffrey Thomas from Debathena, for sharing knowledge.</li>
+</ul>
+<p>The event was a success, but as always, there are some things that could have gone more smoothly. Here's that list:</p>
+<ul><li><strong>We hadn't prepared for people to do Debian development on Ubuntu</strong>. In particular, it took Luke and me about half an hour to come up with a pbuilder command line that worked.</li>
+<li><strong>We didn't contribute to Ubuntu, just Debian</strong>. I actually think this is fine, but geofft did originally <a href="http://www.debian.org/events/2011/0821-debub-bsp">want people to work on both</a>. He was disappointed, and we could have managed to do that if we had done more prep.</li>
+<li><strong>We could have reached more prospective attendees</strong>. I know earlier in the year, <a href="http://rhydd.org/">daf</a> organized a highly popular Debian packaging tutorial <a href="http://pika.mit.edu/">elsewhere on campus</a>. I didn't see any of those people at the event, and I think some would have attended if they had known about it.</li>
+<li><strong>Some people wanted a bit more context</strong>. In particular, attendees asked me about what makes a bug release-critical and what it means to do a non-maintainer upload. We could have taken some time to explain these to the whole group; instead, we dove right into hacking. Because we had so many mentors, I think people did get their questions answered, but we can't sustain that if the event grows in size.</li>
+<li><strong>Mentees didn't always get high-quality help</strong>. geofft suggested Jessica work on one bug, and when she had a question, she asked Luke Faraone. Luke wasn't familiar with the bug, and he skimmed it, not realizing that the bug changed issues midway through the bug log. As a result, his initial help was unhelpful. After Luke, Jessica, and the bug were on the same page (so to speak), Jessica received clear, sound answers to questions.</li>
+</ul>
+<p>Still, it turned out well! I did three NMUs, corresponding to three patches submitted for release-critical bugs by my two mentees. Those mentees were:</p>
+<p><img src="//asheesh.org/pub/image/debian-bsp/6076850459_b49d2fb456.jpg" width="500" height="281" alt="Jessica enjoying herself" /></p>
+<p><a href="http://jesstess.com/">Jessica McKellar</a> is a software engineer at <strike>Ksplice</strike> Oracle and a recent graduate of MIT's EECS program. She solved three release-critical bugs. This was her first direct contribution to Debian. In particular:</p>
+<ul>
+<li><a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?archive=no&bug=636201">#636201</a>:  While updating the package for multiarch support, the maintainer of  wildmidi presumably made a typo. A single character was missing from a  "Replaces:" declaration in debian/control. This bug caused upgrades to  fail. Sam Hartman uploaded an NMU based on a patch Jessica  prepared.</li>
+<li><a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=626420">#626420</a>: The scribus-doc package failed to build from source due to a missing build-depends entry. This one was super easy, and served as a good test package for setting up and using pbuilder.</li>
+<li><a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=565000">#565000</a>: The switch to 
+gcc-4.5 left hubbub unable to build from source due to new GCC warnings that made -Wall fail on the source, although it would succeed with earlier versions of the package. This led to long philosophical discussions about the particularly most reasonable fix: removing -Wall, or adding a more specific exception.</li>
+</ul>
+<p>Jessica has since gotten involved in the <a href="https://launchpad.net/~twisted-dev/+archive/ppa">Twisted project's personal package archive</a>. Toward the end of the sprint, she explained, "I like fixing bugs. I will totally come to the next bug squashing party."</p>
+<p><img height="500" width="281" alt="Noah grinning" src="//asheesh.org/pub/image/debian-bsp/6077392890_95567b4bd3.jpg" /></p>
+<p><a href="http://wiki.mako.cc/Noah_Swartz">Noah Swartz</a> is a recent graduate of Case Western Reserve University  where he studied Mathematics and played Magic. He is an intern at the MIT Media Lab where he contributes to <a href="http://www.media.mit.edu/resenv/doppellab/">DoppelLab</a> in Joe Paradiso's <a href="http://www.media.mit.edu/research/groups/responsive-environments">Responsive Environments</a> group. This was definitely his first direct contribution to Debian. It was also one of the most intense command-line experiences he has had so far. Noah wasn't originally planning to come, but we were having lunch together before the hackathon, and I convinced him to join us.</p>
+<p>Noah fixed <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=625177">#625177</a>, a fails-to-build-from-source (FTBFS) bug in nslint. The problem was that "-Wl" was instead written in all lowercase in the debian/rules file, as "-wl". Noah fixed that, making sure the package properly built in pbuilder, and then spent some quality time with lintian figuring out the right way to write a debian/changelog.</p>
+<p>That's a wrap! We'll hopefully have one again in a few months, and before that, I hope to write up a guide so that we run things even more smoothly next time.</p>
+
+
+		<p style="text-align: right;">
+		<i>[<a href="/note/debian">/note/debian</a>] 
+		<a href="http://www.asheesh.org/note/debian/sep-2011-bsp.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Wed, 17 Aug 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/openhatch-non-profit.html">OpenHatch round two: the non-profit
+</a>
+       </h1>
+		<p>For the past year or two, readers of asheesh.org (including those on
+Planet Debian) have been hearing on and off about OpenHatch, a project that
+<a href="http://www.asheesh.org/note/debian/move-to-atlanta.html">began in Atlanta</a>
+two summers ago.
+</p><p>The <a href="https://openhatch.org/">OpenHatch website</a> has been a place
+to find out how new contributors can get involved in free software.
+Lately, I've discovered how much
+<a href="http://www.asheesh.org/note/debian/why-outreach.html">fun</a>
+it is to help people get involved. I've also discovered oodles of
+<a href="http://opensource.com/life/10/11/introducing-students-world-open-source-day-1">enthusiasm</a> for learning
+more about joining an open source project.
+</p><p>So I've been transitioning OpenHatch to be more of a non-profit
+and to work on more of those outreach events,
+and particularly I've been transitioning my life to support me
+(self-funded) working on that effort full-time for a year. If there's
+one thing I learned while creating a startup under incubation, it
+was how to save money.
+</p><p>The OpenHatch blog has
+<a href="https://openhatch.org/blog/2011/openhatch-gains-full-time-project-lead-transitioning-into-a-non-profit/">the rest of the story</a>. Here's
+a taste:
+</p>
+<blockquote>
+I’m writing to announce three big changes for the project. First, 
+OpenHatch is changing its organizational structure to reflect our 
+not-for-profit goals. Second, we’ll emphasize our new work beyond 
+the website, building and promoting outreach events that bring 
+new people into the free software community. Finally, I am taking 
+a year to do that full-time as the project lead of OpenHatch in 
+Somerville, MA.
+</blockquote>
+<p>This change has been a long-time coming, and it's thanks to so many people
+who have given advice and feedback along the way. One special shout-out goes
+to <a href="http://www.ebb.org/bkuhn/">Bradley Kuhn</a>, who told me in March 2010 that
+OpenHatch should be a non-profit.
+</p><p>I hope you'll <a href="https://openhatch.org/blog/2011/openhatch-gains-full-time-project-lead-transitioning-into-a-non-profit/">read more</a>.
+</p><p><br />
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/debian">/note/debian</a>] 
+		<a href="http://www.asheesh.org/note/debian/openhatch-non-profit.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Thu, 11 Aug 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/companies/apple.html">Apple and product names
+</a>
+       </h1>
+		<blockquote>
+<a href="http://kate-editor.org/2011/07/25/you-kde/#comment-584">...in the comparison with apple is that apple has never had a product called “apple”</a>.
+</blockquote>
+
+		<p style="text-align: right;">
+		<i>[<a href="/scribble/companies">/scribble/companies</a>] 
+		<a href="http://www.asheesh.org/scribble/companies/apple.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sun, 07 Aug 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/accidentally-sexist.html">Women, men, and accidentally being a jerk (at the Desktop Summit)
+</a>
+       </h1>
+		<p>The first day of the Desktop Summit was yesterday, Saturday, August 6. I loved it and gave a presentation. There are two very different stories I can tell on the topic of gender equality in 
+free software. I'll start with the bad.
+</p>
+<hr />
+<p>It's pretty easy, in the U.S. at least, to get people of privilege to stop using terms that evoke centuries of oppression from slavery. It's harder to ask people to stop doing that to women. 
+I'm writing this post to ask for that.
+</p><p>There were two different times that people I generally respect used words that historically have been used to hurt and minimize women.
+</p><p><b>"Cygnus Solutions is prostitutes."</b> Dave Neary was delivering a talk (that I found impressively informative) called,
+"<a href="https://www.desktopsummit.org/program/sessions/cost-going-it-alone">The cost of going it alone</a>". When the talk covered the
+cost (in time and money) of getting your corporation's code into the community branch of an open-source project, he pointed out you could hire someone with the skills. Cygnus was the go-to 
+company for that in the 1990s; to explain that Cygnus does not care who they work for, he said the sentence in bold.
+</p><p><b>"The OpenSuSE Build Service is a slut."</b> I was at a party at a hackerspace last night. Someone who I admire for his work in free in free software, both technical and community, was joking with 
+me about that no one should compile (or use) GTK. I riffed on the joke and remarked, "The OpenSuSE build service will build anything." He replied with the sentence in bold.
+</p><p>"Slut" and "prostitute" are terms that recall the objectification of women. They're terms that attempt to measure a woman's worth as a sex object.
+</p><p>It's not nice to the many women in attendance to bring that up.
+</p><p>You might not have thought this through. You might want to read one woman's take "<a href="http://thoughtcatalog.com/2011/on-sluts-rape-and-fuckery/">On Sluts, Rape, and Fuckery</a>". Give it a read.
+</p><p>Then, give it a rest.
+</p><p>The thing is, this matters all the time. That's why I have to call you two out on it.
+</p><p>Now for the happy story.
+</p>
+<hr />
+<p>While watching the Desktop Summit's <a href="https://www.desktopsummit.org/program/sessions/gnome-and-kde-interns-showcase">intern showcase</a>, I was floored.
+</p><p>One hacker implemented Off-The-Record instant messaging for Telepathy. Another implemented pluggable back-ends for Getting Things GNOME, a task manager. I heard about overwhelming documentation 
+and usability improvements to GNOME mainstays Cheese and Anjuta. In a short summer, these students made huge changes.
+</p><p>For most of them, this was the first time they delivered any sort of presentation. Every single talk was delivered in earnest and enthusiasm. They told us about the work they had done and what 
+might happen in the future.
+</p><p>The other remarkable thing about the intern presentations was the demographics. I didn't keep count, but it seemed like as many women as men presented. We heard about hugely-important changes to 
+documentation, code, and usability. People from central Europe, South Asia (<a href="http://asheesh.org/note/debian/indians.html">yay</a>), and Brazil took the stage.
+</p><p>I hope that is the future of free software.
+</p>
+<hr />
+<p>There are two things I want to see for our community.
+</p><p>I want to know that people are respected and not reminded of centuries of oppression.
+</p><p>I also want to see our community grow in size and diversity.
+</p><p>I treat these issues as separate. We should choose respectful words when we speak not because we want more women to show up, but because it part of the expectation of decency that we should be 
+able to expect from each other.
+</p><p>And I failed the community when I did not make it clear <b>there and then</b> that this kind of language is not okay with me. It took me a day to understand this failure, so here I am writing 
+this blog post.
+</p><p>P.S. Thanks to <a href="http://www.littlegreenriver.com/">Karen Rustad</a> for her feedback while writing this post.
+</p><p><br />
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/debian">/note/debian</a>] 
+		<a href="http://www.asheesh.org/note/debian/accidentally-sexist.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Wed, 03 Aug 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/desktop-summit-2011.html">I'm speaking at the Desktop Summit
+</a>
+       </h1>
+		<p><img src="https://www.desktopsummit.org/sites/www.desktopsummit.org/files/DS2011banner.png" height="110" width="330" alt="I'm attending the Desktop Summit" />
+</p><p>Actually, I'm speaking there!
+</p><p>In two days, I'm going to be in Berlin talking about how to
+<a href="https://www.desktopsummit.org/program/sessions/get-new-contributors-and-diversity-through-outreach">Get new contributors (and diversity) through outreach</a>.
+</p><p>It shares a title with the talk I gave at PyCon, and I expect it will be similar. There are some
+points I will improve on, and some new pieces to cover:
+</p>
+<ul><li> <a href="http://blog.lydiapintscher.de/2011/04/18/how-vidalia-and-gimp-found-new-contributors-just-by-asking/">Build It events</a>
+</li><li> Follow-up statistics from the "Four Days" effort within Debian
+</li><li> The <a href="http://lists.openhatch.org/pipermail/events/2011-August/000192.html">plan</a> to run more student immersion events
+</li></ul>
+<p>In high school, I used to read the <a href="http://dot.kde.org/">Dot</a> daily. I was
+surprised and thrilled to see that they chose to list my talk in their
+<a href="http://dot.kde.org/2011/05/20/desktop-summit-team-unveils-exciting-program-talks">announcement of the summit</a>.
+</p><p>If you'll be there, too, let me know! Let's hang out.
+</p><p>And if you want to work one-on-one(-ish) on helping your project improve diversity or outreach,
+I will be in Berlin until August 14, and <i>extremely</i> happy to spend time with people.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/debian">/note/debian</a>] 
+		<a href="http://www.asheesh.org/note/debian/desktop-summit-2011.html">permanent link and comments</a></i>
+		</p>
+    
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/me/jobs.html">Three reasons to take (or not take) a job</a>
+       </h1>
+		
+<div style="float: left; width: 300px;">
+<p style="margin-top: 1em;"><img style="width: 300px;" src="/pub/image/jobs/seedling-300px-wide.jpg"></p>
+<p><em>Image credit</em>: <a href="http://www.flickr.com/photos/photos-martha/2331543410/">Spring!</a> <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">by (nc-sa)</a> <a href="http://www.flickr.com/photos/photos-martha/">Martha Nelson</a>.</p>
+</div>
+
+<div style="margin-left: 310px;">
+
+<h3>Creative Commons needs someone good. If not me, then who? (2006)</h3>
+
+<p>At the end of 2006, graduation was looming. I had to find a job.</p>
+
+<p>The Johns Hopkins CS jobs emails seemed to list two kinds of work in the Baltimore
+area: cutting-edge artificial intelligence research to build better killing machines
+for defense contractors, and mind-numbing Java development jobs that
+built expensive, hard-to-use websites for government agencies.</p>
+
+<p>Faced with these options, I thought I'd ask Creative Commons if they wanted
+to hire a software engineer. (I had just interned there the summer of 2006.) To my
+glee and relief, they said, "Yes." In the blink of an eye, I said "Yes" back.</p>
+
+<p>Then Google recruiters started emailing me. They suggested I apply to be
+a Site Reliability Engineer. They needed people who
+understood Linux-based performance issues and software architecture, could
+critique other engineers' designs before they took code to production, and
+be nimble system administrators. That sounded exactly like what I enjoyed doing.
+But I told them I already had plans.</p>
+
+<p>While having lunch at Wegmans, I explained this to my parents.</p>
+
+<p>"You could at least <em>interview</em> with them," pleaded my mother.</p>
+
+<p>"No," I explained. "Google has enough resources to find someone who will help it achieve its goals. Creative Commons doesn't necessarily."</p>
+
+<p>The day-to-day work at Google would have been more technically challenging, but
+my actions weren't going to make a net difference on the world. At CC, they would.</p>
+
+<h3>My own projects also need that push (2009)</h3>
+
+<p>In late April 2009, I was stunned to
+<a href="http://www.asheesh.org/note/debian/move-to-atlanta.html">learn</a> that Shotput Ventures funded
+a project Nelson, Raffi, and I applied to start. It's now called <a href="http://openhatch.org/">OpenHatch</a>.</p>
+
+<p>I had started working at Creative Commons because I wanted to push the world in that direction.
+I had enough self-confidence to think that if it wasn't me coding for them (and promoting them),
+it could be someone less effective.</p>
+
+<p>In 2009, I realized that the same applied to my own projects. If there is a direction I want to
+push the world, it's not going that way unless <em>I</em> push it.</p>
+
+<p>Thus was one more layer of humility removed.</p>
+
+<h3>This job will teach me skills I want -- on their time (2011)</h3>
+
+<p>Recently, I've considered other ways to spend my time: for example, building a system administration co-op to 
+combat corporate cloud services with freedom-loving humans, or organizing urban kitchens for hungry 
+yuppies to practice cooking during their lunch breaks.</p>
+
+<p>To understand how to make the sysadmin co-op succeed,
+I needed to understand devops-style system automation tools. A few months ago, while working on
+<a href="http://mirocommunity.org/">Miro Community</a>, I had the chance to redefine the service requirements
+using <a href="http://www.puppetlabs.com/puppet/introduction/">Puppet</a>. Once I realized that it would
+help me plan my own future, I lept at the task.</p>
+
+<p>This year, it struck me that if a job can teach me something I want to know in order to
+make my own projects succeed better, <em>that</em> could be a reason to take it. That includes
+future projects, and goals with a timeline of 5-10 years.</p>
+
+<p>Until recently, I thought
+that jobs were devices for turning my time into some change in the world; I didn't realize I could
+retain some of the value in the transaction.
+In other words, I realized that I'm not an invisible worker pushing the world around. I'm a 
+permanent fixture in my life.</p>
+
+<p>Thus was removed one layer of self-effacement.</p>
+
+<h3>Conclusion</h3>
+
+<p>I'll conclude with some advice to myself:</p>
+
+<p>Don't forget about yourself. Not just your vision of the world; things like, What skills are you gaining? How does this job help you succeed at what you'll be doing five years from now?</p>
+</div>
+
+		<p style="text-align: right;">
+		<i>[<a href="/note/me">/note/me</a>] 
+		<a href="http://www.asheesh.org/note/me/jobs.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Tue, 02 Aug 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/education/outsourcing.html">Steph Alarcon on education
+</a>
+       </h1>
+		<p><a href="http://www.stephalarcon.org/">Steph</a> and I were discussing programs like the
+<a href="http://openhatch.org/wiki/Boston_Python_Workshop">Boston Python Workshop</a>. She said:
+</p>
+<blockquote>
+This can't be the future of education -- outsourcing it to volunteers in the upper middle class.
+</blockquote>
+<p><br />
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/scribble/education">/scribble/education</a>] 
+		<a href="http://www.asheesh.org/scribble/education/outsourcing.html">permanent link and comments</a></i>
+		</p>
+    
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/people/pay-attention.html">Why it's important to focus on things
+</a>
+       </h1>
+		<p>A friend recently sent me an email. It wasn't intended to be about me -- it
+was written about someone else. But his words apply so well to me that I
+will mis-quote him here.
+</p><p>I'll pretend it's about OpenHatch just so that the effect is more personal
+on me.
+</p>
+<blockquote>
+He was great when I spoke to him on telephone a few years ago but I and many others, who were working on or interested in working on the OpenHatch project, found it nearly impossible to 
+communicate with him meaningfully via email.  I understand by his own statements at the time that his attention was very divided and unfortunately OpenHatch was receiving very little 
+attention from him.  Almost everyone involved with OpenHatch at the time was failing to give the attention to the project which would have been needed to make the project a great success.  
+The problem was not Asheesh himself but a culture which pervaded the environment he was working in.  This is a general problem of small projects managed by people pursing 
+too many other interests.
+</blockquote>
+
+		<p style="text-align: right;">
+		<i>[<a href="/scribble/people">/scribble/people</a>] 
+		<a href="http://www.asheesh.org/scribble/people/pay-attention.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Wed, 27 Jul 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/working-vacation/debconf-2011.html">A day in the life of me, at Debconf
+</a>
+       </h1>
+		<p>On Tuesday, July 26, I was in Banja Luka, Bosnia.
+</p><p>I am here for Debconf 2011, this year's meetup of contributors and enthusiasts
+of Debian. I am a developer in Debian.
+</p><p><img src="http://upsilon.cc/~zack/blog/posts/2011/05/debconf11_and_you/debconf11-goingto.png" height="120" width="120" />
+</p><p>In the morning, I wake up late still feeling a bit of the effect of the
+<a href="http://wiki.debconf.org/wiki/DebConf11/CheeseWineBoF">Wine and Cheese birds-of-a-feather session</a>.
+</p><p>I manage to make it to the <a href="http://penta.debconf.org/dc11_schedule/events/701.en.html">talk by the Debian System Administration team</a>.
+I chatted with <a href="http://fifthhorseman.net/">dkg</a>. We both decide to take naps.
+</p><p>I wake up at about 2:45 PM, at which time I realized I had missed lunch. I had been hoping to be at
+lots of talks during Tuesday, but things aren't working out well for that. Having
+missed both lunch and breakfast, food seems important enough to delay my walk
+to <a href="http://www.cyberbulevar.com/banjaluka/kultura/dom-kulture--kulturni-centar-banski-dvor/20050111/">Banski Dvor, the conference venue</a>.
+</p><p>I walk around the venue. I have exactly 1.30 KM (Bosnian currency) in my pocket
+and no ability to understand the Bosnian language. I find an ice cream stand on a street corner
+that is generally packed with and surrounded by commerce of that kind. It looks more like a
+gelato stand than an "ice cream" stand.
+</p><p>I wait in a confusing non-line, and finally am at the front. I ask if the young lady behind the counter
+speaks English; she doesn't. I put my 1.30 on the counter and ask, "How many scoops?" She mulls over the
+question, and raises two fingers.
+</p><p>I point to strawberry and chocolate-hazelnut-with-pieces-of-hazelnut. She gives me a cone with two scoops
+of delicious, although not shocking, ice cream. The strawberry pieces are sort of oddly crunchy due to
+being frozen. The hazelnut chunks are the highlight of the purchase. I eat this and walk toward the venue.
+I stand at the front door of the venue, finishing my ice cream because food is not allowed indoors. As I
+eat the bottom of the cone, I marvel
+at the spherical shape of the scoop of hazelnut-chocolate ice cream.
+</p><p>I attend most of a BoF (birds of a feather session) on the interest Debian has in
+<a href="http://penta.debconf.org/dc11_schedule/events/784.en.html">tracking how people are using our websites</a>.
+We mostly all agree that knowing more about what people do on debian.org would be nice. During the BoF,
+I also handle IMs about some bills that have to be paid in our house.
+</p><p>At the <a href="http://penta.debconf.org/dc11_schedule/events/725.en.html">publicity BoF</a>, I learn that
+the Publicity team in Debian is doing a particularly good job, but is having trouble growing. During that
+time, the housemate and I come to a good set of conclusions about how to best proceed. I am pleased that
+we successfully identified current and future processes that avoid this problem in the future and also
+retain a great deal of clarity for the other people who didn't plan the process.
+</p><p>We talk about the booths that Debian runs at various conferences and meetings during
+the <a href="http://penta.debconf.org/dc11_schedule/events/731.en.html">Events BoF</a>. I learn that I am not
+the only booth staffer who has stood in <i>front</i> of the booth, making it hard to tell the booth <i>staff</i>
+from the visitors.
+</p><p>At 7 PM, we all go outside for the group photo. I missed the group photo in New York in 2010.
+The group photo from <a href="https://gallery.debconf.org/v/debconf8/karora/OfficialPhoto.jpg.html">2008</a>
+shows how much fun I was having (lots). I remember (possibly mis-remember) having used it, the summer of 2009, in a presentation to prospective
+funders of OpenHatch.
+</p><p>So I take special care to not miss the group photo. I am standing next to Jonas Smedegaard. He maintains
+the <a href="http://packages.debian.org/sid/uw-imapd">UW IMAPd package</a>; it shares a lot of code with the package
+I most actively maintain, <a href="http://packages.debian.org/sid/alpine">alpine</a>.
+</p><p>When I find him and walk toward him, Jonas says to me, "You know, it's very important who you are standing
+next to in the group photo!"
+</p><p>I replied, "Yes -- I had better get away from you, then!" He doesn't understand the joke; I explain it.
+</p><p>Then we see Aigars standing on the balcony facing us, moving his camera around as he took a few photos of us.
+We all laugh a lot as he waited while a flag blew in front of his camera. blocking his view of us.
+</p><p>He tells us, "Everybody say: <i>squeeze</i>!"
+</p><p>The 
+<a href="http://www.flickr.com/photos/aigarius/5979331357/lightbox/">result</a>
+is fantastic. Herbert even looks great. As we walk toward dinner (across the street), I think
+imagine he will stitch the photos together with <a href="http://hugin.sourceforge.net/">Hugin</a>.
+</p><p>Dinner that evening, as with the other evenings, was sponsored; it was at the hotel restaurant. A mix-up
+involving different types of meal tickets means that I wait in line twice. After the small wait, I eat
+and chatted with Niels, where I learn about an important (and amusing) but in lintian. Then
+I go to the hacklab
+and work on <a href="http://expo.debian.net/">Debexpo</a>, a web app that Debian has been trying to build for three years.
+I appointed myself the task of finishing that about a year ago. I thought Debconf would be a
+good time to finish doing that; in an email that evening, I indicate that I was not going to work on it much more after
+Debconf.
+</p><p>That evening, I don't take part in the <a href="http://penta.debconf.org/dc11_schedule/day_2011-07-26.en.html">PGP keysigning</a>.
+I stay in the hacklab and mostly work on Debexpo.
+</p><p>After one particularly frustrating issue involving my lack of knowledge of PostgreSQL and the disappointing
+fact that I have to retain users' data rather than just drop the database,
+I pop upstairs for a short game of Mao. I am late, as I expected, but I am eager to learn the rules
+by playing. However, within about ten minutes, one player was argues with another
+(Joachim) about a rule. Joachim had created the rule; the dealer simply asked Joachim, "Are you correct?"
+</p><p>"Yes," answered Joachim. "I'm quite sure I am applying the rule consistently."
+</p><p>This satisfies Ian Jackson, the dealer. It isn't enough for the arguer.
+Ian looked increasingly upset as this circular discussion continues
+for about thirty seconds. Finally, sharply, Ian tells us the cards were his, and
+this is no way to play, and that he is going to do something else!
+Without any argument, the cards return to him.
+</p><p>As we pack up the chairs and move the table back to where it belongs, Ian asked me, "Was that the
+right thing to do?"
+</p><p>I pause for a moment. I wouldn't have done what he did, but I am impressed by the self-actualization and 
+clarity of his action. "One of a few possible right things," I answer with conviction.
+</p><p>Ian is someone I had met the night before. It was after the cheese and wine BoF had ended. I vaguely
+remember somehow still having a drink in my hands. I could be mistaken.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/working-vacation">/note/working-vacation</a>] 
+		<a href="http://www.asheesh.org/note/working-vacation/debconf-2011.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Wed, 13 Jul 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/osb11.html">Open Source Bridge 2011: they love me (and gave me a scarf)!</a>
+       </h1>
+		
+<p>
+<img src="http://asheesh.org/pub/image/osb11-scarf/asheesh.jpg" width="200" height="267">
+<img src="http://asheesh.org/pub/image/osb11-scarf/igal-v.jpg" width="200" height="267">
+<img src="http://asheesh.org/pub/image/osb11-scarf/sumana-small.jpg" width="200" height="267">
+</p>
+
+<p>On <a href="http://opensourcebridge.org/events/2011/schedule#day_2011_06_24">Friday, June 24</a>, the last day of <a href="http://opensourcebridge.org/events/2011/schedule">Open Source Bridge</a>, I won a scarf! It says, "Open Source Citizen."</p>
+
+<p>I wasn't the only one. The attendees nominated people who "<a href="http://opensourcebridge.org/blog/2011/06/wrapping-up-2011/">made an extra effort to help others and share their knowledge</a>," and the conference committee chose the three people they felt exemplified this. The winners were <a href="http://www.harihareswara.net/">Sumana Harihareswara</a>, <a href="http://twitter.com/igalko">Igal Koshevoy</a>, and me.</p>
+
+<p>In case you don't know Sumana, she's the new Wikimedia <a href="http://wikimediafoundation.org/wiki/Staff">Volunteer Development Coordinator</a>, a friend, and a commenter <a href="http://www.asheesh.org/note/debian/indians.html">here</a> <a href="http://www.asheesh.org/note/preso/pycon-2010.html">at</a> Asheeshworld. In the photo of her and her new scarf, you can also see Ward Cunningham. I suggest reading her <a href="http://www.harihareswara.net/sumana/2011/07/10/0">wrap-up</a> about the conference, and checking out the <a href="http://opensourcebridge.org/2011/wiki/Learn_Tech_Management_In_45_Minutes">notes from her talk</a>.</p>
+
+<p>I haven't met Igal, but I've learned he's a fixture of the Portland tech scene. He's <a href="http://opensourcebridge.org/users/1">user number one</a> on opensourcebridge.org and one of the original contributors to <a href="http://calagator.org/">calagator</a>, the most important event calendar in the Portland tech world. That's just a brief summary; follow <a href="http://twitter.com/igalko">him on Twitter</a> to keep in touch.</p>
+
+<p>I started the conference a little shy, not wanting to introduce myself to people, so I hung out with Sumana. She talked to everyone she could find, and there I was standing next to her. On the first day, it was only because of Sumana's outgoingness that people knew who I was. On the second and third days, I was involved in two sessions: a <a href="http://opensourcebridge.org/sessions/711">panel on open source communities</a> and a <a href="http://opensourcebridge.org/sessions/705">talk about the OpenHatch training missions</a>.</p>
+
+<p>I was extremely honored to be chosen. There were so many other spectacular people I met for the first time, like <a href="http://valerieaurora.org/">Valerie Aurora</a>, 
+<a href="http://twitter.com/jarichaust">Jacinta Richardson</a>, <a href="http://krow.livejournal.com/">Brian Aker</a>, and <a href="http://alexlinsker.com/">Alex Linsker</a>. These are all people with three crucial traits: they're <em>extremely</em> knowledgeable, friendly, and opinionated. I'm glad I had a chance to attend and meet them!</p>
+
+<p><em>Photo credits</em>: Thanks to <a href="http://wiki.mako.cc/Noah_Swartz">Noah Swartz</a> for the photo of me. Sumana's photo comes from <a href="http://permalink.gmane.org/gmane.science.linguistics.wikipedia.technical/54396">her post to wikitech-l</a>. Igal's comes from his <a href="http://opensourcebridge.org/users/1">Open Source Bridge user profile</a>.
+
+
+		<p style="text-align: right;">
+		<i>[<a href="/note/debian">/note/debian</a>] 
+		<a href="http://www.asheesh.org/note/debian/osb11.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sun, 03 Jul 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/google-plus.html">How I feel about Google+ (not thrilled)</a>
+       </h1>
+		
+<div style="float: left; width: 427px;">
+<p style="margin-top: 1em;"><img src="http://asheesh.org/pub/image/google-plus/3389164839_53463704b1_z.jpg"></p>
+<p><em>Image credit</em>: <a href="http://www.flickr.com/photos/cobalt/3389164839/">Lake Shimmer</a> <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">by (nc-sa)</a> <a href="http://www.flickr.com/photos/cobalt/">cobalt123</a>.</p>
+
+<p>The beautiful photo above is what reflections should look like. If you don't like Google's shimmering +1 buttons, try the <a href="http://blog.tommorris.org/post/7039918552/1-and-google-no-thanks-fuck-off">convenient AdBlock filter Tom Morris wrote</a>. I also block <a href="https://encrypted.google.com/images/nav_logo72.png">this image</a>.</p>
+</div>
+
+<div style="margin-left: 440px;"><p style="margin-top: 1em;">I have been reading a lot about Google+. I'm sure a lot of people put a lot of hard work into it. Lots of people seem to enjoy using it and appreciate its features. For my part, right now, when I see Google+ mentioned, the smile vanishes from my face.</p>
+
+<p>I just have a few thoughts.</p>
+
+<p><strong>It's anti-competitive.</strong> If you could ask Google, "How much for a shimmering +1 button next to every search result?" you would be laughed out of the room. But they managed to offer themselves that unique marketing opportunity. I know that (1) most regulators who see this anti-competitive behavior won't see it as an anti-trust violation, and (2) the damage is already done, and no retribution in the future can act fast enough to fix the unfair advantage Google gave itself in the Internet-mediated personal communication (and ad sales) markets.</p>
+
+<p><strong>The shimmering is distracting, making my online search experience worse.</strong> I know that Google is holding nothing back; they are willing to distract me from my intended use of Google in order to branch out their business. (If you haven't seen the shimmering +1 button, it's next to every web search result, and if you mouse over <em>any</em> part of the result, it does a wavy dance.)</p>
+
+<p><strong>The most-touted feature is a clone of Diaspora.</strong> This by itself is fine; software should help users by having the best features imaginable. But the enthusiasm I've seen within the free software community (like when I read about Google+ on Slashdot and Planet Debian) should at least <em>recognize</em> that Google "circles" are a <a href="http://raventools.com/blog/google-copies-diaspora/">clone of Diaspora's Aspects</a>.</p>
+
+<p><strong>Centralization on the web feels like a personal attack.</strong> Corporations on the web are like unstoppable machines rolling us toward a future of corporate eavesdropping, central points of failure, and end-users sold en masse to advertisers. It enables a future of individual "platform owners" who can change the lived experience of untold hundreds of millions with tweaks that benefit their actual customers (the advertisers). There's not much I can do about that. I happen to take this personally: I am part of a small culture of people who run their own mail and web servers and understand the importance of <a href="http://www.gnu.org/philosophy/free-sw.html">software freedom</a>. This is a part of my identity. I watch as its traces online vanish, replaced by something more efficient and terrifying. It <a href="http://makesad.us/">makes me sad</a>.</p>
+
+<p><strong>I'm probably going to end up using it despite all these pain points.</strong> That's how I know that I am being steamrolled. The reasons I have given above are not reasons to <em>not use</em> Google+. They're just reasons that I'm going to frown all the way to the address bar.</p>
+
+<p>In weeks to months to years, the service will grow an enthusiastic userbase. At that point, personally, I'll have to make a choice between connecting with those people on their terms, or not staying in touch with them. Already, professionally, the idea has already come up on <a href="http://openhatch.org/contact/">#openhatch</a> that Google+ could help us reach people willing to contribute to open source. Are my gripes worth holding OpenHatch back, or worth isolating myself over? Probably not.</p>
+
+</div>
+
+<br style="clear: both;">
+
+
+		<p style="text-align: right;">
+		<i>[<a href="/note/debian">/note/debian</a>] 
+		<a href="http://www.asheesh.org/note/debian/google-plus.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Mon, 06 Jun 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/software/consulting.html">How much do I charge?</a>
+       </h1>
+		
+<p>A conversation between me and a wiser housemate, when I lived in
+San Francicsco.</p>
+
+<blockquote>
+<p>
+
+Asheesh: "Hey, so I'm going to do some consulting work.
+It's the first time I've done this as a professional,
+like, not a student.
+How much should I be charging per hour?"
+</p>
+<p>
+Matt: "It's easy; do what I do. Think of the biggest amount you
+can ask for with a straight face, then double it."
+</p>
+</blockquote>
+
+		<p style="text-align: right;">
+		<i>[<a href="/note/software">/note/software</a>] 
+		<a href="http://www.asheesh.org/note/software/consulting.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Fri, 27 May 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/code/fcgi.html">SpiderOak gives back
+</a>
+       </h1>
+		<blockquote>
+a FCGI/web-server embedded directly within GIMP
+</blockquote>
+<p>-- <a href="https://spideroak.com/code">open source libraries released by SpiderOak</a>.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/scribble/code">/scribble/code</a>] 
+		<a href="http://www.asheesh.org/scribble/code/fcgi.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Mon, 23 May 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/communication/another-waffle.html">Another Waffle (alter ego)
+</a>
+       </h1>
+		<p>I've noticed that I've been using asheesh.org lately to write
+positive things and announcements, but I don't have a good outlet for sharing criticism
+of the projects that I like.
+</p><p>I have used asheesh.org
+for writing critical pieces sometimes,
+like last year's <a href="http://asheesh.org/note/free-culture/fsf-on-windows-mobile.html">note about some FSF activism</a>.
+For all the small ways that projects I like could be improved, I don't want to
+write a blog post that implies that I <i>only</i> have negative things to say.
+If I did that, when new readers come to asheesh.org, they'll see a big long complaint
+and think that I don't like the project as a whole.
+</p><p>I'm going to try something new, then: when I want to write a bit of criticism
+for a project I generally like, I will stash it in the comments section: I will write up a blog post explaining
+something positive about the effort, and then my alter ego
+will leave a comment taking a more critical perspective.
+(His name will be
+<i>Another Waffle</i>, a punny reference to my etymologies course at CTY in 2000.)
+</p><p>I will also apply this to my <i>own</i> projects, like on the recent
+<a href="http://www.asheesh.org/note/community/boston-python-meetup.html">note about the Boston Python meetup's gender diversity</a>.
+I think it's especially useful on notes about my own work; when I write announcements that
+mention the positive, I sometimes feel a bit hollow about not mentioning my nagging doubts.
+This way, I can still share my mixed feelings while retaining the announcement format.
+</p><p>Constructive criticism is important, I believe, as is context.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/communication">/note/communication</a>] 
+		<a href="http://www.asheesh.org/note/communication/another-waffle.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Thu, 19 May 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/community/boston-python-meetup.html">Boston Python Meetup, May 18
+</a>
+       </h1>
+		<p>Today there was a
+<a href="http://meetup.bostonpython.com/events/17330576/">Boston Python Meetup on science</a>. Two biologists presented. One-sixth
+of the attendees were women.
+</p><p>Ned Batchelder found the presenters and invited them to speak. I had the pleasure of meeting one, Geraldine, at the last
+Boston Python hack night.
+</p><p>At the last minute, I couldn't make it due to bad planning: lots of overdue work and having to cook dinner for my house.
+</p><p>Afterward, Ned found me on IRC and gave me a quick summary of attendees' demographics, gender-wise:
+</p>
+<blockquote>
+&lt;nedbat&gt; paulproteus:  attendance tonight at the meetup: 55 men, 11 women.
+</blockquote>
+<p>I'm <i>really</i> happy about that. It means that things are changing.
+In January, when I first attended, there was one woman in a room of about fifty.
+</p><p>I'm proud that I sparked something positive here. 
+In December, I thought about putting together an introductory programming workshop for women and their friends, and
+in January, Deborah Nicholson joined me to make sure it would happen.
+Ned invited us to do it as part of the Meetup group; in March, I was part of a team of instructors and co-organizers
+who ran the first one. In the new staff, Jessica McKellar is most notable; she has been doing most of the organizing lately.
+</p><p>The trend of more women in attendance was already visible in April. In this regular monthly May meetup,
+we accomplished this level of one-sixth. I'm really proud of that forward progress.
+</p><p>I think there a few things going on here:
+</p>
+<ul><li> More women <i>know about</i> the meetup, at all, because we've been forced to do gender-oriented outreach (for the Meetup as a whole) with the Boston Python Workshop. This works to undo the accidental bias reinforcement problem where meetup attendees invite their friends to the next one, who probably are like them.
+</li><li> Because people see that we are running a gender diversity-oriented outreach program, prospective attendees judge that we are not going to be a bunch of sexist jerks.
+</li><li> Ned invited a woman to be one of the speakers, which also suggests we are not sexist jerks.
+</li><li> Because people see that other women are attending and speaking, they know they will not be the only person of their gender.
+</li></ul>
+<p>In this regard, I think that introductory programming teaching is almost a sideshow: it's not just that
+we are <i>creating</i> more women who are interested in Python. We're also attracting women who already
+have programming chops to attend the Meetup. If you were a woman browsing tech events wondering
+which one to attend, you might pick ours because it seems more likely you'll have a good time.
+</p><p>(I may seem a bit blasé about the teaching, so let me clarify: I see our workshop as having two goals.
+One is a service to Ned Batchelder and the attendees of the Meetup, which is to make the workshop
+a more diverse environment. I'm interested in that as a test-case of what it takes to diversify small,
+visible software communities. The second goal is to change the world more broadly: we find people who
+would like to learn programming but haven't, and we diversify the pool of people who can program.
+This goal is <i>hugely</i> important, and it's worth running the workshops even
+if the Boston Python Workshop becomes an even male-female split.)
+</p><p>I'm pretty happy. I will heed the advice of Bad Religion:
+</p>
+<blockquote>
+Don't be a henchman. <br />
+Stand on your laurels.
+</blockquote>
+<p>Back to work, then. There's more to do.
+</p><p><b>Update</b>: How to join in
+</p><p>In my enthusiasm, I nearly forgot to write about how you can get
+in touch with us and do something similar for your communities.
+</p><p>The best thing to do is:
+</p>
+<ul><li> <a href="http://lists.openhatch.org/mailman/listinfo/events">Join the OpenHatch events mailing list</a>, where people show up to plan similar events and discuss how theirs went.
+</li></ul>
+<p><b>Second update</b>: Ned informs me:
+</p>
+<blockquote>
+&lt;nedbat&gt; paulproteus:  at the beer after-party, two new women and one new man showed up: 13/56: 18.84% <br />
+&lt;nedbat&gt; there were 25 people at the bar i would guess.
+</blockquote>
+<p>Make of those numbers what you will.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/community">/note/community</a>] 
+		<a href="http://www.asheesh.org/note/community/boston-python-meetup.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Fri, 13 May 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/people/gay-pride-shirt.html">Gay pride shirt
+</a>
+       </h1>
+		<blockquote>
+“Write me up then. It’s one more story that I can go home and tell my mothers. And I’m sure my girlfriend would love to hear it, too.” Then she smiled and walked out.
+</blockquote>
+<p>-- <a href="http://irislovesmeat.tumblr.com/post/5347141767">Found on tumblr</a>.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/scribble/people">/scribble/people</a>] 
+		<a href="http://www.asheesh.org/scribble/people/gay-pride-shirt.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Fri, 06 May 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/lgm-2011.html">I'm going to Libre Graphics Meeting 2011
+</a>
+       </h1>
+		<p>This is just a quick note to say:
+</p><p>Next week, I am going to be at:
+</p><p><a href="http://libregraphicsmeeting.org/2011/"><img src="http://inkscapetutorials.files.wordpress.com/2011/03/lgm.png?w=250&amp;h=278" /></a>
+</p><p>My goals for the conference:
+</p>
+<ul><li> On <a href="http://www.libregraphicsmeeting.org/2011/program/#day3">Day 3</a>, participate in a panel called <i>How to keep and make productive libre graphics projects?</i>
+</li><li> Talk about the success of the recent <a href="http://blog.lydiapintscher.de/2011/04/18/how-vidalia-and-gimp-found-new-contributors-just-by-asking/">Build It events</a>.
+</li><li> Learn more about the world of free software graphics app development.
+</li><li> Enjoy the opportunity to speak French.
+</li><li> Say 'hi' to old friends like Jon Phillips.
+</li><li> Give chocolate to Michael Terry for <a href="http://www.mail-archive.com/gimp-developer%40lists.xcf.berkeley.edu/msg22141.html">staying positive</a> on a recent gimp-deve thread.
+</li></ul>
+<p>I'm going to arrive in Montreal at 6:30am on Tuesday on an overnight Greyhound bus from Boston. So another goal:
+</p>
+<ul><li> Make it through Tuesday without embarrassingly falling asleep in public.
+</li></ul>
+<p>If you want to say hi to me during the conference, email me and make sure we meet up!
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/debian">/note/debian</a>] 
+		<a href="http://www.asheesh.org/note/debian/lgm-2011.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Thu, 05 May 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/communication/pedantry.html">On pedantry
+</a>
+       </h1>
+		<p>Sometimes, I get annoyed when I feel that other people are being
+pedantic and wasting people's time with an issue that, in my opinion,
+doesn't matter. "There are more important things to think about!
+We have work to do, saving the world!" I think.
+</p><p>Sometimes I add, "This conversation is surely alienating to new
+people on the list, which makes it hard for our movement to grow."
+</p><p>Sometimes I think that I do a reasonably okay job with this, like
+<a href="http://lists.openhatch.org/pipermail/devel/2011-April/001945.html">a recent OpenHatch devel list post</a>,
+where I explained my feelings and the standard I hold myself to.
+</p><p>But I just spent too much of the past 20 minutes arguing about if it's
+important to call <a href="http://mediagoblin.org/">it</a> GNU MediaGoblin, or
+if it should be okay to call it just MediaGoblin casually sometimes.
+</p><p>I was trying to argue that the GNU MediaGoblin folks should fiercely resist
+to chastize people when they forget the "GNU".
+</p><p>In my passionate arguing, I became a naming pedant (rather,
+a backwards anti-naming-pedant pedant).
+</p><p>That's the same trap.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/communication">/note/communication</a>] 
+		<a href="http://www.asheesh.org/note/communication/pedantry.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Fri, 29 Apr 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/projects/new-front-page.html">asheesh.org has a new front page
+</a>
+       </h1>
+		<p>The front page of <a href="http://asheesh.org/">asheesh.org</a> looks
+snazzier now.
+</p><p>I am, personally, <i>extremely</i> excited.
+</p><p>(-:
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/projects">/note/projects</a>] 
+		<a href="http://www.asheesh.org/note/projects/new-front-page.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Thu, 28 Apr 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/companies/on-taking-risks.html">On entreprenurs, and risk-taking
+</a>
+       </h1>
+		<blockquote>
+<a href="http://www.gladwell.com/2010/2010_01_18_a_surething.html">"I still look at it. I love that chart," Paulson says.</a>
+</blockquote>
+
+		<p style="text-align: right;">
+		<i>[<a href="/scribble/companies">/scribble/companies</a>] 
+		<a href="http://www.asheesh.org/scribble/companies/on-taking-risks.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sat, 23 Apr 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/software/scala-crash-course.html">Announcing the Scala Crash Course (for women & their friends)
+</a>
+       </h1>
+		<p>Here is an email I just sent to the email list for PHASE,
+the Philly Area Scala Enthusiasts:
+</p>
+<blockquote>
+<p>First, let me introduce myself: Hi, everybody!</p>
+<p>I'm Asheesh Laroia, as the "From:" header on this email message indicates. 
+I'm also a Python user, former ocaml user in college, and Debian 
+developer. (Maybe none of those will make me any friends in PHASE....)</p>
+<p>I'm writing this because Yuvi and I are planning an event on the Friday 
+evening before Scalathon: a low-cost Scala crash course.</p>
+<p>http://www.meetup.com/scala-phase/events/17397558/ says a little more; I 
+can, too:</p>
+<p>My goal (I won't claim to speak for Yuvi) is to help encourage a diverse 
+Scalathon that brings new people into the community. By being a "crash 
+course" for people who already know some Scala or another functional 
+programming language, we aim to select for people who can contribute 
+during the big hackathon on so many Scala projects during the weekend. By 
+insisting that attendees of the crash course attend Scalathon, we hope to 
+use the time to enrich the Scalathon event.</p>
+<p>The event has a stipulation that I'm borrowing from an effort called 
+RailsBridge: to attend, you must either be a woman, or find a woman who 
+will bring you as her guest. The idea here is to simultaneously make sure 
+anyone who wants to can attend, while also inviting women to join 
+Scala-based communities.</p>
+<p>The event is separate from Scalathon; it's an effort to feed people into 
+Scalathon.</p>
+<p>If you are a woman who is thinking about attending Scalathon but wants to 
+make sure you have time to sharpen your Scala chops, this event is for 
+you. If you know such a person, please send her a copy of this email. If 
+you're a man in the same situation, we hope you can find the woman in your 
+life who is, too, so that she can invite you.</p>
+<p>So -- that's what I'm working with Yuvi.</p>
+<p>A bit more personally, I met Yuvi because I work on an open source 
+community outreach website called OpenHatch: http://openhatch.org/. He and 
+I met at a meet-up for that site last year, when I lived in West Philly (on 
+a beautiful street called Hazel). He and I organized a Penn-based open 
+source hackathon you can read about at 
+http://opensource.com/life/10/11/introducing-students-world-open-source-day-1 
+. Right now I'm based in the Boston area, in Somerville, MA.</p>
+<p>I'd love to hear what you all think.</p>
+<p>-- <br />
+-- Asheesh.<br />
+<br />
+http://asheesh.org/<br /></p>
+<p>FORTUNE PROVIDES QUESTIONS FOR THE GREAT ANSWERS: #4<br />
+A:	Go west, young man, go west!<br />
+Q:	What do wabbits do when they get tiwed of wunning awound?
+</blockquote>
+</p>
+</blockquote>
+
+		<p style="text-align: right;">
+		<i>[<a href="/note/software">/note/software</a>] 
+		<a href="http://www.asheesh.org/note/software/scala-crash-course.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Mon, 18 Apr 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/why-outreach.html">Why I spend my time on outreach
+</a>
+       </h1>
+		<p><i>Current mood</i>: moved
+</p><p>Today is an amazingly great day. I wrote a blog post about an event that I put together, and an attendee then followed-up by writing a long-form comment.
+</p><p>The thing is, the attendee did a far better job of writing about the event than I did.
+</p><p>The amount of emotional positive reinforcement that this comment gave me is hard to overstate.
+</p><p>You can find it toward the end of <a href="http://blog.lydiapintscher.de/2011/04/18/how-vidalia-and-gimp-found-new-contributors-just-by-asking/">the blog post</a> but I hope you'll read the copy below.
+</p><p>I am stunned and awed. I guess I have my work set out for me.
+<pre>8----&lt; CUT HERE &gt;-----8
+</pre>
+<p>I have never written software for an open source project. I am not subscribed to any development mailing lists. I have not been in a chat room on IRC for months. Yet I was delighted to see this tweet from @torproject on 04/15/2011…
+</p><p>“https://blog.torproject.org/blog/vidalia-get-involved – Join us in #vidalia on irc.oftc.net today at 13:00 UTC.”
+</p><p>The blog post described the “Build It” initiative for the Vidalia project, where people would be available to help you setup your build environment and compile the project.
+</p><p>I have wanted to participate in open source projects for quite a while, but never really knew where to begin. I have experience (and enjoy) writing software. I am glad to learn the languages they are using. I know how to compile software. I’m glad to learn their versioning 
+system and build system. I looked into participating in several projects, but felt like I would be more of a burden than a help considering the relatively small amount that I was intending to contribute. I can generally figure anything out on my own, but it’s nice to have 
+somewhere to turn when you are struggling with something “simple”. I thought that this would be a perfect opportunity for me, since I already preach the use of Tor and Vidalia. I’ve even demonstrated the bundle at a local LUG meeting.&nbsp;:)
+</p><p>I joined the OFTC #vidalia room and waited… nothing happened around 13:00 UTC, so I figured I’d missed the event. They began around 13:30 UTC and walked us through the source code download process and compilation process. They directed our attention to the Volunteer page and 
+the HACKING page. chiiph even suggested several simple OSX-specific tickets for me personally, since he knew that I was building on OSX.
+</p><p>I’ve already managed to contribute a patch for one ticket and am ready to begin a second ticket. I wouldn’t have done it without help and feedback from chiiph and others.
+</p><p>I am confident that there are many others who would be glad to help out with one or more of their favorite open source projects if they only had some place to begin. I hope that other project members or leaders offer a similar “Build It” events for their users.
+</p><p>Jason Klein
+</p><p><br />
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/debian">/note/debian</a>] 
+		<a href="http://www.asheesh.org/note/debian/why-outreach.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Wed, 06 Apr 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/net/internet-in-space.html">The internet in space
+</a>
+       </h1>
+		<p>Some hackerspaces have slow Internet connectivity sometimes:
+</p>
+<blockquote>
+Date: Wed, 6 Apr 2011 14:35:53<br />
+From: Alex Sojda <br />
+To: interlock-rochester mailist list<br />
+Subject: <strong>Internet in space very slow</strong><br />
+
+<p>Guys,</p>
+<p>...
+</p>
+</blockquote>
+<p><br />
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/scribble/net">/scribble/net</a>] 
+		<a href="http://www.asheesh.org/scribble/net/internet-in-space.html">permanent link and comments</a></i>
+		</p>
+    
+</div> <!-- end main copy div  -->
+    <!-- ##### Footer ##### -->
+
+    <div id="footer">
+      <div class="doNotPrint">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" />
+</a>
+      </div>
+
+      <div>
+        Copyright &copy; <a href="http://www.asheesh.org/">Asheesh Laroia</a>.  This work is licensed under a 
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">by-sa</a>. <a href="http://www.openhatch.org/">Open Hatch</a> is my current project. You should enjoy my parents' <a href="http://amayabarandgrill.com/">Indian restaurant in Rochester</a>!
+      </div>
+    </div>
+  </body>
+</html>

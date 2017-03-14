@@ -1,0 +1,1375 @@
+
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-42685392-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>Scrape the web &mdash; Scrape the web with scrapy OSCON documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/single.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     'OSCON',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    <link rel="top" title="Scrape the web with scrapy OSCON documentation" href="#" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  <article class="slide level-1" id="scrape-the-web">
+<h1>Scrape the web<a class="headerlink" href="../index.html#scrape-the-web" title="View HTML">§</a></h1>
+<p>speedily, reliably, and simply with scrapy</p>
+<p>Asheesh Laroia</p>
+<p><a class="reference external" href="mailto:asheesh&#37;&#52;&#48;asheesh&#46;org">asheesh<span>&#64;</span>asheesh<span>&#46;</span>org</a></p>
+
+</article>
+<article class="slide level-2" id="my-history-with-scraping">
+<h2>My history with scraping<a class="headerlink" href="../index.html#my-history-with-scraping" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>2004: Taught 3-week &quot;Learn Python Through Scraping&quot;</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="id1">
+<h2>My history with scraping<a class="headerlink" href="../index.html#id1" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>2004: Taught 3-week &quot;Learn Python Through Scraping&quot;</li>
+<li>2009: &quot;Volunteer opportunity finder&quot; within OpenHatch</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="id2">
+<h2>My history with scraping<a class="headerlink" href="../index.html#id2" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>2004: Taught 3-week &quot;Learn Python Through Scraping&quot;</li>
+<li>2009: &quot;Volunteer opportunity finder&quot; within OpenHatch</li>
+<li>2011: vidscraper. multiprocessing? gevent?</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="id3">
+<h2>My history with scraping<a class="headerlink" href="../index.html#id3" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>2004: Taught 3-week &quot;Learn Python Through Scraping&quot;</li>
+<li>2009: &quot;Volunteer opportunity finder&quot; within OpenHatch</li>
+<li>2011: vidscraper. multiprocessing? gevent?</li>
+<li>2012: &quot;Volunteer opportunity finder&quot; (aka oh-bugimporters) rewrite w/ Scrapy</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="id4">
+<h2>My history with scraping<a class="headerlink" href="../index.html#id4" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>2004: Taught 3-week &quot;Learn Python Through Scraping&quot;</li>
+<li>2009: &quot;Volunteer opportunity finder&quot; within OpenHatch</li>
+<li>2011: vidscraper. multiprocessing? gevent?</li>
+<li>2012: &quot;Volunteer opportunity finder&quot; (aka oh-bugimporters) rewrite w/ Scrapy</li>
+</ul>
+<p>(thanks)</p>
+<ul class="simple">
+<li>Karen Rustad, for diagrams and image selection</li>
+<li>Pablo Hoffman, for starting Scrapy</li>
+<li>Image actual authors: Eric Wilde, April Killingsworth, Jim Davis, Dan Walsh, Steven Depolo</li>
+<li>Stephen Burrows for vidscraper</li>
+<li>Nathan Yergler for slides framework (hieroglyph)</li>
+</ul>
+
+</article>
+<article class="slide level-1" id="section-scraping-without-scrapy">
+<h1>Section: Scraping without scrapy<a class="headerlink" href="../index.html#section-scraping-without-scrapy" title="View HTML">§</a></h1>
+
+</article>
+<article class="slide level-2" id="web-pages">
+<h2>Web pages<a class="headerlink" href="../index.html#web-pages" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/rendered.png" class="fill" src="_images/rendered.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="html-source">
+<h2>HTML source<a class="headerlink" href="../index.html#html-source" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/view-source.png" class="fill" src="_images/view-source.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="as-diagram">
+<h2>As diagram<a class="headerlink" href="../index.html#as-diagram" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/html-structure.gif" class="fill" src="_images/html-structure.gif" />
+</div>
+
+</article>
+<article class="slide level-2" id="dom-inspector">
+<h2>DOM inspector<a class="headerlink" href="../index.html#dom-inspector" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/inspector.png" class="fill" src="_images/inspector.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="scraping-in-python-2004">
+<h2>Scraping in Python (2004)<a class="headerlink" href="../index.html#scraping-in-python-2004" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># get a web page</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">page</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://oscon.com/&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="figure">
+<img alt="_images/view-source.png" src="_images/view-source.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="id5">
+<h2>Scraping in Python (2004)<a class="headerlink" href="../index.html#id5" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># get a web page</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">page</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://oscon.com/&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># parse it</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure">
+<img alt="_images/html-structure.gif" src="_images/html-structure.gif" />
+</div>
+
+</article>
+<article class="slide level-2" id="id6">
+<h2>Scraping in Python (2004)<a class="headerlink" href="../index.html#id6" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># get a web page</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">page</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://oscon.com/&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># parse it</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># find element we want</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matches</span> <span class="o">=</span> <span class="n">soup</span><span class="p">(</span><span class="s">&#39;div&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="s">&#39;location_place&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<div class="figure">
+<img alt="_images/inspector.png" src="_images/inspector.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="id7">
+<h2>Scraping in Python (2004)<a class="headerlink" href="../index.html#id7" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># get a web page</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">page</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://oscon.com/&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># parse it</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># find element we want</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matches</span> <span class="o">=</span> <span class="n">soup</span><span class="p">(</span><span class="s">&#39;div&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="s">&#39;location_place&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Finish extraction and save:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># pull out text</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">first</span> <span class="o">=</span> <span class="n">matches</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">date_range</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">date_range</span>
+<span class="go">u&#39;July 22-26, 2013&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># store results somehow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">save_results</span><span class="p">({</span><span class="s">&#39;conference&#39;</span><span class="p">:</span> <span class="s">&#39;oscon&#39;</span><span class="p">,</span> <span class="s">&#39;date_range&#39;</span><span class="p">:</span> <span class="n">date_range</span><span class="p">})</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="what-could-be-better">
+<h2>What could be better<a class="headerlink" href="../index.html#what-could-be-better" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># get a web page</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">page</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://oscon.com/&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This bloc</p>
+
+</article>
+<article class="slide level-2" id="id8">
+<h2>What could be better<a class="headerlink" href="../index.html#id8" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># get a web page</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">page</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://oscon.com/&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This blocks until the remote site responds.</p>
+
+</article>
+<article class="slide level-2" id="id9">
+<h2>What could be better<a class="headerlink" href="../index.html#id9" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># get a web page</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">page</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://oscon.com/&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This blocks until the remote site responds.</p>
+<p>Must test online.</p>
+
+</article>
+<article class="slide level-2" id="id10">
+<h2>What could be better<a class="headerlink" href="../index.html#id10" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># get a web page</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">page</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://oscon.com/&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This blocks until the remote site responds.</p>
+<p>Must test online.</p>
+<p>If this fails, the app crashes.</p>
+
+</article>
+<article class="slide level-2" id="id11">
+<h2>What could be better<a class="headerlink" href="../index.html#id11" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># pull out text</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">first</span> <span class="o">=</span> <span class="n">matches</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If this fails, the app crashes.</p>
+
+</article>
+<article class="slide level-2" id="id12">
+<h2>What could be better<a class="headerlink" href="../index.html#id12" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># find element we want</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matches</span> <span class="o">=</span> <span class="n">soup</span><span class="p">(</span><span class="s">&#39;div&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="s">&#39;location_place&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>That's just a CSS selector!</p>
+
+</article>
+<article class="slide level-2" id="id13">
+<h2>What could be better<a class="headerlink" href="../index.html#id13" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># store results somehow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">save_results</span><span class="p">({</span><span class="s">&#39;conference&#39;</span><span class="p">:</span> <span class="s">&#39;oscon&#39;</span><span class="p">,</span> <span class="s">&#39;date_range&#39;</span><span class="p">:</span> <span class="n">date_range</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>No clarity about data format. Code evolves!</p>
+
+</article>
+<article class="slide level-1" id="section-importing-scrapy-components-for-sanity">
+<h1>Section: Importing Scrapy components for sanity<a class="headerlink" href="../index.html#section-importing-scrapy-components-for-sanity" title="View HTML">§</a></h1>
+
+</article>
+<article class="slide level-2" id="rewriting-some-non-scrapy-code">
+<h2>Rewriting some non-scrapy code<a class="headerlink" href="../index.html#rewriting-some-non-scrapy-code" title="View HTML">§</a></h2>
+<p>Task: Get a list of speakers</p>
+
+</article>
+<article class="slide level-2" id="id14">
+<h2>Rewriting some non-scrapy code<a class="headerlink" href="../index.html#id14" title="View HTML">§</a></h2>
+<p>Task: Get a list of speakers</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">SCHED_PAGE</span><span class="o">=</span><span class="s">&#39;https://us.pycon.org/2013/schedule/&#39;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="a-word-about-css-selectors">
+<h2>A word about CSS selectors<a class="headerlink" href="../index.html#a-word-about-css-selectors" title="View HTML">§</a></h2>
+<p>CSS and XPath</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cssselect</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cssselect</span><span class="o">.</span><span class="n">HTMLTranslator</span><span class="p">()</span><span class="o">.</span><span class="n">css_to_xpath</span><span class="p">(</span><span class="s">&#39;span.speaker&#39;</span><span class="p">)</span>
+<span class="go">u&quot;descendant-or-self::span[@class and contains(concat(&#39; &#39;, normalize-space(@class), &#39; &#39;), &#39; speaker &#39;)]&quot;</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/scrapy/scrapy/pull/176">https://github.com/scrapy/scrapy/pull/176</a></p>
+
+</article>
+<article class="slide level-2" id="id15">
+<h2>Rewriting some non-scrapy code<a class="headerlink" href="../index.html#id15" title="View HTML">§</a></h2>
+<p>Task: Get a list of speakers</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">SCHED_PAGE</span><span class="o">=</span><span class="s">&#39;https://us.pycon.org/2013/schedule/&#39;</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">lxml.html</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">SCHED_PAGE</span><span class="p">)</span>
+    <span class="n">parsed</span> <span class="o">=</span> <span class="n">lxml</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">parsed</span><span class="o">.</span><span class="n">cssselect</span><span class="p">(</span><span class="s">&#39;span.speaker&#39;</span><span class="p">):</span>
+        <span class="k">print</span> <span class="n">speaker</span><span class="o">.</span><span class="n">text_content</span><span class="p">()</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id16">
+<h2>Rewriting some non-scrapy code<a class="headerlink" href="../index.html#id16" title="View HTML">§</a></h2>
+<p>Why: <strong>Separate handling from retrieving</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">SCHED_PAGE</span><span class="o">=</span><span class="s">&#39;https://us.pycon.org/2013/schedule/&#39;</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">lxml.html</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">SCHED_PAGE</span><span class="p">)</span>
+    <span class="n">parsed</span> <span class="o">=</span> <span class="n">lxml</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">parsed</span><span class="o">.</span><span class="n">cssselect</span><span class="p">(</span><span class="s">&#39;span.speaker&#39;</span><span class="p">):</span>
+        <span class="k">print</span> <span class="n">speaker</span><span class="o">.</span><span class="n">text_content</span><span class="p">()</span>
+    <span class="c">#   ↑</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id17">
+<h2>Rewriting some non-scrapy code<a class="headerlink" href="../index.html#id17" title="View HTML">§</a></h2>
+<p>Why: <strong>Separate handling from retrieving</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">SCHED_PAGE</span><span class="o">=</span><span class="s">&#39;https://us.pycon.org/2013/schedule/&#39;</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">lxml.html</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">SCHED_PAGE</span><span class="p">)</span>
+    <span class="n">parsed</span> <span class="o">=</span> <span class="n">lxml</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">parsed</span><span class="o">.</span><span class="n">cssselect</span><span class="p">(</span><span class="s">&#39;span.speaker&#39;</span><span class="p">):</span>
+        <span class="k">print</span> <span class="n">speaker</span><span class="o">.</span><span class="n">text_content</span><span class="p">()</span>
+    <span class="c">#   ↑</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">UnicodeEncodeError:</span> <span class="pre">'ascii'</span> <span class="pre">codec</span> <span class="pre">can't</span> <span class="pre">encode</span> <span class="pre">character</span> <span class="pre">u'\xe9'</span> <span class="pre">in</span> <span class="pre">position</span> <span class="pre">0:</span> <span class="pre">ordinal</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">range(128)</span></tt></p>
+
+</article>
+<article class="slide level-2" id="id18">
+<h2>Rewriting some non-scrapy code<a class="headerlink" href="../index.html#id18" title="View HTML">§</a></h2>
+<p>How: <strong>Separate handling from retrieving</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">SCHED_PAGE</span><span class="o">=</span><span class="s">&#39;https://us.pycon.org/2013/schedule/&#39;</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">lxml.html</span>
+
+<span class="k">def</span> <span class="nf">get_data</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">SCHED_PAGE</span><span class="p">)</span>
+    <span class="n">parsed</span> <span class="o">=</span> <span class="n">lxml</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">parsed</span><span class="o">.</span><span class="n">cssselect</span><span class="p">(</span><span class="s">&#39;span.speaker&#39;</span><span class="p">):</span>
+         <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">speaker</span><span class="o">.</span><span class="n">text_content</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id19">
+<h2>Rewriting some non-scrapy code<a class="headerlink" href="../index.html#id19" title="View HTML">§</a></h2>
+<p>Why: <strong>Clarify the fields you are retrieving</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">SCHED_PAGE</span><span class="o">=</span><span class="s">&#39;https://us.pycon.org/2013/schedule/&#39;</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">lxml.html</span>
+
+<span class="k">def</span> <span class="nf">get_data</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">SCHED_PAGE</span><span class="p">)</span>
+    <span class="n">parsed</span> <span class="o">=</span> <span class="n">lxml</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">parsed</span><span class="o">.</span><span class="n">cssselect</span><span class="p">(</span><span class="s">&#39;span.speaker&#39;</span><span class="p">):</span>
+         <span class="n">datum</span> <span class="o">=</span> <span class="p">{}</span>
+         <span class="n">datum</span><span class="p">[</span><span class="s">&#39;speaker_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">speaker</span><span class="o">.</span><span class="n">text_content</span><span class="p">()</span>
+         <span class="n">datum</span><span class="p">[</span><span class="s">&#39;preso_title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_</span> <span class="c"># FIXME</span>
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id20">
+<h2>Rewriting some non-scrapy code<a class="headerlink" href="../index.html#id20" title="View HTML">§</a></h2>
+<p>Why: <strong>Clarify the fields you are retrieving</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">SCHED_PAGE</span><span class="o">=</span><span class="s">&#39;https://us.pycon.org/2013/schedule/&#39;</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">lxml.html</span>
+
+<span class="k">def</span> <span class="nf">get_data</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">SCHED_PAGE</span><span class="p">)</span>
+    <span class="n">parsed</span> <span class="o">=</span> <span class="n">lxml</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">parsed</span><span class="o">.</span><span class="n">cssselect</span><span class="p">(</span><span class="s">&#39;span.speaker&#39;</span><span class="p">):</span>
+         <span class="n">datum</span> <span class="o">=</span> <span class="p">{}</span>
+         <span class="n">datum</span><span class="p">[</span><span class="s">&#39;speaker_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">speaker</span><span class="o">.</span><span class="n">text_content</span><span class="p">()</span>
+         <span class="n">datum</span><span class="p">[</span><span class="s">&#39;preso_title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_</span> <span class="c"># FIXME</span>
+    <span class="k">return</span> <span class="n">data</span> <span class="c"># ↑</span>
+
+<span class="k">def</span> <span class="nf">handle_datum</span><span class="p">(</span><span class="n">datum</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">datum</span><span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">],</span> <span class="s">&#39;by&#39;</span><span class="p">,</span> <span class="n">datum</span><span class="p">[</span><span class="s">&#39;speaker_name&#39;</span><span class="p">]</span>
+<span class="c">#                ↑</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="scrapy-items-item">
+<h2>scrapy.items.Item<a class="headerlink" href="../index.html#scrapy-items-item" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PyConPreso</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">Item</span><span class="p">):</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">Field</span><span class="p">()</span>
+    <span class="n">preso</span> <span class="o">=</span> <span class="n">Field</span><span class="p">()</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id21">
+<h2>scrapy.items.Item<a class="headerlink" href="../index.html#id21" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PyConPreso</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">Item</span><span class="p">):</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">Field</span><span class="p">()</span>
+    <span class="n">preso</span> <span class="o">=</span> <span class="n">Field</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Similar to...</span>
+<span class="p">{</span><span class="s">&#39;author&#39;</span><span class="p">:</span> <span class="n">_</span><span class="p">,</span>
+ <span class="s">&#39;preso&#39;</span><span class="p">:</span>  <span class="n">_</span><span class="p">}</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id22">
+<h2>scrapy.items.Item<a class="headerlink" href="../index.html#id22" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PyConPreso</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">Item</span><span class="p">):</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">Field</span><span class="p">()</span>
+    <span class="n">preso</span> <span class="o">=</span> <span class="n">Field</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Similar to...</span>
+<span class="p">{</span><span class="s">&#39;author&#39;</span><span class="p">:</span> <span class="n">_</span><span class="p">,</span>
+ <span class="s">&#39;preso&#39;</span><span class="p">:</span>  <span class="n">_</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Asheesh&#39;</span>
+<span class="go">KeyError: &#39;PyConPreso does not support field: title&#39;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="better">
+<h2>Better<a class="headerlink" href="../index.html#better" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">get_data</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">SCHED_PAGE</span><span class="p">)</span>
+    <span class="n">parsed</span> <span class="o">=</span> <span class="n">lxml</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">parsed</span><span class="o">.</span><span class="n">cssselect</span><span class="p">(</span><span class="s">&#39;span.speaker&#39;</span><span class="p">):</span>
+        <span class="n">author</span> <span class="o">=</span> <span class="n">_</span> <span class="c"># ...</span>
+        <span class="n">preso_title</span> <span class="o">=</span> <span class="n">_</span> <span class="c"># ...</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">PyConPreso</span><span class="p">(</span>
+            <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span>
+            <span class="n">preso</span><span class="o">=</span><span class="n">preso_title</span><span class="p">)</span>
+        <span class="n">out_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out_data</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="scrapy-spider-basespider">
+<h2>scrapy.spider.BaseSpider<a class="headerlink" href="../index.html#scrapy-spider-basespider" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">lxml.html</span>
+<span class="n">START_URL</span> <span class="o">=</span> <span class="s">&#39;...&#39;</span>
+
+<span class="k">class</span> <span class="nc">PyConSiteSpider</span><span class="p">(</span><span class="n">BaseSpider</span><span class="p">):</span>
+    <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span><span class="n">START_URL</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="n">parsed</span> <span class="o">=</span> <span class="n">lxml</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span>
+                          <span class="n">response</span><span class="o">.</span><span class="n">body_as_unicode</span><span class="p">)</span>
+        <span class="n">slots</span> <span class="o">=</span> <span class="n">parsed</span><span class="o">.</span><span class="n">cssselect</span><span class="p">(</span><span class="s">&#39;span.speaker&#39;</span><span class="p">)</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">speakers</span><span class="p">:</span>
+            <span class="n">author</span> <span class="o">=</span> <span class="n">_</span> <span class="c"># placeholder</span>
+            <span class="n">preso</span> <span class="o">=</span> <span class="n">_</span>  <span class="c"># placeholder</span>
+            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PyConPreso</span><span class="p">(</span>
+                    <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span> <span class="n">preso</span><span class="o">=</span><span class="n">preso</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">results</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id23">
+<h2>scrapy.spider.BaseSpider<a class="headerlink" href="../index.html#id23" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">lxml.html</span>
+<span class="n">START_URL</span> <span class="o">=</span> <span class="s">&#39;...&#39;</span>
+
+<span class="k">class</span> <span class="nc">PyConSiteSpider</span><span class="p">(</span><span class="n">BaseSpider</span><span class="p">):</span>
+    <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span><span class="n">START_URL</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="n">parsed</span> <span class="o">=</span> <span class="n">lxml</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span>
+                          <span class="n">response</span><span class="o">.</span><span class="n">body_as_unicode</span><span class="p">)</span>
+        <span class="n">slots</span> <span class="o">=</span> <span class="n">parsed</span><span class="o">.</span><span class="n">cssselect</span><span class="p">(</span><span class="s">&#39;span.speaker&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">speakers</span><span class="p">:</span>
+            <span class="n">author</span> <span class="o">=</span> <span class="n">_</span> <span class="c"># placeholder</span>
+            <span class="n">preso</span> <span class="o">=</span> <span class="n">_</span>  <span class="c"># placeholder</span>
+            <span class="k">yield</span> <span class="n">PyConPreso</span><span class="p">(</span>
+                    <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span> <span class="n">preso</span><span class="o">=</span><span class="n">preso</span><span class="p">)</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="how-you-run-it">
+<h2>How you run it<a class="headerlink" href="../index.html#how-you-run-it" title="View HTML">§</a></h2>
+<div class="highlight-python"><pre>$ scrapy runspider your_spider.py</pre>
+</div>
+
+</article>
+<article class="slide level-2" id="id24">
+<h2>How you run it<a class="headerlink" href="../index.html#id24" title="View HTML">§</a></h2>
+<div class="highlight-python"><pre>$ scrapy runspider your_spider.py
+2013-03-12 18:04:07-0700 [Demo] DEBUG: Crawled (200) &lt;GET ...&gt; (referer: None)
+2013-03-12 18:04:07-0700 [Demo] DEBUG: Scraped from &lt;200 ...&gt;
+{}
+2013-03-12 18:04:07-0700 [Demo] INFO: Closing spider (finished)
+2013-03-12 18:04:07-0700 [Demo] INFO: Dumping spider stats:
+{'downloader/request_bytes': 513,
+'downloader/request_count': 2,
+'downloader/request_method_count/GET': 2,
+'downloader/response_bytes': 75142,
+'downloader/response_count': 2,
+'downloader/response_status_count/200': 1,
+'downloader/response_status_count/301': 1,
+'finish_reason': 'finished',
+'finish_time': datetime.datetime(2013, 3, 13, 1, 4, 7, 567078),
+'item_scraped_count': 1,
+'scheduler/memory_enqueued': 2,
+'start_time': datetime.datetime(2013, 3, 13, 1, 4, 5, 144944)}
+2013-03-12 18:04:07-0700 [Demo] INFO: Spider closed (finished)
+2013-03-12 18:04:07-0700 [scrapy] INFO: Dumping global stats:
+{'memusage/max': 95105024, 'memusage/startup': 95105024}</pre>
+</div>
+
+</article>
+<article class="slide level-2" id="id25">
+<h2>How you run it<a class="headerlink" href="../index.html#id25" title="View HTML">§</a></h2>
+<div class="highlight-python"><pre>$ scrapy runspider your_spider.py -L ERROR
+$</pre>
+</div>
+
+</article>
+<article class="slide level-2" id="customizing-output">
+<h2>Customizing output<a class="headerlink" href="../index.html#customizing-output" title="View HTML">§</a></h2>
+<div class="highlight-python"><pre>$ scrapy runspider your_spider.py -s FEED_URI=myfile.out
+$</pre>
+</div>
+
+</article>
+<article class="slide level-2" id="id26">
+<h2>...<a class="headerlink" href="../index.html#id26" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/scrapy-diagram-1.png" class="fill" src="_images/scrapy-diagram-1.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="id27">
+<h2>...<a class="headerlink" href="../index.html#id27" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/scrapy-diagram-2.png" class="fill" src="_images/scrapy-diagram-2.png" />
+</div>
+
+</article>
+<article class="slide level-1" id="section-pros-and-cons-of-scrapy">
+<h1>Section: Pros and Cons of Scrapy<a class="headerlink" href="../index.html#section-pros-and-cons-of-scrapy" title="View HTML">§</a></h1>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Pablo Hoffman&#39;</span> <span class="o">&gt;</span> <span class="s">&#39;Asheesh Laroia&#39;</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="part-iii-an-aside-about-scrapy">
+<h2>Part III. An aside about Scrapy<a class="headerlink" href="../index.html#part-iii-an-aside-about-scrapy" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>Scrapy: 9,000</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="id28">
+<h2>Part III. An aside about Scrapy<a class="headerlink" href="../index.html#id28" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>Scrapy: 9,000</li>
+<li>Mechanize: 20,000</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="id29">
+<h2>Part III. An aside about Scrapy<a class="headerlink" href="../index.html#id29" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>Scrapy: 9,000</li>
+<li>Mechanize: 20,000</li>
+<li>Requests: 475,000</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="scrapy-wants-you-to-make-a-project">
+<h2>Scrapy wants you to make a project<a class="headerlink" href="../index.html#scrapy-wants-you-to-make-a-project" title="View HTML">§</a></h2>
+<div class="highlight-python"><pre>$ scrapy startproject tutorial</pre>
+</div>
+
+</article>
+<article class="slide level-2" id="id30">
+<h2>Scrapy wants you to make a project<a class="headerlink" href="../index.html#id30" title="View HTML">§</a></h2>
+<div class="highlight-python"><pre>$ scrapy startproject tutorial</pre>
+</div>
+<p>creates</p>
+<div class="highlight-python"><pre>tutorial/
+    scrapy.cfg
+    tutorial/
+        __init__.py
+        items.py
+        pipelines.py
+        settings.py
+        spiders/
+            __init__.py</pre>
+</div>
+
+</article>
+<article class="slide level-2" id="awesome-features">
+<h2>Awesome features<a class="headerlink" href="../index.html#awesome-features" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/cloud.png" class="fill" src="_images/cloud.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="id31">
+<h2>Awesome features...<a class="headerlink" href="../index.html#id31" title="View HTML">§</a></h2>
+<blockquote>
+<div><p>$ scrapy runspider your_spider.py &amp;</p>
+<p>$ telnet localhost 6023</p>
+</div></blockquote>
+
+</article>
+<article class="slide level-2" id="id32">
+<h2>Awesome features...<a class="headerlink" href="../index.html#id32" title="View HTML">§</a></h2>
+<blockquote>
+<div><p>$ scrapy runspider your_spider.py &amp;</p>
+<p>$ telnet localhost 6023</p>
+</div></blockquote>
+<p>Gives</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">est</span><span class="p">()</span>
+<span class="go">Execution engine status</span>
+<span class="go">time()-engine.start_time              : 21.3188259602</span>
+<span class="go">engine.is_idle()                      : False</span>
+<span class="go">…</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id33">
+<h2>Awesome features...<a class="headerlink" href="../index.html#id33" title="View HTML">§</a></h2>
+<blockquote>
+<div><p>$ scrapy runspider your_spider.py &amp;</p>
+<p>$ telnet localhost 6023</p>
+</div></blockquote>
+<p>Gives</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">est</span><span class="p">()</span>
+<span class="go">Execution engine status</span>
+<span class="go">time()-engine.start_time              : 21.3188259602</span>
+<span class="go">engine.is_idle()                      : False</span>
+<span class="go">…</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span><span class="p">;</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;eject&#39;</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Hmm.</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id34">
+<h2>Awesome features...<a class="headerlink" href="../index.html#id34" title="View HTML">§</a></h2>
+<blockquote>
+<div>$ scrapy runspider your_spider.py -s TELNETCONSOLE_ENABLED=0 -s WEBSERVICE_ENABLED=0</div></blockquote>
+
+</article>
+<article class="slide level-2" id="id35">
+<h2>Awesome features...<a class="headerlink" href="../index.html#id35" title="View HTML">§</a></h2>
+<blockquote>
+<div>$ scrapy runspider your_spider.py -s TELNETCONSOLE_ENABLED=0 -s WEBSERVICE_ENABLED=0</div></blockquote>
+<p>Semi-complex integration with other pieces of code.</p>
+
+</article>
+<article class="slide level-2" id="section-async">
+<h2>Section: Async<a class="headerlink" href="../index.html#section-async" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/asink.jpg" class="fill" src="_images/asink.jpg" />
+</div>
+
+</article>
+<article class="slide level-2" id="if-you-re-not-done-say-so">
+<h2>If you're not done, say so<a class="headerlink" href="../index.html#if-you-re-not-done-say-so" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="c"># ...</span>
+    <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">speakers</span><span class="p">:</span>
+        <span class="n">partial_item</span> <span class="o">=</span> <span class="n">PyConPreso</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">)</span>
+        <span class="c"># need more data!</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id36">
+<h2>If you're not done, say so<a class="headerlink" href="../index.html#id36" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="c"># ...</span>
+    <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">speakers</span><span class="p">:</span>
+        <span class="n">partial_item</span> <span class="o">=</span> <span class="n">PyConPreso</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">)</span>
+        <span class="c"># need more data!</span>
+        <span class="c"># ...</span>
+        <span class="n">request</span> <span class="o">=</span> <span class="n">scrapy</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">other_url</span><span class="p">)</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id37">
+<h2>If you're not done, say so<a class="headerlink" href="../index.html#id37" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="c"># ...</span>
+    <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">speakers</span><span class="p">:</span>
+        <span class="n">partial_item</span> <span class="o">=</span> <span class="n">PyConPreso</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">)</span>
+        <span class="c"># need more data!</span>
+        <span class="c"># ...</span>
+        <span class="n">request</span> <span class="o">=</span> <span class="n">scrapy</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">other_url</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Relevant snippet:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urlparse</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urlparse</span><span class="o">.</span><span class="n">urljoin</span><span class="p">(</span><span class="s">&#39;http://example.com/my/site&#39;</span><span class="p">,</span> <span class="s">&#39;/newpath&#39;</span><span class="p">)</span>
+<span class="go">&#39;http://example.com/newpath&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urlparse</span><span class="o">.</span><span class="n">urljoin</span><span class="p">(</span><span class="s">&#39;http://example.com/my/site&#39;</span><span class="p">,</span> <span class="s">&#39;subpath&#39;</span><span class="p">)</span>
+<span class="go">&#39;http://example.com/my/subpath&#39;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id38">
+<h2>If you're not done, say so<a class="headerlink" href="../index.html#id38" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="c"># ...</span>
+    <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">speakers</span><span class="p">:</span>
+        <span class="n">partial_item</span> <span class="o">=</span> <span class="n">PyConPreso</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">)</span>
+        <span class="c"># need more data!</span>
+        <span class="c"># ...</span>
+        <span class="n">request</span> <span class="o">=</span> <span class="n">scrapy</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">other_url</span><span class="p">)</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;partial_item&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">partial_item</span>
+        <span class="k">yield</span> <span class="n">request</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id39">
+<h2>If you're not done, say so<a class="headerlink" href="../index.html#id39" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="c"># ...</span>
+    <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">speakers</span><span class="p">:</span>
+        <span class="n">partial_item</span> <span class="o">=</span> <span class="n">PyConPreso</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">)</span>
+        <span class="c"># need more data!</span>
+        <span class="c"># ...</span>
+        <span class="n">request</span> <span class="o">=</span> <span class="n">scrapy</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">other_url</span><span class="p">,</span>
+                            <span class="n">callback</span><span class="o">=</span><span class="n">extract_next_part</span><span class="p">)</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;partial_item&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">partial_item</span>
+        <span class="k">yield</span> <span class="n">request</span>
+
+<span class="k">def</span> <span class="nf">extract_next_part</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
+    <span class="n">partial_item</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;partial_item&#39;</span><span class="p">]</span>
+    <span class="c"># do some work...</span>
+    <span class="n">partial_item</span><span class="p">[</span><span class="s">&#39;preso&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_</span>
+    <span class="k">yield</span> <span class="n">partial_item</span> <span class="c"># now not partial!</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id40">
+<h2>If you're not done, say so<a class="headerlink" href="../index.html#id40" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="c"># ...</span>
+    <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">speakers</span><span class="p">:</span>
+        <span class="n">partial_item</span> <span class="o">=</span> <span class="n">PyConPreso</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">)</span>
+        <span class="c"># need more data!</span>
+        <span class="c"># ...</span>
+        <span class="n">request</span> <span class="o">=</span> <span class="n">scrapy</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">other_url</span><span class="p">,</span>
+                            <span class="n">callback</span><span class="o">=</span><span class="n">extract_next_part</span><span class="p">)</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;partial_item&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">partial_item</span>
+        <span class="k">yield</span> <span class="n">request</span>
+
+<span class="k">def</span> <span class="nf">extract_next_part</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
+    <span class="n">partial_item</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;partial_item&#39;</span><span class="p">]</span>
+    <span class="c"># do some work...</span>
+    <span class="n">partial_item</span><span class="p">[</span><span class="s">&#39;preso&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_</span>
+    <span class="k">yield</span> <span class="n">partial_item</span> <span class="c"># now not partial!</span>
+</pre></div>
+</div>
+<p>Rule: Split the function if you need a new HTTP request.</p>
+
+</article>
+<article class="slide level-2" id="performance">
+<h2>Performance<a class="headerlink" href="../index.html#performance" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>Crawl 500 projects' bug trackers:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>26 hours</li>
+</ul>
+</div></blockquote>
+
+</article>
+<article class="slide level-2" id="id41">
+<h2>Performance<a class="headerlink" href="../index.html#id41" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>Crawl 500 projects' bug trackers:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>26 hours</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Add multiprocessing:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>+1-10 MB * N workers</li>
+</ul>
+</div></blockquote>
+
+</article>
+<article class="slide level-2" id="id42">
+<h2>Performance<a class="headerlink" href="../index.html#id42" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>Crawl 500 projects' bug trackers:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>26 hours</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Add multiprocessing:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>+1-10 MB * N workers</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>After Scrapy:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>N=200 simultaneous requests</li>
+<li>1 hour 10 min</li>
+</ul>
+</div></blockquote>
+
+</article>
+<article class="slide level-1" id="section-testing">
+<h1>Section: Testing<a class="headerlink" href="../index.html#section-testing" title="View HTML">§</a></h1>
+
+</article>
+<article class="slide level-2" id="data-is-complicated">
+<h2>Data is complicated<a class="headerlink" href="../index.html#data-is-complicated" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">author</span>
+<span class="go">&#39;Asheesh Laroia, Jessica McKellar, Dana Bauer, Daniel Choi&#39;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="why-testing-is-normally-hard">
+<h2>Why testing is normally hard<a class="headerlink" href="../index.html#why-testing-is-normally-hard" title="View HTML">§</a></h2>
+<div class="highlight-python"><pre>Traceback (most recent call last):
+ ...
+ File "/usr/lib/python2.7/urllib2.py", line 1181, in do_open
+    raise URLError(err)
+URLError: &lt;urlopen error [Errno -2] Name or service not known&gt;
+
+Ran 1 test in 0.153s
+
+FAILED (errors=1)</pre>
+</div>
+
+</article>
+<article class="slide level-2" id="id43">
+<h2>Why testing is normally hard<a class="headerlink" href="../index.html#id43" title="View HTML">§</a></h2>
+<div class="highlight-python"><pre>Traceback (most recent call last):
+ ...
+ File "/usr/lib/python2.7/urllib2.py", line 1181, in do_open
+    raise URLError(err)
+urllib2.HTTPError: HTTP Error 403: Exceeded query limit for API key
+
+Ran 1 test in 0.153s
+
+FAILED (errors=1)</pre>
+</div>
+
+</article>
+<article class="slide level-2" id="id44">
+<h2>Why testing is normally hard<a class="headerlink" href="../index.html#id44" title="View HTML">§</a></h2>
+<div class="highlight-python"><pre>Traceback (most recent call last):
+ ...
+ File "/usr/lib/python2.7/urllib2.py", line 1181, in do_open
+    raise URLError(err)
+URLError: &lt;urlopen error [Errno 110] Connection timed out&gt;
+
+Ran 1 test in 127.255s
+
+FAILED (errors=1)</pre>
+</div>
+
+</article>
+<article class="slide level-2" id="id45">
+<h2>Why testing is normally hard<a class="headerlink" href="../index.html#id45" title="View HTML">§</a></h2>
+<div class="highlight-python"><pre>Traceback (most recent call last):
+ ...
+ File "/usr/lib/python2.7/urllib2.py", line 1181, in do_open
+    raise URLError(err)
+URLError: &lt;urlopen error [Errno 110] Connection timed out&gt;
+
+Ran 1 test in 127.255s
+
+FAILED (errors=1)</pre>
+</div>
+<p>mock.patch()?</p>
+
+</article>
+<article class="slide level-2" id="id46">
+<h2>Why testing is normally hard<a class="headerlink" href="../index.html#id46" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/sad-commit.png" class="fill" src="_images/sad-commit.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="part-v-testing">
+<h2>Part V. Testing<a class="headerlink" href="../index.html#part-v-testing" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PyConSiteSpider</span><span class="p">(</span><span class="n">BaseSpider</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="c"># ...</span>
+        <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">speakers</span><span class="p">:</span>
+            <span class="c"># ...</span>
+            <span class="k">yield</span> <span class="n">PyConPreso</span><span class="p">(</span>
+                    <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span> <span class="n">preso</span><span class="o">=</span><span class="n">preso</span><span class="p">)</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id47">
+<h2>...<a class="headerlink" href="../index.html#id47" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/scrapy-diagram-1.png" class="fill" src="_images/scrapy-diagram-1.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="id48">
+<h2>Part V. Testing<a class="headerlink" href="../index.html#id48" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PyConSiteSpider</span><span class="p">(</span><span class="n">BaseSpider</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="c"># ...</span>
+        <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">speakers</span><span class="p">:</span>
+            <span class="c"># ...</span>
+            <span class="k">yield</span> <span class="n">PyConPreso</span><span class="p">(</span>
+                    <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span> <span class="n">preso</span><span class="o">=</span><span class="n">preso</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>test:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">spidey</span> <span class="o">=</span> <span class="n">PyConSiteSpider</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">spidey</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id49">
+<h2>Part V. Testing<a class="headerlink" href="../index.html#id49" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PyConSiteSpider</span><span class="p">(</span><span class="n">BaseSpider</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="c"># ...</span>
+        <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">speakers</span><span class="p">:</span>
+            <span class="c"># ...</span>
+            <span class="k">yield</span> <span class="n">PyConPreso</span><span class="p">(</span>
+                    <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span> <span class="n">preso</span><span class="o">=</span><span class="n">preso</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>test:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">spidey</span> <span class="o">=</span> <span class="n">PyConSiteSpider</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">canned_response</span> <span class="o">=</span> <span class="n">HtmlResponse</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;saved-data.html&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">spidey</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">canned_response</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="n">PyConPreso</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">preso</span><span class="o">=</span><span class="n">b</span><span class="p">),</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id50">
+<h2>Part V. Testing<a class="headerlink" href="../index.html#id50" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PyConSiteSpider</span><span class="p">(</span><span class="n">BaseSpider</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="c"># ...</span>
+        <span class="k">for</span> <span class="n">speaker</span> <span class="ow">in</span> <span class="n">speakers</span><span class="p">:</span>
+            <span class="c"># ...</span>
+            <span class="k">yield</span> <span class="n">PyConPreso</span><span class="p">(</span>
+                    <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span> <span class="n">preso</span><span class="o">=</span><span class="n">preso</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>test:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_spider</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="p">[</span><span class="n">PyConPreso</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">preso</span><span class="o">=</span><span class="n">b</span><span class="p">),</span> <span class="o">...</span><span class="p">]</span>
+
+    <span class="n">spidey</span> <span class="o">=</span> <span class="n">PyConSiteSpider</span><span class="p">()</span>
+    <span class="n">canned_response</span> <span class="o">=</span> <span class="n">HtmlResponse</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;saved-data.html&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">spidey</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">canned_response</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">expected</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id51">
+<h2>...<a class="headerlink" href="../index.html#id51" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/scrapy-diagram-1.png" class="fill" src="_images/scrapy-diagram-1.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="more-testing">
+<h2>More testing<a class="headerlink" href="../index.html#more-testing" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_spider</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">url2filename</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;https://us.pycon.org/2013/schedule/&#39;</span><span class="p">:</span>
+                           <span class="s">&#39;localcopy.html&#39;</span><span class="p">}</span>
+
+    <span class="n">expected_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">PyConPreso</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">preso</span><span class="o">=</span><span class="n">b</span><span class="p">),</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id52">
+<h2>More testing<a class="headerlink" href="../index.html#id52" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_spider</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">url2filename</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;https://us.pycon.org/2013/schedule/&#39;</span><span class="p">:</span>
+                           <span class="s">&#39;localcopy.html&#39;</span><span class="p">}</span>
+
+    <span class="n">expected_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">PyConPreso</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">preso</span><span class="o">=</span><span class="n">b</span><span class="p">),</span> <span class="o">...</span><span class="p">]</span>
+
+    <span class="n">spidey</span> <span class="o">=</span> <span class="n">PyConSiteSpider</span><span class="p">()</span>
+    <span class="n">request_iterable</span> <span class="o">=</span> <span class="n">spider</span><span class="o">.</span><span class="n">start_requests</span><span class="p">()</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id53">
+<h2>More testing<a class="headerlink" href="../index.html#id53" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_spider</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">url2filename</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;https://us.pycon.org/2013/schedule/&#39;</span><span class="p">:</span>
+                           <span class="s">&#39;localcopy.html&#39;</span><span class="p">}</span>
+
+    <span class="n">expected_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">PyConPreso</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">preso</span><span class="o">=</span><span class="n">b</span><span class="p">),</span> <span class="o">...</span><span class="p">]</span>
+
+    <span class="n">spidey</span> <span class="o">=</span> <span class="n">PyConSiteSpider</span><span class="p">()</span>
+    <span class="n">request_iterable</span> <span class="o">=</span> <span class="n">spider</span><span class="o">.</span><span class="n">start_requests</span><span class="p">()</span>
+
+    <span class="n">ar</span> <span class="o">=</span> <span class="n">autoresponse</span><span class="o">.</span><span class="n">Autoresponder</span><span class="p">(</span>
+             <span class="n">url2filename</span><span class="o">=</span><span class="n">url2filename</span><span class="p">,</span>
+             <span class="n">url2errors</span><span class="o">=</span><span class="p">{})</span>
+
+    <span class="n">items</span> <span class="o">=</span> <span class="n">ar</span><span class="o">.</span><span class="n">respond_recursively</span><span class="p">(</span><span class="n">request_iterable</span><span class="p">)</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id54">
+<h2>More testing<a class="headerlink" href="../index.html#id54" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_spider</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">url2filename</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;https://us.pycon.org/2013/schedule/&#39;</span><span class="p">:</span>
+                           <span class="s">&#39;localcopy.html&#39;</span><span class="p">}</span>
+
+    <span class="n">expected_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">PyConPreso</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">preso</span><span class="o">=</span><span class="n">b</span><span class="p">),</span> <span class="o">...</span><span class="p">]</span>
+
+    <span class="n">spidey</span> <span class="o">=</span> <span class="n">PyConSiteSpider</span><span class="p">()</span>
+    <span class="n">request_iterable</span> <span class="o">=</span> <span class="n">spider</span><span class="o">.</span><span class="n">start_requests</span><span class="p">()</span>
+
+    <span class="n">ar</span> <span class="o">=</span> <span class="n">autoresponse</span><span class="o">.</span><span class="n">Autoresponder</span><span class="p">(</span>
+             <span class="n">url2filename</span><span class="o">=</span><span class="n">url2filename</span><span class="p">,</span>
+             <span class="n">url2errors</span><span class="o">=</span><span class="p">{})</span>
+
+    <span class="n">items</span> <span class="o">=</span> <span class="n">ar</span><span class="o">.</span><span class="n">respond_recursively</span><span class="p">(</span><span class="n">request_iterable</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">expected</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-1" id="section-javascript">
+<h1>Section: Javascript<a class="headerlink" href="../index.html#section-javascript" title="View HTML">§</a></h1>
+
+</article>
+<article class="slide level-2" id="three-approaches">
+<h2>Three approaches<a class="headerlink" href="../index.html#three-approaches" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>Re-write the Javascript in Python</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="id55">
+<h2>Three approaches<a class="headerlink" href="../index.html#id55" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>Re-write the Javascript in Python</li>
+<li>Wrap some of the JS in spidermonkey</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="id56">
+<h2>Three approaches<a class="headerlink" href="../index.html#id56" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>Re-write the Javascript in Python</li>
+<li>Wrap some of the JS in spidermonkey</li>
+<li>Run it in an actual browser</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="javascript">
+<h2>JavaScript<a class="headerlink" href="../index.html#javascript" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">spidermonkey</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">spidermonkey</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id57">
+<h2>JavaScript<a class="headerlink" href="../index.html#id57" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">spidermonkey</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">spidermonkey</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ctx</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">new_context</span><span class="p">()</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id58">
+<h2>JavaScript<a class="headerlink" href="../index.html#id58" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">spidermonkey</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">spidermonkey</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ctx</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">new_context</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ctx</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;{} + []&quot;</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id59">
+<h2>JavaScript<a class="headerlink" href="../index.html#id59" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">js_src</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;function (x) { return 3 + x; }&#39;&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">spidermonkey</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ctx</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">new_context</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ctx</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;{} + []&quot;</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">js_fn</span> <span class="o">=</span> <span class="n">cx</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">js_src</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">js_fn</span><span class="p">)</span>
+<span class="go">&lt;type &#39;spidermonkey.Function&#39;&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id60">
+<h2>JavaScript<a class="headerlink" href="../index.html#id60" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">js_src</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;function (x) { return 3 + x; }&#39;&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">spidermonkey</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ctx</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">new_context</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ctx</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;{} + []&quot;</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">js_fn</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">js_src</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">js_fn</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id61">
+<h2>JavaScript<a class="headerlink" href="../index.html#id61" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">js_src</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;function (x) { return 3 + x; }&#39;&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">spidermonkey</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ctx</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">new_context</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">js_fn</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">js_src</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">js_fn</span><span class="p">)</span>
+<span class="go">&lt;type &#39;spidermonkey.Function&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">js_fn</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+<p>Get your source, e.g.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+   <span class="c"># to get a tag...</span>
+   <span class="n">script_content</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;//script&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text_content</span><span class="p">()</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id62">
+<h2>JavaScript<a class="headerlink" href="../index.html#id62" title="View HTML">§</a></h2>
+<p>Also works for non-anonymous functions:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">js_src</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;function add_three(x) { return 3 + x; }&#39;&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">spidermonkey</span><span class="o">.</span><span class="n">Runtime</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ctx</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">new_context</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">js_fn</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">js_src</span><span class="p">)(</span><span class="s">&quot;add_three&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">js_fn</span><span class="p">)</span>
+<span class="go">&lt;type &#39;spidermonkey.Function&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">js_fn</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="hash-cash">
+<h2>Hash cash<a class="headerlink" href="../index.html#hash-cash" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/hash-cash.png" class="fill" src="_images/hash-cash.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="id63">
+<h2>Hash cash<a class="headerlink" href="../index.html#id63" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/hash-cash-2.png" class="fill" src="_images/hash-cash-2.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="id64">
+<h2>JavaScript<a class="headerlink" href="../index.html#id64" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">selenium</span>
+<span class="k">class</span> <span class="nc">MySpider</span><span class="p">(</span><span class="n">BaseSpider</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">browser</span> <span class="o">=</span> <span class="n">selenium</span><span class="o">.</span><span class="n">selenium</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="c"># configure</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c"># synchronously launch</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="p">)</span> <span class="c"># GET by browser</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&#39;//ul&#39;</span><span class="p">)</span> <span class="c"># in-browser XPath</span>
+</pre></div>
+</div>
+<p>Also look for: phantompy, ghost.py, zombie, headless webkit</p>
+
+</article>
+<article class="slide level-1" id="section-api-clients">
+<h1>Section: API clients<a class="headerlink" href="../index.html#section-api-clients" title="View HTML">§</a></h1>
+
+</article>
+<article class="slide level-2" id="basic-non-html-use">
+<h2>Basic non-HTML use<a class="headerlink" href="../index.html#basic-non-html-use" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">WikiImageSpider</span><span class="p">(</span><span class="n">BaseSpider</span><span class="p">):</span>
+    <span class="n">START_URLS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;http://en.wikipedia.org/w/api.php?action=query&amp;titles=San_Francisco&amp;prop=images&amp;imlimit=20&amp;format=json&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body_as_unicode</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">results</span><span class="p">[</span><span class="s">&#39;query&#39;</span><span class="p">][</span><span class="s">&#39;pages&#39;</span><span class="p">][</span><span class="s">&#39;images&#39;</span><span class="p">]:</span>
+             <span class="n">item</span> <span class="o">=</span> <span class="n">WikipediaImage</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="c"># ...</span>
+             <span class="k">yield</span> <span class="n">WikipediaImage</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id65">
+<h2>Basic non-HTML use<a class="headerlink" href="../index.html#id65" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">WikiImageSpider</span><span class="p">(</span><span class="n">BaseSpider</span><span class="p">):</span>
+    <span class="n">START_URLS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;http://en.wikipedia.org/w/api.php?action=query&amp;titles=San_Francisco&amp;prop=images&amp;imlimit=20&amp;format=json&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body_as_unicode</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">results</span><span class="p">[</span><span class="s">&#39;query&#39;</span><span class="p">][</span><span class="s">&#39;pages&#39;</span><span class="p">][</span><span class="s">&#39;images&#39;</span><span class="p">]:</span>
+             <span class="n">item</span> <span class="o">=</span> <span class="n">WikipediaImage</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="c"># ...</span>
+             <span class="k">yield</span> <span class="n">WikipediaImage</span>
+        <span class="k">if</span> <span class="n">results</span><span class="p">[</span><span class="s">&#39;query-continue&#39;</span><span class="p">][</span><span class="s">&#39;images&#39;</span><span class="p">]:</span>
+            <span class="n">new_url</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="n">_</span> <span class="c"># ...</span>
+            <span class="k">yield</span> <span class="n">scrapy</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">new_url</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">)</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id66">
+<h2>Basic non-HTML use<a class="headerlink" href="../index.html#id66" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">WikiImageSpider</span><span class="p">(</span><span class="n">BaseSpider</span><span class="p">):</span>
+    <span class="n">START_URLS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;http://en.wikipedia.org/w/api.php?action=query&amp;titles=San_Francisco&amp;prop=images&amp;imlimit=20&amp;format=json&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body_as_unicode</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">results</span><span class="p">[</span><span class="s">&#39;query&#39;</span><span class="p">][</span><span class="s">&#39;pages&#39;</span><span class="p">][</span><span class="s">&#39;images&#39;</span><span class="p">]:</span>
+             <span class="n">item</span> <span class="o">=</span> <span class="n">WikipediaImage</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="c"># ...</span>
+             <span class="k">yield</span> <span class="n">WikipediaImage</span>
+        <span class="k">if</span> <span class="n">results</span><span class="p">[</span><span class="s">&#39;query-continue&#39;</span><span class="p">][</span><span class="s">&#39;images&#39;</span><span class="p">]:</span>
+            <span class="n">new_url</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="n">_</span> <span class="c"># ...</span>
+            <span class="k">yield</span> <span class="n">scrapy</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">new_url</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>settings.USER_AGENT = &quot;My Wiki Bot <a class="reference external" href="mailto:mywikibot&#37;&#52;&#48;asheesh&#46;org">mywikibot<span>&#64;</span>asheesh<span>&#46;</span>org</a>&quot;</li>
+<li>settings.RETRY_HTTP_CODES.append(403)</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="id67">
+<h2>Basic non-HTML use<a class="headerlink" href="../index.html#id67" title="View HTML">§</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">WikiImageSpider</span><span class="p">(</span><span class="n">BaseSpider</span><span class="p">):</span>
+    <span class="n">START_URLS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;http://en.wikipedia.org/w/api.php?action=query&amp;titles=San_Francisco&amp;prop=images&amp;imlimit=20&amp;format=json&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body_as_unicode</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">results</span><span class="p">[</span><span class="s">&#39;query&#39;</span><span class="p">][</span><span class="s">&#39;pages&#39;</span><span class="p">][</span><span class="s">&#39;images&#39;</span><span class="p">]:</span>
+             <span class="n">item</span> <span class="o">=</span> <span class="n">WikipediaImage</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="c"># ...</span>
+             <span class="k">yield</span> <span class="n">WikipediaImage</span>
+        <span class="k">if</span> <span class="n">results</span><span class="p">[</span><span class="s">&#39;query-continue&#39;</span><span class="p">][</span><span class="s">&#39;images&#39;</span><span class="p">]:</span>
+            <span class="n">new_url</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="n">_</span> <span class="c"># ...</span>
+            <span class="k">yield</span> <span class="n">scrapy</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">new_url</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>settings.USER_AGENT = &quot;My Wiki Bot <a class="reference external" href="mailto:mywikibot&#37;&#52;&#48;asheesh&#46;org">mywikibot<span>&#64;</span>asheesh<span>&#46;</span>org</a>&quot;</li>
+<li>settings.RETRY_HTTP_CODES.append(403)</li>
+<li>Write a DownloaderMiddleware for custom retry logic</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="a-setting-for-everything">
+<h2>A setting for everything<a class="headerlink" href="../index.html#a-setting-for-everything" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>settings.USER_AGENT</li>
+<li>settings.CONCURRENT_REQUESTS_PER_DOMAIN (= e.g. 1)</li>
+<li>settings.CONCURRENT_REQUEST (= e.g. 800)</li>
+<li>settings.RETRY_ENABLED (= True by default)</li>
+<li>settings.RETRY_TIMES</li>
+<li>settings.RETRY_HTTP_CODES</li>
+<li>Great intro-to-scraping docs</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="best-case-integration">
+<h2>Best-case integration<a class="headerlink" href="../index.html#best-case-integration" title="View HTML">§</a></h2>
+<ul class="simple">
+<li>Leave your HTTP to Scrapy.</li>
+<li>Impatient? Steal data from item pipeline.</li>
+<li>Patient? Feed Exporter.</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="twisted-minus-twisted">
+<h2>Twisted minus Twisted<a class="headerlink" href="../index.html#twisted-minus-twisted" title="View HTML">§</a></h2>
+<div class="figure">
+<img alt="_images/garfield-minus.png" class="fill" src="_images/garfield-minus.png" />
+</div>
+
+</article>
+<article class="slide level-1" id="separate-requesting-and-responding">
+<h1>Separate requesting and responding<a class="headerlink" href="../index.html#separate-requesting-and-responding" title="View HTML">§</a></h1>
+<div class="figure">
+<img alt="_images/take-away.jpg" class="fill" src="_images/take-away.jpg" />
+</div>
+<p>Asheesh Laroia scrapy-talk.asheesh.org</p>
+
+</article>
+
+
+</section>
+  </body>
+</html>

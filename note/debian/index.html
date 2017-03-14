@@ -1,0 +1,883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+  <head>
+   <link rel="openid.server" href="http://www.livejournal.com/openid/server.bml" />
+   <link rel="openid.delegate" href="http://paulproteus.livejournal.com/" />
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta name="author" content="root"/>
+    <meta name="generator" content="Bluefish 1.0.4"/>
+    <link rel="alternate" type="application/atom+xml" 
+    href="http://asheesh.org/index.atom" />
+
+    <!-- Navigational metadata for large websites (an accessibility feature): -->
+    <link rel="top"      href="./index.html" title="Homepage" />
+    <link rel="up"       href="./index.html" title="Up" />
+    <link rel="first"    href="./index.html" title="First page" />
+    <link rel="previous" href="./index.html" title="Previous page" />
+    <link rel="next"     href="./index.html" title="Next page" />
+    <link rel="last"     href="./index.html" title="Last page" />
+    <link rel="toc"      href="./index.html" title="Table of contents" />
+    <link rel="index"    href="./index.html" title="Site map" />
+
+<!-- Change the path to your .css file. This should reflect the weblocation -->
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-screen.css" media="screen" title="Gila (screen)" />
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-print.css" media="print" />
+	
+	<!--  title is pulled from blosxom -->
+    <title></title>
+  </head>
+
+  <body>
+    <!-- For non-visual user agents: -->
+      <div id="top"><a href="#main-copy" class="doNotDisplay doNotPrint">Skip to main content.</a></div>
+
+    <!-- ##### Header ##### -->
+
+    <div id="header">
+      <h1 class="headerTitle">
+     <!-- again the global variables are pulled from blosxom -->
+        <a href="/" title="Browse to homepage">Asheeshworld <span>Notes you will like</span></a>
+      </h1>
+
+      <div class="subHeader">
+        <span class="doNotDisplay">Navigation: </span>
+        <!-- change or add the following links to represent what you want -->
+        <a href="/about/">About</a> |
+        <a href="/mmm/">Mmm</a> |
+	<a href="/note/">Notes</a> |
+        <a href="/rmad/">RMAD</a> |
+        <a href="/dwad/">DWAD</a> |
+        <a href="/scribble/">Scribbles</a> |
+        <a href="/projects/">Projects</a>
+      </div>
+    </div>
+    <div id="side-bar">
+
+      <!-- ##### Left Sidebar ##### -->
+	<!-- If you want to use the Blosxom Plugin "menu" by Fletcher T. Penney, leave this area alone... put the menu file in your plugins dir-->
+      <div class="leftSideBar">
+        <p class="sideBarTitle">Menu</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li></li>
+        </ul>  
+        <p class="sideBarTitle">This section</p> 
+         <ul><li>Jotted-down notes at the intersection of my mind and permanence</li></ul>
+   
+        <p class="sideBarTitle">Recycling the past</p>
+        <span class="sideBarText">
+          
+        </span>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments are welcome.  Email me.
+        </span>
+      </div>
+
+	<!-- if you want to manually set up your menus.. commnet above .. and uncomment the following and manipulate to your liking. -->
+	<!--
+      <div class="leftSideBar">
+        <p class="sideBarTitle">This Page</p>
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#cross-browser" title="Improved cross-browser compatibility">Cross-browser</a></li>
+          <li><a href="#stylesheets" title="Modified stylesheets">Stylesheets</a></li>
+          <li><a href="#accessibility" title="Improved accessibility">Accessibility</a></li>
+        </ul>
+
+        <p class="sideBarTitle">Branch Navigation</p>
+        <ul>
+          <li><a href="http://www.oswd.org/index.phtml">OSWD Home</a></li>
+          <li><a href="http://www.oswd.org/browse.php">Browse Designs</a></li>
+          <li><a href="http://www.oswd.org/userinfo.phtml?user=haran">haran&rsquo;s Designs</a></li>
+          <li><span class="thisPage" title="That's this page!">Gila Homepage</span></li>
+        </ul>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments and constructive criticisms are welcome
+          <a href="http://www.oswd.org/email.phtml?user=haran" title="Email form">via email</a>.
+        </span>
+      </div>
+	-->
+
+
+      <!-- ##### Right Sidebar ##### 
+
+      <div class="rightSideBar">
+        
+
+        <p class="sideBarTitle">Downloads</p>
+
+        <div class="sideBarText"><strong>"Gila" Skin for Blosxom</strong><br />
+
+      </div>
+      -->
+
+    </div>  
+         <div id="main-copy">
+        <!-- <h1 id="introduction" style="border-top: none; padding-top: 0;"></h1>
+       </div>
+       -->
+<h2>Sun, 22 Jun 2014</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/tool-assist.html">Interactive semi-automated package review (by abusing Travis-CI)
+</a>
+       </h1>
+		<p>I just did some Debian package review in a somewhat unusual way, and I 
+wanted to share that. I'm hoping other Debian developers (and other free 
+software contributors) that need to review others' contributions can 
+learn something from this, and that I can use this blog post as a way to 
+find out if other people are doing something similar.
+</p><p>It was pretty exciting! At the end of it, I joined #debian-mentors to talk
+about how my cool process. Someone summarized it very accurately:
+</p>
+<pre>&lt;sney&gt; it almost sounds like you're working to replace yourself with automation</pre>
+<h3 id="w_context-about-alpine-in-debian">Context about alpine in Debian</h3>
+<p>(Skip to "Package review, with automation" if you're familiar with Debian.)
+</p><p>I'm the maintainer of alpine in Debian. There are quite a few problems 
+with the alpine package in Debian right now, the biggest of which are:
+</p>
+<ul><li> We're one version behind -- 2.11 is the latest available, but 2.10 is the newest that we have in Debian.
+</li></ul>
+<ul><li> The packaging uses a decreasingly-popular packaging helper, cdbs, about which I happen to know less than the dh-style helper (aka dh7).
+</li></ul>
+<ul><li> There are lots of bugs filed, and I don't respond in a timely fashion.
+</li></ul>
+<p>This doesn't change my deep love for alpine -- I've had that for about 
+half my life now, and so far, I don't see it going away.
+</p><p>A month or so ago, I got a friendly private message from Unit193, saying 
+he had converted the package to the dh style, and also packaged the 
+newer version. They wanted to know if they should clean this up into 
+something high-enough quality to land in Debian.
+</p><p>(In Debian, we have a common situation where enthusiastic users update 
+or create a new package, and aren't yet Debian Developers, so they don't 
+have permission to upload that directly to the "Debian archive", which 
+is the Debian equivalent of git master. Package "sponsorship" is how we 
+handle that -- a Debian Developer reviews the package, makes sure it is 
+of high quality, and uploads it to the Debian archive along with the 
+Debian Developer's OpenPGP signature, so the archive processing tools 
+know to trust it.)
+</p><p>On Friday evening, I had a spare moment, so I sent a private message to 
+Unit193 apologizing for not getting back to them in a reasonable amount 
+of time. Having another person help maintain is a pretty exciting 
+prospect, and I wanted to treat that enthusiasm with the respect it 
+deserves, or at least apologize when I haven't. I was surprised to see a 
+reply within a few minutes. At that point, I thought: I wasn't 
+<i>planning</i> on doing any package review this weekend, but if they're 
+online and I'm online... might as well!
+</p>
+<h3 id="w_package-review-with-automation">Package review, with automation</h3>
+<p>Unit193 and I popped into ##alpine on irc.freenode.net, and I started 
+reading through their packaging changes, asking questions. As I asked 
+questions, I wondered -- how will I know if they are going to fix the 
+issues I'm raising?
+</p><p>Luckily, Unit193 wanted to use git to track the packaging, and we 
+settled on using git-buildpackage, a tool that was fairly new to both of 
+us. I thought, I might as well have some executable documentation so I 
+don't forget how to use it. ("Executable documentation" is Asheesh-speak 
+for a shell script.)
+</p><p>One thing I knew was that I'd have to test the package in a pbuilder, or 
+other pristine build environment. But all I had on me at the moment was 
+my work laptop, which didn't have one set up. Then I had a bright idea:
+I could use <a href="https://travis-ci.org/">Travis-CI</a>, a public continuous
+integration service, to check Unit193's packaging. If I had any
+concerns, I could add them to the shell script and then point at the
+build log and say, "This needs to be fixed." Then there would be great
+clarity about the problems.
+</p><p>Some wonderful things about Travis-CI:
+</p>
+<ul><li> They give you root access on an Ubuntu Precise (10.04) virtual machine.
+</li><li> Their build hosts are well-connected to the Internet, which means fast downloads in e.g. pbuilder.
+</li><li> They will let you run a build for up to 50 minutes, for free.
+</li><li> Build just means "command" or "set of commands," so you can just write a shell script and they will run it.
+</li><li> Travis-CI will watch a github.com repository, if you like. This means you can 'git commit --allow-empty' then 'git push' and ask it to re-run your script.
+</li></ul>
+<p>Since Unit193's packaging was in git (but not on github), I created a 
+git repo containing the same contents, where I would experiment with 
+fixes for packaging problems I found. It'd be up to Unit193 to fix the 
+problems in the Alioth packaging. This way, I would be providing advice, 
+and Unit193 would have an opportunity to ask questions, so it would be more
+like mentorship and less like me fixing things.
+</p><p>We did a few rounds of feedback this way, and got the packaging to higher
+and higher quality. Every time Unit193 made a fix and pushed it, I would
+re-run the auto-build, and see if the problems I spotted had gone away.
+</p><p>While the auto-build runs, I can focus on conversing with my mentee 
+about problems or just generally chatting. Chatting is valuable 
+community-building! It's extremely nice that I can do that while waiting 
+on the build, knowing that I don't have to read it carefully -- I can 
+just wait a few minutes, then see if it's done, and see if it's red or 
+green. Having the mentee around while I'm reviewing it means that I can 
+use the time I'm waiting on builds as fun free software social time. 
+(Contrast this with asynchronous review, where, all alone, I would wait 
+for a build to finish, then write up an email at the end of it all.)
+</p><p>This kind of mentorship + chatting was spread out over Friday night, 
+Saturday night, and Sunday morning. By the end of it, we had a superb 
+package that I'm excited to sign and push into Debian when I'm next near 
+my OpenPGP key.
+</p>
+<h2 id="w_implementation-details">Implementation details</h2>
+<p>You can see the final shell script here:
+</p>
+<ul><li> <a href="https://github.com/paulproteus/travis-debcheck/blob/master/do.sh">do.sh</a>
+</li></ul>
+<p>And you can see the various builds here:
+</p>
+<ul><li> <a href="https://travis-ci.org/paulproteus/travis-debcheck/builds">builds</a>
+</li></ul>
+<p>The shell script:
+</p>
+<ul><li> Alternates between the Alioth packaging vs. my fork of it. (This way, I can test packaging changes/suggestions.)
+</li><li> Disables ccache in pbuilder, due to a permissions problem with ccache/pbuilder/travis-ci, and I didn't need ccache anyway.
+</li><li> Handles 'git dch' slightly wrong. I need to figure that out.
+</li><li> Optionally passes --git-ignore-new to git-buildpackage, which was required initially, but should not be required by the time the package is ready. (This is an example of a thing I might forget to remark upon to my mentee.)
+</li><li> Plays games with git branches so that git-buildpackage on Travis-CI can find the pristine-tar branch.
+</li><li> Tries to use cdn.debian.net as its mirror, but on Saturday ran into problems with whicever mirror that is, so it falls back to mirror.mit.edu in case that fails.
+</li><li> Contains a GPG homedir, and imports the Debian archive key, so that it can get past Ubuntu-Debian pbuilder trust issues.
+</li></ul>
+<p>I also had a local shell script that would run, effectively:
+</p>
+<ul><li> git commit --allow-empty -m 'Trigger build'
+</li><li> git push
+</li></ul>
+<p>This was needed since I was basically using Travis-CI as remote shell 
+service -- moreover, the scripts Travis-CI runs are in a different repo 
+(<a href="https://github.com/paulproteus/travis-debcheck">travis-debcheck</a>)
+than the software I'm actually testing (<a href="http://anonscm.debian.org/gitweb/?p=collab-maint/alpine.git">collab-maint/alpine.git</a>).
+</p><p>Unit193 and I had a technical disagreement at one point, and I realized 
+that rather than discuss it, I could just ask Travis-CI to test which 
+one of us was right. At one point in the revisions, the binary package 
+build failed to build on Precise Pangolin (the Ubuntu release that the 
+Travis-CI worker is running), and Unit193 said that it was probably due 
+to a problem with building on Ubuntu. So I added a configuration option 
+to build just the <i>source package</i> in Ubuntu, keeping the <i>binary package</i> test-build within the Debian sid pbuilder, although I believed 
+that there was actually a problem with the packaging. This way, I could 
+modify the script so that I could demonstrate the problem could be 
+reproduced in a sid pbuilder. Of course, by the time I got that far, 
+Unit193 had figured out that it was indeed a packaging bug.
+</p><p>I also created an option to SKIP_PBUILDER; initially, I wanted to get 
+quick automated feedback on the quality of the source package without 
+waiting for pbuilder to create the chroot and for the test build to 
+happen.
+</p><p>You might notice that the script is not very secure -- Niels Thykier 
+already did! That's fine by me; it's only Travis-CI's machines that 
+could be worsened by that insecurity, and really, they already gave me a 
+root shell with no password. (This might sound dismissive of Travis-CI 
+-- I don't mean it to be! I just mean that their security model already 
+presumably involves throwing away the environment in which my code is 
+executing, and I enjoy taking advantage of that.)
+</p><p>Since the Travis virtual machine is Ubuntu, and we want to run the 
+latest version of lintian (a Debian packaging "lint" checker), we run 
+lintian within the Debian sid pbuilder. To do that, I use the glorious 
+"B90lintian" sample pbuilder hook script, which comes bundled with 
+pbuilder in /usr/share/doc/pbuilder/.
+</p><p>The full build, which includes creating a sid pbuilder from scratch, 
+takes merely 7-10 minutes. I personally find this kind of shockingly 
+speedy -- in 2005, when I first got involved, doing a pbuilder build 
+seemed like it would take forever. Now, a random free shell service on 
+the Internet will create a pbuilder, and do a test build within it, in 
+about 5 minutes.
+</p>
+<h3 id="w_package-review-without-automation">Package review, without automation</h3>
+<p>I've done package review for other mentees in the past. I tend to do it 
+in a very bursty fashion -- one weekend day or one weeknight I decide 
+sure, it's a good day to read Debian packages and provide feedback.
+</p><p>Usually we do it asynchronously on the following protocol:
+</p>
+<ol><li> I dig up an email from someone who needed review.
+</li><li> I read through the packaging files, doing a variety of checks as they occur to me.
+</li><li> If I find problems, I write an email about them to the mentee. If not, success! I sign and upload the package.
+</li></ol>
+<p>There are some problems with the above:
+</p>
+<ul><li> The burstiness means that if someone fixes the issues, I might not have time to re-review for another month or longer.
+</li><li> The absence of an exhaustive list of things to look for means that I could fail to provide that feedback in the first round of review, leading to a longer wait time.
+</li><li> The person receiving the email might not understand my comments, which could interact really badly with the burstiness.
+</li></ul>
+<p>I did this for Simon Fondrie-Teitler's python-pypump package recently. 
+We followed the above protocol. I wrote a long email to Simon, where I 
+remarked on various good and bad points of the packaging. It was part 
+commentary, part terminal transcript -- I use the terminal transcripts 
+to explain what I mean. This is part of the email I sent:
+</p>
+<pre>
+I got an error in the man page generation phase -- because at 
+build-time, I don't have requests-oauthlib:
+
+make[2]: Leaving directory `/tmp/python-pypump-0.5-1+dfsg/docs'
+help2man --no-info \
+	-n 'sets up an environment and oauth tokens and allows for interactive testing' \
+        --version-string=0.5.1 /tmp/python-pypump-0.5-1+dfsg/pypump-shell &gt; /tmp/python-pypump-0.5-1+dfsg/debian/pypump-shell.1
+help2man: can't get `--help' info from /tmp/python-pypump-0.5-1+dfsg/pypump-shell
+Try `--no-discard-stderr' if option outputs to stderr
+make[1]: *** [override_dh_auto_build] Error 1
+
+This seems to be because:
+
+➜  python-pypump-0.5-1+dfsg  ./pypump-shell 
+Traceback (most recent call last):
+  File "./pypump-shell", line 26, in &lt;module&gt;
+    from pypump import PyPump, Client
+  File "/tmp/python-pypump-0.5-1+dfsg/pypump/__init__.py", line 19, in &lt;module&gt;
+    from pypump.pypump import PyPump, WebPump
+  File "/tmp/python-pypump-0.5-1+dfsg/pypump/pypump.py", line 28, in &lt;module&gt;
+    from six.moves.urllib import parse
+ImportError: No module named urllib
+
+$ ./pypump-shell 
+Traceback (most recent call last):
+  File "./pypump-shell", line 26, in &lt;module&gt;
+    from pypump import PyPump, Client
+  File "/tmp/python-pypump-0.5-1+dfsg/pypump/__init__.py", line 19, in &lt;module&gt;
+    from pypump.pypump import PyPump, WebPump
+  File "/tmp/python-pypump-0.5-1+dfsg/pypump/pypump.py", line 29, in &lt;module&gt;
+    from requests_oauthlib import OAuth1
+ImportError: No module named requests_oauthlib
+</pre>
+<p>The deeper problem was a missing build-dependency, and I explained that 
+in my email. But the <i>meta</i> problem is that Simon didn't try building 
+this in a pbuilder, or otherwise clean build environment.
+</p><p>Simon fixed these problems, and submitted a fresh package to 
+<a href="http://notes.pault.ag/">Paul Tagliamonte</a> and myself. It happened to 
+have some typos in the names of the new build dependencies. Paul 
+reviewed the fixed package, noticed the typos, fixed them, and uploaded 
+it. Simon had forgotten to do a test build the second time, too, which 
+is an understandable human failure. There was a two-day delay between 
+Simon's fixed resubmission, and Paul signing+uploading the fixed result.
+</p><p>In a pedagogical sense, there's something disappointing about that 
+exchange for me: Paul fixed an error Simon introduced, so we're not 
+teaching Simon to take total responsibility for his packages in Debian, 
+nor to understand the Debian system as well as he could. (Luckily, I 
+think Simon already understands the importance of taking responsibility! 
+In this case, it's just a hypothetical in this case.)
+</p>
+<h3 id="w_for-the-future">For the future</h3>
+<p>The next time I review a package, I'm going to try to do something 
+similar to my Travis-CI hack. It would be nice to have the do.sh script 
+be a little more abstract; I imagine that as I try to use it for a 
+different package, I'll discover the right abstractions.
+</p><p>I'd love it if Travis-CI did not require the git repositories to be on 
+GitHub. I'd also like if the .travis.yml file could be in a different 
+path. If so, we could create debian/travis-configuration (or something) 
+and keep the packaging files nice and separate from the upstream source.
+</p><p>I'd also love to hear about other people's feedback. Are you doing 
+something similar? Do you want to be? Would you have done some of this 
+differently? Leave a comment here, or ping me (paulproteus) on #debian-mentors
+on irc.debian.org (aka irc.oftc.net).
+</p><p>I'll leave you with some conversation from #debian-mentors:
+</p>
+<pre>
+&lt;paulproteus&gt; The automation here, I think, is really interesting.
+&lt;paulproteus&gt; What I really want is for mentees to show up to me and say "Here is my package + build log with pbuilder, can you sponsor it please?"
+&lt;Unit193&gt; Oooooh!
+-*- Unit193 gets ideas.
+&lt;paulproteus&gt; Although the irony is that I actually like the community-building and relationship-building nature of having these things be conversations.
+&lt;bremner&gt; how will this brave new world cope with licensing issues?
+&lt;paulproteus&gt; bremner: It's not a replacement for actual review, just a tool-assist.
+&lt;paulproteus&gt; bremner: You might be relieved to know that much of Unit193's and my back and forth related to get-orig-source and licensing. (-:
+&lt;bremner&gt; I didn't doubt you&nbsp;;).
+&lt;paulproteus&gt; If necessary I can just be a highly productive reviewer, but I would prefer to figure out some way that I can get other non-paulproteus people to get a similar assist.
+&lt;paulproteus&gt; I think the current blocker is "omg travis why are you bound to githubbbbbbbb" which is a reasonable concern.
+</pre>
+
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/debian/tool-assist.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Thu, 26 Dec 2013</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/eventbrite.html">New job (what running Debian means to me)
+</a>
+       </h1>
+		<p>Five weeks ago, I started a new job (Security Engineer, Eventbrite). I accepted the offer on a Friday evening at about 5:30 PM. That evening, my new boss and I traded emails to help me figure 
+out what kind of computer I'd like. Time was of the essence because my start date was very next day, Tuesday.
+</p><p>I wrote about how I value pixel count, and then RAM, and then a speedy disk, and
+then a speedy CPU. I named a few ThinkPad models that could be good, and with advice
+from the inimitable <a href="https://launchpad.net/~jared-dominguez">danjared</a>,
+I pointed out that some Dell laptops come pre-installed with Ubuntu (which I could
+easily swap out for Debian).
+</p><p>On Monday, my boss replied. Given the options that the IT department supports, he picked out the best one by my metrics: a MacBook Pro.
+The IT department would set up the company-mandated full-disk encryption and anti-virus scanning. If I
+wanted to run Linux, I could set up BootCamp or a virtualization solution.
+</p><p>As I read the email, my heart nearly stopped. I just <i>couldn't</i> see myself using a Mac.
+</p><p>I thought about it. Does it really matter to me enough to call up my boss and undo an IT request
+that is already in the works, backpedaling on what I claimed was important to me, opting for
+brand anti-loyalty to Apple over hardware speed?
+</p><p><i>Yes,</i> I thought to myself. <i>I am willing to just not work there if I have to use a Mac.</i>
+</p><p>So I called $BOSS, and I asked, "What can we do to not get me a Mac?" It all worked out fine;
+I use a ThinkPad X1 Carbon running Debian for work now, and it absolutely does everything I need.
+It does have a slower CPU, fewer pixels, and less RAM, and I am the only person in the San
+Francisco engineering office not running Mac OS. But it all works.
+</p><p>In the process, I thought it made sense to write up some text to $BOSS. Here is how it goes.
+</p>
+<blockquote>
+Hi $BOSS,<br /><br />
+                                                                                                                                                                                                          
+Thanks for hearing my concerns about having a Mac. It would basically be a fairly serious blow to my self image. It's possible I could rationalize it, but it would take a long time, and I'm not 
+sure it would work.
+                                                                                                                                                                                                          
+<br /><br />I don't at all need to start work using the computer I'm going to be using for the weeks afterward. I'm OK with using something temporarily that is whatever is available, Mac or non-Mac; I could 
+happily borrow something out of the equipment closet in the short term if there are plans in the works to replace it with something else that makes me productive in the long term.
+                                                                                                                                                                                                          
+<br /><br />For full-disk encryption, there are great solutions for this on Linux.
+                                                                                                                                                                                                          
+<br /><br />For anti-virus, it seems Symantec AV is available for Linux &lt;http://www.symantec.com/business/support/index?page=content&id=HOWTO17995&gt;.
+                                                                                                                                                                                                          
+                                                                                                                                                                                                          
+<br /><br />It sounds like Apple and possibly Lenovo are the only brands that are available through the IT department, but it is worth mentioning that Dell sells perfectly great laptops with Linux 
+pre-installed, such as the XPS 13. I would perfectly happily use that.
+                                                                                                                                                                                                          
+<br /><br />If getting me more RAM is the priority, and the T440s is a bad fit for $COMPANY, then the Lenovo X230 would be a great option, and is noticeably less expensive, and it fits 16GB of RAM.
+                                                                                                                                                                                                          
+<br /><br />BootCamp and the like are theoretical possibilities on Macs, but one worry I have is that if there were a configuration issue, it might not be worth me spending work time to have me fix my 
+environment, but instead I would be encouraged for efficiency to use Mac OS, which is well-tested on Apple hardware, and then I would basically hate using my computer, which is a strong emotion, 
+but basically how I would feel.
+                                                                                                                                                                                                          
+<br /><br />Another issue (less technical) is that if I took my work machine to the kinds of conferences that I go to, like Debconf, I would find myself in the extremely uncomfortable position of 
+advertising for Apple. I am pretty strongly unexcited about doing that.
+                                                                                                                                                                                                          
+<br /><br />Relating to the self-image issue is that it means a lot to me to sort of carry the open source community with me as I do my technical work, even if that technical work is not making more open 
+source software. Feeling part of this world that shares software, and Debian in particular where I have a strong feeling of attachment to the community, even while doing something different, is 
+part of what makes using computers fun for me. So it clashes with that to use Mac OS on my main machine, or to feel like I'm externally indistinguishable from people who don't care about this 
+sort of community.
+                                                                                                                                                                                                          
+<br /><br />I am unenthusiastic about making your life harder and looking like a prima donna with my possibly obscure requirements.
+                                                                                                                                                                                                          
+<br /><br />I am, however, excited to contribute to $COMPANY!
+                                                                                                                                                                                                          
+<br /><br />I hope that helps! Probably nothing you couldn't have guessed in here, but I thought it was worth spelling some of that out. Happy to talk more.
+                                                                                                                                                                                                          
+<br /><br />-- Asheesh.
+</blockquote>
+
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/debian/eventbrite.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Mon, 13 Aug 2012</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/excellent-nurses-and-doctors.html">Zooming in
+</a>
+       </h1>
+		<blockquote>
+She zoomed in on the git commits to check that the new contributors
+were thanked properly.
+She was not looking for bad programmers or bad community managers.
+She was looking for the kinds of misses that even excellent programmers
+and community managers can make under pressure.
+</blockquote>
+<p>A mis-quote of
+"<a href="http://www.newyorker.com/reporting/2012/08/13/120813fa_fact_gawande">Can Hospital Chains Improve the Medical Industry?</a>".
+</p><p><br />
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/debian/excellent-nurses-and-doctors.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sat, 18 Feb 2012</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/venk-bike-ride.html">Help a BSD developer bike across the US, and give hope to cancer communities</a>
+       </h1>
+		
+<style type="text/css">
+@import "/pub/special-css/venk.css";
+</style>
+<div class="top-spacing" style="padding-left: 1em;">
+<div class="huge" style="width: 500px;">
+'Cancer' is a cluster of diseases, a betrayal by the majesty and power of the development program that constructed and heals us.
+</div>
+<div class="huge" style="width: 500px; text-align: right;">
+<img src="http://4kforcancer.org/wp-content/uploads/formidable/IMG_0302-150x150.jpg" style="border: dashed;">
+</div>
+<div style="width: 500px; font-size: 1.5em;">
+<a href="http://4kforcancer.org/profiles/venkatesh-srinivas/">Support</a> Venkatesh's bike ride, and alleviate the toll of cancer.
+</div>
+</div>
+<p>My friend Venkatesh, pictured above, is going to bike four thousand miles, all the way across the continental US, from Baltimore to Portland. He's doing it to raise money for the Ulman Cancer Fund for Young Adults. I'm writing this because I want you to <a href="http://4kforcancer.org/profiles/venkatesh-srinivas/">donate money to his cause</a>. He's a DragonFly BSD developer, loves bikes, and your donation could make a big difference.</p>
+<p>I first met Venkatesh through the Johns Hopkins computer club, an <a href="http://acm.jhu.edu/">ACM chapter</a>. I was the head of the club, and he had just started his career at Hopkins. He was looking for advice on running <a href="http://brickwiki.org/wiki/Main_Page">Brickwiki</a>, the LEGO encyclopedia. Quickly, I became his friend; in that time, I've learned the following things about him.</p>
+<ul>
+<li>He is friendly!</li>
+<li>He believes in science; beyond just writing <a href="http://ops101.org/">sharp code</a>, he likes to <a href="http://lists.freebsd.org/pipermail/freebsd-hackers/2010-December/033864.html">ask</a> <a href="http://leaf.dragonflybsd.org/mailarchive/kernel/2011-03/msg00016.html">questions</a>.</li>
+<li>He is melodramatically attracted to the power and complexity of biology. (The above quote about cancer are his words.)</li>
+<li>He wants to do something to make cancer less of a killer.</li>
+</ul>
+<p>In the years since I graduated from Hopkins, I've been impressed by Venkatesh's ongoing curiosity and contributions to open source projects like DragonFly. I'm honored to have this chance to help him bike across the country for a good cause.</p>
+<p>Here is a quick word about the <a href="http://4kforcancer.org/">4K for cancer</a> effort:</p>
+<blockquote>
+<p>Since 2002, groups of college students have undertaken a 70 day,  4000+ mile summer bike ride across the United States with the goal of  offering hope, inspiration and support to cancer communities along the  way.</p>
+<p>This past summer was our 10th year of cycling across the country as  76 volunteers rode along three different routes:  Baltimore to San  Francisco, Baltimore to Portland, and Baltimore to Seattle.  Our riders  raised a combined $476,000 to support organizations and individuals in  the fight against cancer.
+</p>
+</blockquote>
+<p>His fundraising goal is $5,000. Anything from $5 to $500 is a donation to an organization that helps young adult cancer surviers and their families get access to information and support resources. <a href="http://4kforcancer.org/profiles/venkatesh-srinivas/">Can you help</a>? </p>
+
+
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/debian/venk-bike-ride.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Mon, 26 Dec 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/short-key-ids-are-bad-news.html">Short key IDs are bad news (with OpenPGP and GNU Privacy Guard)
+</a>
+       </h1>
+		<p><b>Summary</b>: It is important that we (the Debian community that relies on OpenPGP through
+GNU Privacy Guard) stop using short key IDs. There is no vulnerability in OpenPGP and GPG.
+However, using short key IDs (like 0x70096AD1) is
+fundementally insecure; it is easy to generate collisions for short key IDs.
+We should <i>always use 64-bit</i> (or longer) key IDs, like: 0x37E1C17570096AD1
+or 0xEC4B033C70096AD1.
+</p><p><b>TL;DR</b>: This now gives two results: <tt>gpg --recv-key 70096AD1</tt>
+</p>
+<h3 id="w_some-background-and-my-two-keys">Some background, and my two keys</h3>
+<p>Years ago, I read
+<a href="http://www.debian-administration.org/users/dkg/weblog/48">dkg's instructions</a>
+on migrating the Debian OpenPGP infrastructure. It told me that the time and
+effort I had spent getting my key into the strong set wasn't as useful as I
+thought it had been.
+</p><p>I felt deflated. I had put in quite a bit of effort over the years to strongly-connect my
+key to a variety of signatures, and I had helped people get their own keys into
+the strong set this way. If I migrated off my old key and revoked it, I'd be abandoning some
+people for whom I was their only link into the strong set. And what fun it was
+to first become part of the strong set! And all the eyebrows I raised when I told
+people I was going meet up with people I met on a website called
+<a href="http://www.biglumber.com/">Biglumber</a>... I even made it my
+<a href="https://www.facebook.com/0x70096AD1">Facebook.com user ID</a>. So if I had to generate a
+new key, I decided I had better really love the short key ID.
+</p><p>But at that point,
+I already felt pretty attached to the number 0x70096AD1. And I couldn't come up with
+anything better. So that settled it: no key upgrade
+until I had a new key whose ID is the same as my old key.
+</p><p>That dream has become a reality. Search for my old key ID, and you get two keys!
+<pre>$ gpg --keyserver pgp.mit.edu --recv-key 0x70096AD1
+gpg: requesting key 70096AD1 from hkp server pgp.mit.edu
+gpg: key 70096AD1: public key "Asheesh Laroia &lt;asheesh@asheesh.org&gt;" imported
+gpg: key 70096AD1: public key "Asheesh Laroia &lt;asheesh@asheesh.org&gt;" imported
+gpg: no ultimately trusted keys found
+gpg: Total number processed: 2
+gpg:               imported: 2  (RSA: 1)
+</pre>
+<p>I also saw it as an opportunity: I know that cryptography tools are tragically easy
+to mis-use. The use of 32-bit key IDs is fundamentally incorrect -- too little entropy.
+Maybe shocking people by creating two "identical" keys will help speed the transition
+away from this mis-use.
+</p>
+<h3 id="w_a-neat-stunt-abusing-refresh-keys">A neat stunt abusing --refresh-keys</h3>
+<p>Thanks to a GNU Privacy Guard bug, it is super easy to get my
+new key. Let's say that, like many people, you only have my old key
+on your workstation:
+<pre>$ gpg --list-keys | grep 70096AD1
+pub   1024D/70096AD1 2005-12-28
+</pre>
+<p>Just ask GPG to refresh:
+<pre>$ gpg --keyserver pgp.mit.edu --refresh-keys
+gpg: refreshing 1 key from hkp://pgp.mit.edu
+gpg: requesting key 70096AD1 from hkp server pgp.mit.edu
+gpg: key 70096AD1: public key "Asheesh Laroia &lt;asheesh@asheesh.org&gt;" imported
+gpg: key 70096AD1: "Asheesh Laroia &lt;asheesh@asheesh.org&gt;" not changed
+gpg: Total number processed: 2
+gpg:               imported: 1  (RSA: 1)
+gpg:              unchanged: 1
+gpg: no ultimately trusted keys found
+</pre>
+<p>You can see that it set out to refresh just 1 key. It did that by querying
+the keyserver for the <i>short ID</i>. The keyserver provided two hits for that
+query. In the end, GPG refreshes one key and actually <i>imports</i> a new key
+into the keyring!
+</p><p>Now you have two:
+<pre>$ gpg --list-keys | grep 70096AD1
+pub   1024D/70096AD1 2005-12-28
+pub   4096R/70096AD1 2011-03-11
+</pre>
+<p>There is a
+<a href="https://bugs.g10code.com/gnupg/issue1340">bug</a> filed in GNU Privacy Guard about this.
+It has a patch attached. There is, at the moment, no plan for a new release.
+</p>
+<h3 id="w_a-faster-attack-but-nothing-truly-new">A faster attack, but nothing truly new</h3>
+<p>My friend <a href="http://endeavour.zapto.org">Venkatesh</a> tells me there is an apocryphal old Perl script that
+could be used to generate key ID collisions.
+Here in the twenty-first century, l33t h4x0rz like Georgi Guninski are
+<a href="http://seclists.org/fulldisclosure/2011/Sep/207">trying to create collisions</a>.
+</p><p>In May 2010, "halfdog" posted a note to the full-disclosure list that generates PGP keys 
+with chosen short key IDs. I haven't benchmarked or tested that tool, but I have used a 
+different tool (private for now) that can generate collisions in a similar fashion.
+It takes about 3 hours to loop through all key IDs on a dinky little netbook.
+</p><p>You don't have to use any of these tools. You can just rent time on an elastic
+computing service or a botnet, or your own personal computer, and generate keys
+until you have a match.
+</p><p>I think that it's easy to under-estimate the seriousness of this problem: tools
+like the <a href="http://pgp.cs.uu.nl/">PGP Key Pathfinder</a> should be updated to only
+accept 64-bit (or longer) key IDs if we want to trust their output.
+</p>
+<h3 id="w_my-offer-i-will-make-you-a-key">My offer: I will make you a key</h3>
+<p>I've been spending some time wondering: What sort of exciting demonstration
+can I create to highlight that this is a real problem? Some ideas I've had:
+</p>
+<ul><li> Publish a private/public key pair whose key ID is the same as Phil Zimmerman's, original author of PGP
+</li><li> Publish a private/public key pair whose key ID is the same as Werner Koch's, maintainer of GNU Privacy Guard
+</li><li> Publish a set of public keys that mimic the entire PGP strong set, except where I control the private key of all these keys
+</li></ul>
+<p>The last one would be extremely amusing, and would be a
+hat-tip to some work discussed in Raph Levien's 
+<a href="http://video.google.com/videoplay?docid=-5092930485716426869">Google Tech Talk about Advogato</a>.
+</p><p>For now, here is my offer: If you send me a request signed with a key in the strong
+set, I will create a 4096-bit RSA public/private key pair whose 32-bit key ID is <i>one greater</i>
+than yours. So if you are 0x517DD4E4 I will generate 0x517DD4E5.
+</p><p>I will post the keys here, along a note about who requested it, and instructions on how
+to import them into your keyring. (Note: I will politely decline to create a new key whose 32-bit key ID would create a collision; 
+apologies if your key ID is just one away from someone else's.)
+</p><p>P.S. The prize for best sarcastic retort goes to Ian Jackson. He said, "I should go and create a lot of keys with your key ID. I'll set the real name to 'Not Asheesh Laroia' so everyone is totally clear about what is going on."
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/debian/short-key-ids-are-bad-news.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sun, 27 Nov 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/oot-killer.html">The OOT Killer
+</a>
+       </h1>
+		<p>Commitments require care, and recently I have been suffering from the delusion
+that making more commitments will make me more able to achieve them.
+</p><p>When overcommit reaches a certain point, the OOT (out of time) killer comes and
+reaps time from whatever it finds, often with disappointing consequences.
+</p><p>(See also: <a href="http://linux-mm.org/OOM_Killer">OOM Killer</a>.)
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/debian/oot-killer.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sun, 23 Oct 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/rfbp.html">RFBP: Request for birthday present/package
+</a>
+       </h1>
+		<p>There is a program that I love: <tt>bb</tt>.
+</p><p><tt>bb</tt> is a demo of the famous ASCII Art library, aalib.
+</p>
+<center><pre>     dT8  8Tb     
+    dT 8  8 Tb    
+   dT  8  8  Tb   
+&lt;PROJECT&gt;&lt;PROJECT&gt;
+ dT    8  8    Tb 
+dT     8  8     Tb
+</pre>
+</center>
+
+<tt>bb</tt> is a demo-scene-type program that shows how <em>awesome</em>
+automatic ASCII art is. The personalities of the people who made <tt>bb</tt>
+shine through. It's surely one of my favorite programs in Debian, up there
+with alpine. It's been in Debian since 1998.
+
+<p><tt>bb</tt> has a serious bug, however:
+<a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=123150">BB's "graphics" freeze when music starts</a>.</p>
+<p>Here's the issue.
+</p>
+<ul><li> <tt>bb</tt> uses libmikmod to play sound.
+</li><li> Back in the twentieth century, many of us thought it would be cool to have applications play sound through a system service called <a href="http://www.tux.org/~ricdude/EsounD.html">EsounD</a>. To enable that, the libmikmod maintainers added the ability for libmikmod to send audio to that daemon.
+</li><li> libmikmod detects if your system uses esound, and if so, sends sound there by default.
+</li><li> libmikmod's esound support is broken, and <tt>bb</tt> half-crashes (as per #123150) when it gets used.
+</li><li> Today, nearly everyone's sound output goes through pulseaudio, which supports ALSA as well as the old esound protocol for backwards-compatibility.
+</li></ul>
+<p>So if your system (like most GNU/Linux systems) uses pulseaudio for sound, then
+<tt>bb</tt> is broken. That means every Ubuntu user and most desktop Debian users can't use it.</p>
+<p>There are a few possible fixes, depending on where you'd want to solve the problem. If you just
+want bb to run on your own machine, without recompiling anything, you can adjust pulseaudio's configuration
+(in /etc/pulse/default.pa) to disable esound support. If you want to do that, just comment out this line:</p>
+<pre> load-module module-esound-protocol-unix</pre>
+<p>We could also possibly patch <tt>bb</tt> so that it asks libmikmod not to use its esound "support."</p>
+<p>I think the smarter thing to do is to adjust libmikmod. Since its esound support seems to be just plain broken,
+it should be removed. At very least, it should not be the default when ALSA output is available. There
+<i>is</i> a new upstream release of libmikmod, maybe the esound output is fixed.</p>
+<p>In Debian, libmikmod is
+<a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=628162">orphaned</a>.
+When a package is orphaned,
+it means that a new person must step in and <i>adopt</i> the package.
+Debian packages need ongoing care
+and commitment to fix issues and make changes like this that benefit the users.</p>
+<p>In this case, you'd need to understand some C and be willing to maintain a shared library.
+Maintaining a library in Debian requires attention to detail, but it is quite doable. Since you would be adopting an existing package, most of the work is already done for you.
+I would also be quite willing to answer questions. If you're not a Debian developer, I would happily sponsor uploads of this package
+into Debian so that the fixes are part of the distribution.</p>
+<p>So: who will maintain libmikmod and fix <tt>bb</tt>? Could it be you?</p>
+<p>It would make a <a href="http://www.asheesh.org/note/event/2011-bday.html">really great birthday present</a>
+if the amazing <tt>bb</tt> program worked in the next Debian release. Leave a comment if you
+have questions or are interested!</p>
+<p>P.S. In a pinch, I can be convinced to maintain libmikmod myself, but I think this is a great opportunity for someone new to Debian to make a big difference.</p>
+
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/debian/rfbp.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Fri, 02 Sep 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/sep-2011-bsp.html">Debian bug squashing party at SIPB, MIT</a>
+       </h1>
+		
+<p style="width: 600; text-align: right;"><img src="http://www.asheesh.org/pub/image/debian-bsp/arthur.jpg" width="600" height="125" /><br />
+(Photo credit: Obey Arthur Liu; <span old_href="https://picasaweb.google.com/lh/photo/rojWvmxk2BAOxrNijtzE4fl-7_ynySStRGVX0SVR8xY">originally on Picasa</span>, <a href="http://creativecommons.org/licenses/by-sa/3.0/">license</a>.)
+</p>
+<p>Three weekends ago, I participated in a <a href="http://www.debian.org/events/2011/0821-debub-bsp">Debian bug squashing party</a>. It was more fun than I had guessed!</p>
+<p>The event worked: we squashed bugs. Geoffrey Thomas (geofft) organized it as an event for MIT's student computing group, SIPB. In this post, I'll review the good parts and the bad. I'll conclude with beaming photos of my two mentees and talk about the bugs they fixed.</p>
+<p>So, the good:</p>
+<ul><li><strong>Attendance</strong>. As <a href="https://luke.faraone.cc/">Luke</a> put it, when he arrived, there was hardly anyone there.  “Then people showed up! And then mentorship and pedagogy happened!” In all, 14 people attended, seven of whom are active in Debian or its derivatives (Ubuntu, Debathena).</li>
+<li><strong>We took photos</strong>. Arthur took a wide panoramic photo, and I snapped a few good ones, too. (Thanks to Jessica McKellar for letting me borrow her camera.) Here's my <a href="http://www.flickr.com/photos/paulproteus/sets/72157627510089068/with/6076878743/">full photo set</a>.</li>
+<li><strong>Good, free pizza</strong>. Props to geofft for ordering from <a href="http://beautys-pizza.com/">Beauty's</a>, and props to SIPB for picking up the tab.</li>
+<li><strong>We fixed bugs</strong>! I mentored two new Debian contributors through their first release-critical bug fix. Both of them said they would attend similar events in the future. One of my mentees is now idling and asking questions in the #debian-mentors IRC channel.</li>
+<li><strong>The Debian Events team republished the event</strong>. MadameZou <a href="http://www.debian.org/events/2011/0821-debub-bsp">posted</a> the event to debian.org, giving it a nice stable URL.</li>
+<li><strong>geofft made a good list of bugs to work on</strong>. He worked from the release-critical bug list, categorized the bugs by expected difficulty, and made somee short notes about how to fix the bug. This turned out quite useful.</li>
+<li><strong>People printed music to the speakers</strong>. If this sounds weird, you should read the <a href="http://sipb.mit.edu/doc/using-sipbmp3/">SIPB documentation for how to use Gutenbach</a> (written by <a href="http://lizdenys.com/">Liz Denys</a>).</li>
+<li><strong>We had a good ratio of developers to newcomers</strong>. This was hugely helpful; from what I saw, new people rarely waited very long for their questions to be answered. Thanks to Luke Faraone, Sam Hartman, Obey Arthur Liu, Karl Ramm, and Christine Spang from Debian, and Geoffrey Thomas from Debathena, for sharing knowledge.</li>
+</ul>
+<p>The event was a success, but as always, there are some things that could have gone more smoothly. Here's that list:</p>
+<ul><li><strong>We hadn't prepared for people to do Debian development on Ubuntu</strong>. In particular, it took Luke and me about half an hour to come up with a pbuilder command line that worked.</li>
+<li><strong>We didn't contribute to Ubuntu, just Debian</strong>. I actually think this is fine, but geofft did originally <a href="http://www.debian.org/events/2011/0821-debub-bsp">want people to work on both</a>. He was disappointed, and we could have managed to do that if we had done more prep.</li>
+<li><strong>We could have reached more prospective attendees</strong>. I know earlier in the year, <a href="http://rhydd.org/">daf</a> organized a highly popular Debian packaging tutorial <a href="http://pika.mit.edu/">elsewhere on campus</a>. I didn't see any of those people at the event, and I think some would have attended if they had known about it.</li>
+<li><strong>Some people wanted a bit more context</strong>. In particular, attendees asked me about what makes a bug release-critical and what it means to do a non-maintainer upload. We could have taken some time to explain these to the whole group; instead, we dove right into hacking. Because we had so many mentors, I think people did get their questions answered, but we can't sustain that if the event grows in size.</li>
+<li><strong>Mentees didn't always get high-quality help</strong>. geofft suggested Jessica work on one bug, and when she had a question, she asked Luke Faraone. Luke wasn't familiar with the bug, and he skimmed it, not realizing that the bug changed issues midway through the bug log. As a result, his initial help was unhelpful. After Luke, Jessica, and the bug were on the same page (so to speak), Jessica received clear, sound answers to questions.</li>
+</ul>
+<p>Still, it turned out well! I did three NMUs, corresponding to three patches submitted for release-critical bugs by my two mentees. Those mentees were:</p>
+<p><img src="//asheesh.org/pub/image/debian-bsp/6076850459_b49d2fb456.jpg" width="500" height="281" alt="Jessica enjoying herself" /></p>
+<p><a href="http://jesstess.com/">Jessica McKellar</a> is a software engineer at <strike>Ksplice</strike> Oracle and a recent graduate of MIT's EECS program. She solved three release-critical bugs. This was her first direct contribution to Debian. In particular:</p>
+<ul>
+<li><a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?archive=no&bug=636201">#636201</a>:  While updating the package for multiarch support, the maintainer of  wildmidi presumably made a typo. A single character was missing from a  "Replaces:" declaration in debian/control. This bug caused upgrades to  fail. Sam Hartman uploaded an NMU based on a patch Jessica  prepared.</li>
+<li><a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=626420">#626420</a>: The scribus-doc package failed to build from source due to a missing build-depends entry. This one was super easy, and served as a good test package for setting up and using pbuilder.</li>
+<li><a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=565000">#565000</a>: The switch to 
+gcc-4.5 left hubbub unable to build from source due to new GCC warnings that made -Wall fail on the source, although it would succeed with earlier versions of the package. This led to long philosophical discussions about the particularly most reasonable fix: removing -Wall, or adding a more specific exception.</li>
+</ul>
+<p>Jessica has since gotten involved in the <a href="https://launchpad.net/~twisted-dev/+archive/ppa">Twisted project's personal package archive</a>. Toward the end of the sprint, she explained, "I like fixing bugs. I will totally come to the next bug squashing party."</p>
+<p><img height="500" width="281" alt="Noah grinning" src="//asheesh.org/pub/image/debian-bsp/6077392890_95567b4bd3.jpg" /></p>
+<p><a href="http://wiki.mako.cc/Noah_Swartz">Noah Swartz</a> is a recent graduate of Case Western Reserve University  where he studied Mathematics and played Magic. He is an intern at the MIT Media Lab where he contributes to <a href="http://www.media.mit.edu/resenv/doppellab/">DoppelLab</a> in Joe Paradiso's <a href="http://www.media.mit.edu/research/groups/responsive-environments">Responsive Environments</a> group. This was definitely his first direct contribution to Debian. It was also one of the most intense command-line experiences he has had so far. Noah wasn't originally planning to come, but we were having lunch together before the hackathon, and I convinced him to join us.</p>
+<p>Noah fixed <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=625177">#625177</a>, a fails-to-build-from-source (FTBFS) bug in nslint. The problem was that "-Wl" was instead written in all lowercase in the debian/rules file, as "-wl". Noah fixed that, making sure the package properly built in pbuilder, and then spent some quality time with lintian figuring out the right way to write a debian/changelog.</p>
+<p>That's a wrap! We'll hopefully have one again in a few months, and before that, I hope to write up a guide so that we run things even more smoothly next time.</p>
+
+
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/debian/sep-2011-bsp.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Wed, 17 Aug 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/openhatch-non-profit.html">OpenHatch round two: the non-profit
+</a>
+       </h1>
+		<p>For the past year or two, readers of asheesh.org (including those on
+Planet Debian) have been hearing on and off about OpenHatch, a project that
+<a href="http://www.asheesh.org/note/debian/move-to-atlanta.html">began in Atlanta</a>
+two summers ago.
+</p><p>The <a href="https://openhatch.org/">OpenHatch website</a> has been a place
+to find out how new contributors can get involved in free software.
+Lately, I've discovered how much
+<a href="http://www.asheesh.org/note/debian/why-outreach.html">fun</a>
+it is to help people get involved. I've also discovered oodles of
+<a href="http://opensource.com/life/10/11/introducing-students-world-open-source-day-1">enthusiasm</a> for learning
+more about joining an open source project.
+</p><p>So I've been transitioning OpenHatch to be more of a non-profit
+and to work on more of those outreach events,
+and particularly I've been transitioning my life to support me
+(self-funded) working on that effort full-time for a year. If there's
+one thing I learned while creating a startup under incubation, it
+was how to save money.
+</p><p>The OpenHatch blog has
+<a href="https://openhatch.org/blog/2011/openhatch-gains-full-time-project-lead-transitioning-into-a-non-profit/">the rest of the story</a>. Here's
+a taste:
+</p>
+<blockquote>
+I’m writing to announce three big changes for the project. First, 
+OpenHatch is changing its organizational structure to reflect our 
+not-for-profit goals. Second, we’ll emphasize our new work beyond 
+the website, building and promoting outreach events that bring 
+new people into the free software community. Finally, I am taking 
+a year to do that full-time as the project lead of OpenHatch in 
+Somerville, MA.
+</blockquote>
+<p>This change has been a long-time coming, and it's thanks to so many people
+who have given advice and feedback along the way. One special shout-out goes
+to <a href="http://www.ebb.org/bkuhn/">Bradley Kuhn</a>, who told me in March 2010 that
+OpenHatch should be a non-profit.
+</p><p>I hope you'll <a href="https://openhatch.org/blog/2011/openhatch-gains-full-time-project-lead-transitioning-into-a-non-profit/">read more</a>.
+</p><p><br />
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/debian/openhatch-non-profit.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sun, 07 Aug 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/accidentally-sexist.html">Women, men, and accidentally being a jerk (at the Desktop Summit)
+</a>
+       </h1>
+		<p>The first day of the Desktop Summit was yesterday, Saturday, August 6. I loved it and gave a presentation. There are two very different stories I can tell on the topic of gender equality in 
+free software. I'll start with the bad.
+</p>
+<hr />
+<p>It's pretty easy, in the U.S. at least, to get people of privilege to stop using terms that evoke centuries of oppression from slavery. It's harder to ask people to stop doing that to women. 
+I'm writing this post to ask for that.
+</p><p>There were two different times that people I generally respect used words that historically have been used to hurt and minimize women.
+</p><p><b>"Cygnus Solutions is prostitutes."</b> Dave Neary was delivering a talk (that I found impressively informative) called,
+"<a href="https://www.desktopsummit.org/program/sessions/cost-going-it-alone">The cost of going it alone</a>". When the talk covered the
+cost (in time and money) of getting your corporation's code into the community branch of an open-source project, he pointed out you could hire someone with the skills. Cygnus was the go-to 
+company for that in the 1990s; to explain that Cygnus does not care who they work for, he said the sentence in bold.
+</p><p><b>"The OpenSuSE Build Service is a slut."</b> I was at a party at a hackerspace last night. Someone who I admire for his work in free in free software, both technical and community, was joking with 
+me about that no one should compile (or use) GTK. I riffed on the joke and remarked, "The OpenSuSE build service will build anything." He replied with the sentence in bold.
+</p><p>"Slut" and "prostitute" are terms that recall the objectification of women. They're terms that attempt to measure a woman's worth as a sex object.
+</p><p>It's not nice to the many women in attendance to bring that up.
+</p><p>You might not have thought this through. You might want to read one woman's take "<a href="http://thoughtcatalog.com/2011/on-sluts-rape-and-fuckery/">On Sluts, Rape, and Fuckery</a>". Give it a read.
+</p><p>Then, give it a rest.
+</p><p>The thing is, this matters all the time. That's why I have to call you two out on it.
+</p><p>Now for the happy story.
+</p>
+<hr />
+<p>While watching the Desktop Summit's <a href="https://www.desktopsummit.org/program/sessions/gnome-and-kde-interns-showcase">intern showcase</a>, I was floored.
+</p><p>One hacker implemented Off-The-Record instant messaging for Telepathy. Another implemented pluggable back-ends for Getting Things GNOME, a task manager. I heard about overwhelming documentation 
+and usability improvements to GNOME mainstays Cheese and Anjuta. In a short summer, these students made huge changes.
+</p><p>For most of them, this was the first time they delivered any sort of presentation. Every single talk was delivered in earnest and enthusiasm. They told us about the work they had done and what 
+might happen in the future.
+</p><p>The other remarkable thing about the intern presentations was the demographics. I didn't keep count, but it seemed like as many women as men presented. We heard about hugely-important changes to 
+documentation, code, and usability. People from central Europe, South Asia (<a href="http://asheesh.org/note/debian/indians.html">yay</a>), and Brazil took the stage.
+</p><p>I hope that is the future of free software.
+</p>
+<hr />
+<p>There are two things I want to see for our community.
+</p><p>I want to know that people are respected and not reminded of centuries of oppression.
+</p><p>I also want to see our community grow in size and diversity.
+</p><p>I treat these issues as separate. We should choose respectful words when we speak not because we want more women to show up, but because it part of the expectation of decency that we should be 
+able to expect from each other.
+</p><p>And I failed the community when I did not make it clear <b>there and then</b> that this kind of language is not okay with me. It took me a day to understand this failure, so here I am writing 
+this blog post.
+</p><p>P.S. Thanks to <a href="http://www.littlegreenriver.com/">Karen Rustad</a> for her feedback while writing this post.
+</p><p><br />
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/note/debian/accidentally-sexist.html">permanent link and comments</a></i>
+		</p>
+    
+</div> <!-- end main copy div  -->
+    <!-- ##### Footer ##### -->
+
+    <div id="footer">
+      <div class="doNotPrint">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" />
+</a>
+      </div>
+
+      <div>
+        Copyright &copy; <a href="http://www.asheesh.org/">Asheesh Laroia</a>.  This work is licensed under a 
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">by-sa</a>. <a href="http://www.openhatch.org/">Open Hatch</a> is my current project. You should enjoy my parents' <a href="http://amayabarandgrill.com/">Indian restaurant in Rochester</a>!
+      </div>
+    </div>
+  </body>
+</html>

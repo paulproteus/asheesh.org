@@ -1,0 +1,76 @@
+Date: Fri, 8 Oct 2010 22:12:15
+From: peterb@fsf.org
+To: info-fsf@fsf.org
+Subject: [FSF] Windows Phone 7: The Best Choice For Patent Trolls
+Reply-To: info@fsf.org
+
+Windows Phone 7: The Best Choice For Patent Trolls
+
+BOSTON, Massachusetts, USA -- Friday, October 8th, 2010 -- The Free
+Software Foundation (FSF) today issued a warning to consumers over
+Microsoft's upcoming Windows 7 Phone Series. The software release is
+backed by a reported 400 to 500 million dollar marketing campaign that
+aims to distract consumers from its history of abusive behavior, and
+recent actions as a patent troll: attacking free software based phones
+like Android.
+
+FSF is advising citizens to help increase awareness for the threat that
+Microsoft posses to computer user freedom, providing details at:
+
+http://www.fsf.org/blogs/community/windows-phone-7-the-best-choice-for-patent-trolls
+
+"Software patents are the most important anticompetitive,
+anti-software-developer tool available. And right now they are being used
+by Microsoft in an attempt to crush computer users' freedom. Proprietary
+software like Windows 7 Phone are designed to keep users divided and
+powerless and must be rejected" said Peter Brown, FSF executive director.
+
+"Windows 7 Phone Series is another cookie-cutter example of Microsoft's
+bumbling maliciousness to everything it does.", said Matt Lee, FSF
+campaigns manager, "Microsoft's damaging approach to software freedom,
+coupled with their utter contempt for customers and developers alike, has
+produced yet-another-platform of systematic control. This is a platform
+designed only to appease its shareholders and help the folks at the MPAAs
+and RIAAs of the world feel better about the chaos they seek to foster
+surrounding digital restrictions and other technical folly imposed on
+computer users."
+
+
+About the Free Software Foundation
+
+The Free Software Foundation, founded in 1985, is dedicated to promoting
+computer users' right to use, study, copy, modify, and redistribute
+computer programs. The FSF promotes the development and use of free (as in
+freedom) software -- particularly the GNU operating system and its
+GNU/Linux variants -- and free documentation for free software. The FSF
+also helps to spread awareness of the ethical and political issues of
+freedom in the use of software, and its Web sites, located at fsf.org and
+gnu.org, are an important source of information about GNU/Linux. Donations
+to support the FSF's work can be made at http://donate.fsf.org. Its
+headquarters are in Boston, MA, USA.
+
+About Free Software and Open Source
+
+The free software movement's goal is freedom for computer users. Some,
+especially corporations, advocate a different viewpoint, known as "open
+source," which cites only practical goals such as making software powerful
+and reliable, focuses on development models, and avoids discussion of
+ethics and freedom. These two viewpoints are different at the deepest
+level. For more explanation, see
+http://www.gnu.org/philosophy/open-source-misses-the-point.html.
+
+Media Contacts
+
+Peter Brown
+Executive Director
+Free Software Foundation
++1 (617) 542 5942
+campaigns@fsf.org
+
+
+
+
+info-fsf mailing list
+info-fsf@fsf.org
+Unsubscribe: http://lists.fsf.org/mailman/listinfo/info-fsf
+

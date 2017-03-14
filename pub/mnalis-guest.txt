@@ -1,0 +1,14 @@
+Hi NM,
+                                                                                                                                                             
+Please accept the request of Matija Nalis to join collab-maint. We are going to work together on the GNU MediaGoblin packaging.
+                                                                                                                                                             
+I had sent this earlier, but GPG verification failed for you all. It verifies OK for me, curiously, but I'm resending it now. I'll also host it on 
+the web at http://asheesh.org/pub/mnalis-guest.txt (verify with http://asheesh.org/pub/mnalis-guest.txt.asc ).
+                                                                                                                                                             
+I've been working with another non-DD contributor, simonft, and am looking forward to being able to add Matija Nalis to the team.
+                                                                                                                                                             
+Let me know if you have any questions!
+                                                                                                                                                             
+Sincerely,
+                                                                                                                                                             
+Asheesh.

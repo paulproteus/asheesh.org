@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+  <head>
+   <link rel="openid.server" href="http://www.livejournal.com/openid/server.bml" />
+   <link rel="openid.delegate" href="http://paulproteus.livejournal.com/" />
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta name="author" content="root"/>
+    <meta name="generator" content="Bluefish 1.0.4"/>
+    <link rel="alternate" type="application/atom+xml" 
+    href="http://asheesh.org/index.atom" />
+
+    <!-- Navigational metadata for large websites (an accessibility feature): -->
+    <link rel="top"      href="./index.html" title="Homepage" />
+    <link rel="up"       href="./index.html" title="Up" />
+    <link rel="first"    href="./index.html" title="First page" />
+    <link rel="previous" href="./index.html" title="Previous page" />
+    <link rel="next"     href="./index.html" title="Next page" />
+    <link rel="last"     href="./index.html" title="Last page" />
+    <link rel="toc"      href="./index.html" title="Table of contents" />
+    <link rel="index"    href="./index.html" title="Site map" />
+
+<!-- Change the path to your .css file. This should reflect the weblocation -->
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-screen.css" media="screen" title="Gila (screen)" />
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-print.css" media="print" />
+	
+	<!--  title is pulled from blosxom -->
+    <title></title>
+  </head>
+
+  <body>
+    <!-- For non-visual user agents: -->
+      <div id="top"><a href="#main-copy" class="doNotDisplay doNotPrint">Skip to main content.</a></div>
+
+    <!-- ##### Header ##### -->
+
+    <div id="header">
+      <h1 class="headerTitle">
+     <!-- again the global variables are pulled from blosxom -->
+        <a href="/" title="Browse to homepage">Asheeshworld <span>where are you?</span></a>
+      </h1>
+
+      <div class="subHeader">
+        <span class="doNotDisplay">Navigation: </span>
+        <!-- change or add the following links to represent what you want -->
+        <a href="/about/">About</a> |
+        <a href="/mmm/">Mmm</a> |
+	<a href="/note/">Notes</a> |
+        <a href="/rmad/">RMAD</a> |
+        <a href="/dwad/">DWAD</a> |
+        <a href="/scribble/">Scribbles</a> |
+        <a href="/projects/">Projects</a>
+      </div>
+    </div>
+    <div id="side-bar">
+
+      <!-- ##### Left Sidebar ##### -->
+	<!-- If you want to use the Blosxom Plugin "menu" by Fletcher T. Penney, leave this area alone... put the menu file in your plugins dir-->
+      <div class="leftSideBar">
+        <p class="sideBarTitle">Menu</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li></li>
+        </ul>  
+        <p class="sideBarTitle">This section</p> 
+         <ul><li>Why are you here?</li></ul>
+   
+        <p class="sideBarTitle">Recycling the past</p>
+        <span class="sideBarText">
+          
+        </span>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments are welcome.  Email me.
+        </span>
+      </div>
+
+	<!-- if you want to manually set up your menus.. commnet above .. and uncomment the following and manipulate to your liking. -->
+	<!--
+      <div class="leftSideBar">
+        <p class="sideBarTitle">This Page</p>
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#cross-browser" title="Improved cross-browser compatibility">Cross-browser</a></li>
+          <li><a href="#stylesheets" title="Modified stylesheets">Stylesheets</a></li>
+          <li><a href="#accessibility" title="Improved accessibility">Accessibility</a></li>
+        </ul>
+
+        <p class="sideBarTitle">Branch Navigation</p>
+        <ul>
+          <li><a href="http://www.oswd.org/index.phtml">OSWD Home</a></li>
+          <li><a href="http://www.oswd.org/browse.php">Browse Designs</a></li>
+          <li><a href="http://www.oswd.org/userinfo.phtml?user=haran">haran&rsquo;s Designs</a></li>
+          <li><span class="thisPage" title="That's this page!">Gila Homepage</span></li>
+        </ul>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments and constructive criticisms are welcome
+          <a href="http://www.oswd.org/email.phtml?user=haran" title="Email form">via email</a>.
+        </span>
+      </div>
+	-->
+
+
+      <!-- ##### Right Sidebar ##### 
+
+      <div class="rightSideBar">
+        
+
+        <p class="sideBarTitle">Downloads</p>
+
+        <div class="sideBarText"><strong>"Gila" Skin for Blosxom</strong><br />
+
+      </div>
+      -->
+
+    </div>  
+         <div id="main-copy">
+        <!-- <h1 id="introduction" style="border-top: none; padding-top: 0;"></h1>
+       </div>
+       -->
+<h2>Sun, 22 Jun 2014</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/tool-assist.html">Interactive semi-automated package review (by abusing Travis-CI)
+</a>
+       </h1>
+		<p>I just did some Debian package review in a somewhat unusual way, and I 
+wanted to share that. I'm hoping other Debian developers (and other free 
+software contributors) that need to review others' contributions can 
+learn something from this, and that I can use this blog post as a way to 
+find out if other people are doing something similar.
+</p><p>It was pretty exciting! At the end of it, I joined #debian-mentors to talk
+about how my cool process. Someone summarized it very accurately:
+</p>
+<pre>&lt;sney&gt; it almost sounds like you're working to replace yourself with automation</pre>
+<h3 id="w_context-about-alpine-in-debian">Context about alpine in Debian</h3>
+<p>(Skip to "Package review, with automation" if you're familiar with Debian.)
+</p><p>I'm the maintainer of alpine in Debian. There are quite a few problems 
+with the alpine package in Debian right now, the biggest of which are:
+</p>
+<ul><li> We're one version behind -- 2.11 is the latest available, but 2.10 is the newest that we have in Debian.
+</li></ul>
+<ul><li> The packaging uses a decreasingly-popular packaging helper, cdbs, about which I happen to know less than the dh-style helper (aka dh7).
+</li></ul>
+<ul><li> There are lots of bugs filed, and I don't respond in a timely fashion.
+</li></ul>
+<p>This doesn't change my deep love for alpine -- I've had that for about 
+half my life now, and so far, I don't see it going away.
+</p><p>A month or so ago, I got a friendly private message from Unit193, saying 
+he had converted the package to the dh style, and also packaged the 
+newer version. They wanted to know if they should clean this up into 
+something high-enough quality to land in Debian.
+</p><p>(In Debian, we have a common situation where enthusiastic users update 
+or create a new package, and aren't yet Debian Developers, so they don't 
+have permission to upload that directly to the "Debian archive", which 
+is the Debian equivalent of git master. Package "sponsorship" is how we 
+handle that -- a Debian Developer reviews the package, makes sure it is 
+of high quality, and uploads it to the Debian archive along with the 
+Debian Developer's OpenPGP signature, so the archive processing tools 
+know to trust it.)
+</p><p>On Friday evening, I had a spare moment, so I sent a private message to 
+Unit193 apologizing for not getting back to them in a reasonable amount 
+of time. Having another person help maintain is a pretty exciting 
+prospect, and I wanted to treat that enthusiasm with the respect it 
+deserves, or at least apologize when I haven't. I was surprised to see a 
+reply within a few minutes. At that point, I thought: I wasn't 
+<i>planning</i> on doing any package review this weekend, but if they're 
+online and I'm online... might as well!
+</p>
+<h3 id="w_package-review-with-automation">Package review, with automation</h3>
+<p>Unit193 and I popped into ##alpine on irc.freenode.net, and I started 
+reading through their packaging changes, asking questions. As I asked 
+questions, I wondered -- how will I know if they are going to fix the 
+issues I'm raising?
+</p><p>Luckily, Unit193 wanted to use git to track the packaging, and we 
+settled on using git-buildpackage, a tool that was fairly new to both of 
+us. I thought, I might as well have some executable documentation so I 
+don't forget how to use it. ("Executable documentation" is Asheesh-speak 
+for a shell script.)
+</p><p>One thing I knew was that I'd have to test the package in a pbuilder, or 
+other pristine build environment. But all I had on me at the moment was 
+my work laptop, which didn't have one set up. Then I had a bright idea:
+I could use <a href="https://travis-ci.org/">Travis-CI</a>, a public continuous
+integration service, to check Unit193's packaging. If I had any
+concerns, I could add them to the shell script and then point at the
+build log and say, "This needs to be fixed." Then there would be great
+clarity about the problems.
+</p><p>Some wonderful things about Travis-CI:
+</p>
+<ul><li> They give you root access on an Ubuntu Precise (10.04) virtual machine.
+</li><li> Their build hosts are well-connected to the Internet, which means fast downloads in e.g. pbuilder.
+</li><li> They will let you run a build for up to 50 minutes, for free.
+</li><li> Build just means "command" or "set of commands," so you can just write a shell script and they will run it.
+</li><li> Travis-CI will watch a github.com repository, if you like. This means you can 'git commit --allow-empty' then 'git push' and ask it to re-run your script.
+</li></ul>
+<p>Since Unit193's packaging was in git (but not on github), I created a 
+git repo containing the same contents, where I would experiment with 
+fixes for packaging problems I found. It'd be up to Unit193 to fix the 
+problems in the Alioth packaging. This way, I would be providing advice, 
+and Unit193 would have an opportunity to ask questions, so it would be more
+like mentorship and less like me fixing things.
+</p><p>We did a few rounds of feedback this way, and got the packaging to higher
+and higher quality. Every time Unit193 made a fix and pushed it, I would
+re-run the auto-build, and see if the problems I spotted had gone away.
+</p><p>While the auto-build runs, I can focus on conversing with my mentee 
+about problems or just generally chatting. Chatting is valuable 
+community-building! It's extremely nice that I can do that while waiting 
+on the build, knowing that I don't have to read it carefully -- I can 
+just wait a few minutes, then see if it's done, and see if it's red or 
+green. Having the mentee around while I'm reviewing it means that I can 
+use the time I'm waiting on builds as fun free software social time. 
+(Contrast this with asynchronous review, where, all alone, I would wait 
+for a build to finish, then write up an email at the end of it all.)
+</p><p>This kind of mentorship + chatting was spread out over Friday night, 
+Saturday night, and Sunday morning. By the end of it, we had a superb 
+package that I'm excited to sign and push into Debian when I'm next near 
+my OpenPGP key.
+</p>
+<h2 id="w_implementation-details">Implementation details</h2>
+<p>You can see the final shell script here:
+</p>
+<ul><li> <a href="https://github.com/paulproteus/travis-debcheck/blob/master/do.sh">do.sh</a>
+</li></ul>
+<p>And you can see the various builds here:
+</p>
+<ul><li> <a href="https://travis-ci.org/paulproteus/travis-debcheck/builds">builds</a>
+</li></ul>
+<p>The shell script:
+</p>
+<ul><li> Alternates between the Alioth packaging vs. my fork of it. (This way, I can test packaging changes/suggestions.)
+</li><li> Disables ccache in pbuilder, due to a permissions problem with ccache/pbuilder/travis-ci, and I didn't need ccache anyway.
+</li><li> Handles 'git dch' slightly wrong. I need to figure that out.
+</li><li> Optionally passes --git-ignore-new to git-buildpackage, which was required initially, but should not be required by the time the package is ready. (This is an example of a thing I might forget to remark upon to my mentee.)
+</li><li> Plays games with git branches so that git-buildpackage on Travis-CI can find the pristine-tar branch.
+</li><li> Tries to use cdn.debian.net as its mirror, but on Saturday ran into problems with whicever mirror that is, so it falls back to mirror.mit.edu in case that fails.
+</li><li> Contains a GPG homedir, and imports the Debian archive key, so that it can get past Ubuntu-Debian pbuilder trust issues.
+</li></ul>
+<p>I also had a local shell script that would run, effectively:
+</p>
+<ul><li> git commit --allow-empty -m 'Trigger build'
+</li><li> git push
+</li></ul>
+<p>This was needed since I was basically using Travis-CI as remote shell 
+service -- moreover, the scripts Travis-CI runs are in a different repo 
+(<a href="https://github.com/paulproteus/travis-debcheck">travis-debcheck</a>)
+than the software I'm actually testing (<a href="http://anonscm.debian.org/gitweb/?p=collab-maint/alpine.git">collab-maint/alpine.git</a>).
+</p><p>Unit193 and I had a technical disagreement at one point, and I realized 
+that rather than discuss it, I could just ask Travis-CI to test which 
+one of us was right. At one point in the revisions, the binary package 
+build failed to build on Precise Pangolin (the Ubuntu release that the 
+Travis-CI worker is running), and Unit193 said that it was probably due 
+to a problem with building on Ubuntu. So I added a configuration option 
+to build just the <i>source package</i> in Ubuntu, keeping the <i>binary package</i> test-build within the Debian sid pbuilder, although I believed 
+that there was actually a problem with the packaging. This way, I could 
+modify the script so that I could demonstrate the problem could be 
+reproduced in a sid pbuilder. Of course, by the time I got that far, 
+Unit193 had figured out that it was indeed a packaging bug.
+</p><p>I also created an option to SKIP_PBUILDER; initially, I wanted to get 
+quick automated feedback on the quality of the source package without 
+waiting for pbuilder to create the chroot and for the test build to 
+happen.
+</p><p>You might notice that the script is not very secure -- Niels Thykier 
+already did! That's fine by me; it's only Travis-CI's machines that 
+could be worsened by that insecurity, and really, they already gave me a 
+root shell with no password. (This might sound dismissive of Travis-CI 
+-- I don't mean it to be! I just mean that their security model already 
+presumably involves throwing away the environment in which my code is 
+executing, and I enjoy taking advantage of that.)
+</p><p>Since the Travis virtual machine is Ubuntu, and we want to run the 
+latest version of lintian (a Debian packaging "lint" checker), we run 
+lintian within the Debian sid pbuilder. To do that, I use the glorious 
+"B90lintian" sample pbuilder hook script, which comes bundled with 
+pbuilder in /usr/share/doc/pbuilder/.
+</p><p>The full build, which includes creating a sid pbuilder from scratch, 
+takes merely 7-10 minutes. I personally find this kind of shockingly 
+speedy -- in 2005, when I first got involved, doing a pbuilder build 
+seemed like it would take forever. Now, a random free shell service on 
+the Internet will create a pbuilder, and do a test build within it, in 
+about 5 minutes.
+</p>
+<h3 id="w_package-review-without-automation">Package review, without automation</h3>
+<p>I've done package review for other mentees in the past. I tend to do it 
+in a very bursty fashion -- one weekend day or one weeknight I decide 
+sure, it's a good day to read Debian packages and provide feedback.
+</p><p>Usually we do it asynchronously on the following protocol:
+</p>
+<ol><li> I dig up an email from someone who needed review.
+</li><li> I read through the packaging files, doing a variety of checks as they occur to me.
+</li><li> If I find problems, I write an email about them to the mentee. If not, success! I sign and upload the package.
+</li></ol>
+<p>There are some problems with the above:
+</p>
+<ul><li> The burstiness means that if someone fixes the issues, I might not have time to re-review for another month or longer.
+</li><li> The absence of an exhaustive list of things to look for means that I could fail to provide that feedback in the first round of review, leading to a longer wait time.
+</li><li> The person receiving the email might not understand my comments, which could interact really badly with the burstiness.
+</li></ul>
+<p>I did this for Simon Fondrie-Teitler's python-pypump package recently. 
+We followed the above protocol. I wrote a long email to Simon, where I 
+remarked on various good and bad points of the packaging. It was part 
+commentary, part terminal transcript -- I use the terminal transcripts 
+to explain what I mean. This is part of the email I sent:
+</p>
+<pre>
+I got an error in the man page generation phase -- because at 
+build-time, I don't have requests-oauthlib:
+
+make[2]: Leaving directory `/tmp/python-pypump-0.5-1+dfsg/docs'
+help2man --no-info \
+	-n 'sets up an environment and oauth tokens and allows for interactive testing' \
+        --version-string=0.5.1 /tmp/python-pypump-0.5-1+dfsg/pypump-shell &gt; /tmp/python-pypump-0.5-1+dfsg/debian/pypump-shell.1
+help2man: can't get `--help' info from /tmp/python-pypump-0.5-1+dfsg/pypump-shell
+Try `--no-discard-stderr' if option outputs to stderr
+make[1]: *** [override_dh_auto_build] Error 1
+
+This seems to be because:
+
+➜  python-pypump-0.5-1+dfsg  ./pypump-shell 
+Traceback (most recent call last):
+  File "./pypump-shell", line 26, in &lt;module&gt;
+    from pypump import PyPump, Client
+  File "/tmp/python-pypump-0.5-1+dfsg/pypump/__init__.py", line 19, in &lt;module&gt;
+    from pypump.pypump import PyPump, WebPump
+  File "/tmp/python-pypump-0.5-1+dfsg/pypump/pypump.py", line 28, in &lt;module&gt;
+    from six.moves.urllib import parse
+ImportError: No module named urllib
+
+$ ./pypump-shell 
+Traceback (most recent call last):
+  File "./pypump-shell", line 26, in &lt;module&gt;
+    from pypump import PyPump, Client
+  File "/tmp/python-pypump-0.5-1+dfsg/pypump/__init__.py", line 19, in &lt;module&gt;
+    from pypump.pypump import PyPump, WebPump
+  File "/tmp/python-pypump-0.5-1+dfsg/pypump/pypump.py", line 29, in &lt;module&gt;
+    from requests_oauthlib import OAuth1
+ImportError: No module named requests_oauthlib
+</pre>
+<p>The deeper problem was a missing build-dependency, and I explained that 
+in my email. But the <i>meta</i> problem is that Simon didn't try building 
+this in a pbuilder, or otherwise clean build environment.
+</p><p>Simon fixed these problems, and submitted a fresh package to 
+<a href="http://notes.pault.ag/">Paul Tagliamonte</a> and myself. It happened to 
+have some typos in the names of the new build dependencies. Paul 
+reviewed the fixed package, noticed the typos, fixed them, and uploaded 
+it. Simon had forgotten to do a test build the second time, too, which 
+is an understandable human failure. There was a two-day delay between 
+Simon's fixed resubmission, and Paul signing+uploading the fixed result.
+</p><p>In a pedagogical sense, there's something disappointing about that 
+exchange for me: Paul fixed an error Simon introduced, so we're not 
+teaching Simon to take total responsibility for his packages in Debian, 
+nor to understand the Debian system as well as he could. (Luckily, I 
+think Simon already understands the importance of taking responsibility! 
+In this case, it's just a hypothetical in this case.)
+</p>
+<h3 id="w_for-the-future">For the future</h3>
+<p>The next time I review a package, I'm going to try to do something 
+similar to my Travis-CI hack. It would be nice to have the do.sh script 
+be a little more abstract; I imagine that as I try to use it for a 
+different package, I'll discover the right abstractions.
+</p><p>I'd love it if Travis-CI did not require the git repositories to be on 
+GitHub. I'd also like if the .travis.yml file could be in a different 
+path. If so, we could create debian/travis-configuration (or something) 
+and keep the packaging files nice and separate from the upstream source.
+</p><p>I'd also love to hear about other people's feedback. Are you doing 
+something similar? Do you want to be? Would you have done some of this 
+differently? Leave a comment here, or ping me (paulproteus) on #debian-mentors
+on irc.debian.org (aka irc.oftc.net).
+</p><p>I'll leave you with some conversation from #debian-mentors:
+</p>
+<pre>
+&lt;paulproteus&gt; The automation here, I think, is really interesting.
+&lt;paulproteus&gt; What I really want is for mentees to show up to me and say "Here is my package + build log with pbuilder, can you sponsor it please?"
+&lt;Unit193&gt; Oooooh!
+-*- Unit193 gets ideas.
+&lt;paulproteus&gt; Although the irony is that I actually like the community-building and relationship-building nature of having these things be conversations.
+&lt;bremner&gt; how will this brave new world cope with licensing issues?
+&lt;paulproteus&gt; bremner: It's not a replacement for actual review, just a tool-assist.
+&lt;paulproteus&gt; bremner: You might be relieved to know that much of Unit193's and my back and forth related to get-orig-source and licensing. (-:
+&lt;bremner&gt; I didn't doubt you&nbsp;;).
+&lt;paulproteus&gt; If necessary I can just be a highly productive reviewer, but I would prefer to figure out some way that I can get other non-paulproteus people to get a similar assist.
+&lt;paulproteus&gt; I think the current blocker is "omg travis why are you bound to githubbbbbbbb" which is a reasonable concern.
+</pre>
+
+		<p style="text-align: right;">
+		<i>[<a href="/note/debian">/note/debian</a>] 
+		<a href="http://www.asheesh.org/note/debian/tool-assist.html">permanent link and comments</a></i>
+		</p>
+    
+</div> <!-- end main copy div  -->
+    <!-- ##### Footer ##### -->
+
+    <div id="footer">
+      <div class="doNotPrint">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" />
+</a>
+      </div>
+
+      <div>
+        Copyright &copy; <a href="http://www.asheesh.org/">Asheesh Laroia</a>.  This work is licensed under a 
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">by-sa</a>. <a href="http://www.openhatch.org/">Open Hatch</a> is my current project. You should enjoy my parents' <a href="http://amayabarandgrill.com/">Indian restaurant in Rochester</a>!
+      </div>
+    </div>
+  </body>
+</html>

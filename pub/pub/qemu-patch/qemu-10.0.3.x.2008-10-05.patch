@@ -1,0 +1,64 @@
+Index: qemu-doc.texi
+===================================================================
+RCS file: /sources/qemu/qemu/qemu-doc.texi,v
+retrieving revision 1.186
+diff -r1.186 qemu-doc.texi
+657c657
+< usual 10.0.2.2.
+---
+> usual 10.0.3.2.
+676c676
+< 10.0.2.4 smbserver
+---
+> 10.0.3.4 smbserver
+692c692
+< is not specified, its value is 10.0.2.15 (default address given by the
+---
+> is not specified, its value is 10.0.3.15 (default address given by the
+1497c1497
+<                            |          (10.0.2.2)
+---
+>                            |          (10.0.3.2)
+1499c1499
+<                            ---->  DNS server (10.0.2.3)
+---
+>                            ---->  DNS server (10.0.3.3)
+1501c1501
+<                            ---->  SMB server (10.0.2.4)
+---
+>                            ---->  SMB server (10.0.3.4)
+1507c1507
+< to the hosts starting from 10.0.2.15.
+---
+> to the hosts starting from 10.0.3.15.
+1510,1511c1510,1511
+< the address 10.0.2.2 and verify that you got an address in the range
+< 10.0.2.x from the QEMU virtual DHCP server.
+---
+> the address 10.0.3.2 and verify that you got an address in the range
+> 10.0.3.x from the QEMU virtual DHCP server.
+1515c1515
+< router (10.0.2.2).
+---
+> router (10.0.3.2).
+Index: vl.c
+===================================================================
+RCS file: /sources/qemu/qemu/vl.c,v
+retrieving revision 1.403
+diff -r1.403 vl.c
+3773c3773
+<         pstrcpy(buf, sizeof(buf), "10.0.2.15");
+---
+>         pstrcpy(buf, sizeof(buf), "10.0.3.15");
+Index: slirp/ctl.h
+===================================================================
+RCS file: /sources/qemu/qemu/slirp/ctl.h,v
+retrieving revision 1.1
+diff -r1.1 ctl.h
+6,7c6,7
+< #define CTL_SPECIAL   "10.0.2.0"
+< #define CTL_LOCAL "10.0.2.15"
+---
+> #define CTL_SPECIAL   "10.0.3.0"
+> #define CTL_LOCAL "10.0.3.15"
+

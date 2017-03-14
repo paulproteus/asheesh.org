@@ -1,0 +1,639 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+  <head>
+   <link rel="openid.server" href="http://www.livejournal.com/openid/server.bml" />
+   <link rel="openid.delegate" href="http://paulproteus.livejournal.com/" />
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta name="author" content="root"/>
+    <meta name="generator" content="Bluefish 1.0.4"/>
+    <link rel="alternate" type="application/atom+xml" 
+    href="http://asheesh.org/index.atom" />
+
+    <!-- Navigational metadata for large websites (an accessibility feature): -->
+    <link rel="top"      href="./index.html" title="Homepage" />
+    <link rel="up"       href="./index.html" title="Up" />
+    <link rel="first"    href="./index.html" title="First page" />
+    <link rel="previous" href="./index.html" title="Previous page" />
+    <link rel="next"     href="./index.html" title="Next page" />
+    <link rel="last"     href="./index.html" title="Last page" />
+    <link rel="toc"      href="./index.html" title="Table of contents" />
+    <link rel="index"    href="./index.html" title="Site map" />
+
+<!-- Change the path to your .css file. This should reflect the weblocation -->
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-screen.css" media="screen" title="Gila (screen)" />
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-print.css" media="print" />
+	
+	<!--  title is pulled from blosxom -->
+    <title></title>
+  </head>
+
+  <body>
+    <!-- For non-visual user agents: -->
+      <div id="top"><a href="#main-copy" class="doNotDisplay doNotPrint">Skip to main content.</a></div>
+
+    <!-- ##### Header ##### -->
+
+    <div id="header">
+      <h1 class="headerTitle">
+     <!-- again the global variables are pulled from blosxom -->
+        <a href="/" title="Browse to homepage">Asheeshworld <span>where are you?</span></a>
+      </h1>
+
+      <div class="subHeader">
+        <span class="doNotDisplay">Navigation: </span>
+        <!-- change or add the following links to represent what you want -->
+        <a href="/about/">About</a> |
+        <a href="/mmm/">Mmm</a> |
+	<a href="/note/">Notes</a> |
+        <a href="/rmad/">RMAD</a> |
+        <a href="/dwad/">DWAD</a> |
+        <a href="/scribble/">Scribbles</a> |
+        <a href="/projects/">Projects</a>
+      </div>
+    </div>
+    <div id="side-bar">
+
+      <!-- ##### Left Sidebar ##### -->
+	<!-- If you want to use the Blosxom Plugin "menu" by Fletcher T. Penney, leave this area alone... put the menu file in your plugins dir-->
+      <div class="leftSideBar">
+        <p class="sideBarTitle">Menu</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li></li>
+        </ul>  
+        <p class="sideBarTitle">This section</p> 
+         <ul><li>Why are you here?</li></ul>
+   
+        <p class="sideBarTitle">Recycling the past</p>
+        <span class="sideBarText">
+          
+        </span>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments are welcome.  Email me.
+        </span>
+      </div>
+
+	<!-- if you want to manually set up your menus.. commnet above .. and uncomment the following and manipulate to your liking. -->
+	<!--
+      <div class="leftSideBar">
+        <p class="sideBarTitle">This Page</p>
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#cross-browser" title="Improved cross-browser compatibility">Cross-browser</a></li>
+          <li><a href="#stylesheets" title="Modified stylesheets">Stylesheets</a></li>
+          <li><a href="#accessibility" title="Improved accessibility">Accessibility</a></li>
+        </ul>
+
+        <p class="sideBarTitle">Branch Navigation</p>
+        <ul>
+          <li><a href="http://www.oswd.org/index.phtml">OSWD Home</a></li>
+          <li><a href="http://www.oswd.org/browse.php">Browse Designs</a></li>
+          <li><a href="http://www.oswd.org/userinfo.phtml?user=haran">haran&rsquo;s Designs</a></li>
+          <li><span class="thisPage" title="That's this page!">Gila Homepage</span></li>
+        </ul>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments and constructive criticisms are welcome
+          <a href="http://www.oswd.org/email.phtml?user=haran" title="Email form">via email</a>.
+        </span>
+      </div>
+	-->
+
+
+      <!-- ##### Right Sidebar ##### 
+
+      <div class="rightSideBar">
+        
+
+        <p class="sideBarTitle">Downloads</p>
+
+        <div class="sideBarText"><strong>"Gila" Skin for Blosxom</strong><br />
+
+      </div>
+      -->
+
+    </div>  
+         <div id="main-copy">
+        <!-- <h1 id="introduction" style="border-top: none; padding-top: 0;"></h1>
+       </div>
+       -->
+<h2>Thu, 21 Aug 2008</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/sysop/ddrescue.html">dd, dd_rescue, and ddrescue
+</a>
+       </h1>
+		<p>The short answer: "Use GNU ddrescue.  GNU stands for Quality."
+</p><p>dd is a classic UNIX utility to read from and write to files (often devices).
+Typically, one uses it to copy a hard disk to a file, or to image a hard drive
+by copying a backup onto it.
+</p><p>One hits a problem when the hard disk has errors.  In this case, dd abruptly stops working
+in the middle, reporting an "Input/output error."  But when the hard disk has errors, usually
+what you want is to get an image of all the blocks on the hard disk that are readable - not
+just the first few before the first error!  
+</p><p>(Note for the pedantic: Yes, I know about dd conv=notrunc,noerror.  They're so easy to 
+misuse (mostly by forgetting one of those two options) that they're worth avoiding.)
+</p><p>Two tools are available for this particular purpose.  Confusingly, one is called
+ddrescue, and the other is called dd_rescue.
+</p><p>Around 2001, <a href="http://www.garloff.de/kurt/">Kurt Garloff</a> wrote dd_rescue.  It does what dd 
+does if you pass it some options, but it comes with instructions on how to use it to 
+recover data from drivers, like by running it multiple times or bakcwards.  A wrapper 
+script called <a href="http://freshmeat.net/projects/dd_rhelp/">dd_rhelp</a> automates that process.
+</p><p>When you're running dd_rescue on an obscure OS like Mac OS X 10.3 because you dropped your
+laptop in Uganda and the Linux partition grew bad blocks and you still want your data, you
+will find that dd_rhelp is written as a complicated shell script that relies on GNU versions
+of core system utilities.  OS X provides non-GNU versions, and you will waste hours fiddling
+with compiling those utilities just so you can run some dumb shell script.
+</p><p>In the <a href="http://blue-gnu.biz/content/interview_gnu_ddrescue_039_s_antonio_diaz_diaz">summer of 2004</a>, the same summer as I dropped my laptop, <a href="http://es.geocities.com/ant_diaz2001/">Antonio Diaz Diaz</a> wrote
+"ddrescue," a stand-alone C++ tool that does the same things as dd_rhelp, but more sanely
+and therefore more efficiently.  It became <a href="http://www.gnu.org/software/ddrescue/ddrescue.html">an official GNU project</a>.
+GNU ddrescue, like dd_rhelp, can keep a log file to let itself gracefully pick up after interrputions.
+</p><p>When your hard disk fails, you should turn to your backups.  But if you need a tool like
+these, just remember: "GNU ddrescue."
+</p><p><tt>$ sudo apt-get install <a href="http://packages.debian.org/search?keywords=gddrescue">gddrescue</a></tt>
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/sysop">/note/sysop</a>] 
+		<a href="http://www.asheesh.org/note/sysop/ddrescue.html">permanent link and comments</a></i>
+		</p>
+    
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/ba-2008/lamers.html">Lamers
+</a>
+       </h1>
+		<p>Kragen Sitaker and his wife Beatrice were very gracious in hosting me
+and my brother for a week in Buenos Aires.
+</p><p>I was looking for something on <a href="http://canonical.org/~kragen/">Kragen's website</a>
+and found <a href="http://canonical.org/~kragen/security-holes.html">a ten-years-old discussion of how to find security problems in software</a>.  In it, he writes:
+</p>
+<blockquote>
+Body text last updated 1998-07-22. Recently has become the most popular page of mine, presumably because a bunch of lamers want to learn how to break into things. [...]
+</blockquote>
+<blockquote>
+I wouldn't be surprised if calling 100-200 people a day `lamers' results in electronic attacks on me or my machine (kragen.dnaco.net.) All I can say is that people who do this would thereby demonstrate their lamosity.
+</blockquote>
+<p>Lamers, you say?  <a href="http://nelson.freeculture.org/">Nelson</a> took this picture of me a few years back.  Look
+at the thumbs-up from the driver!
+</p><p><a href="http://www.flickr.com/photos/41894169422@N01/20180018"><img src="http://farm1.static.flickr.com/16/20180018_c243dfd86a.jpg?v=0" /></a>
+</p><p>(Photo available for re-use under <a href="http://creativecommons.org/licenses/by-sa/2.0/deed.en">Creative Commons Attribution-ShareAlike 2.0</a>.)
+</p><p>Note: <a href="http://mako.cc/">Mako</a> addressed this topic <a href="http://mako.cc/copyrighteous/20080330-00">earlier this year</a>, and then again <a href="http://mako.cc/copyrighteous/20080331-00">more recently</a>.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/ba-2008">/note/ba-2008</a>] 
+		<a href="http://www.asheesh.org/note/ba-2008/lamers.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Tue, 19 Aug 2008</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/code/yea.html">For Timo art with me
+</a>
+       </h1>
+		<p>Chris Wakelin <a href="http://dovecot.org/pipermail/dovecot/2008-August/032912.html">asks Timo of Dovecot to change his English usage</a>:
+</p>
+<blockquote>
+I've been meaning to tell you that should be "Yeah" for an informal 
+version of "Yes", otherwise it's a very archaic form of "Yes" or 
+"Indeed" as in "Yea, though I walk in the valley of the shadow of death"!
+</blockquote>
+<p>Stewart Dean <a href="http://dovecot.org/pipermail/dovecot/2008-August/032946.html">points out</a>:
+</p>
+<blockquote>
+But Timo walks through the valley of the shadow for us all.....so maybe he's 
+entitled.....
+</blockquote>
+<p><a href="http://scripturetext.com/psalms/23-4.htm">Psalm 23:4</a>
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/scribble/code">/scribble/code</a>] 
+		<a href="http://www.asheesh.org/scribble/code/yea.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sun, 17 Aug 2008</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/ba-2008/fake-out.html">Fake Out in Buenos Aires
+</a>
+       </h1>
+		<p>"Falso," he said.
+</p><p>I accepted the 100 peso (US$30) note back.  The only place we had gotten 100 peso notes 
+were ATMs.
+</p><p>I found a different one with a good watermark and handed it to him.  (This happened a 
+bit over a week ago.)
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/ba-2008">/note/ba-2008</a>] 
+		<a href="http://www.asheesh.org/note/ba-2008/fake-out.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Fri, 15 Aug 2008</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/debian/hello.html">Hello Planet Debian
+</a>
+       </h1>
+		<p>I have a face on <a href="http://planet.debian.net/">Planet Debian</a>!
+</p><p>(Thanks to <a href="http://johnwright.org/">John Wright</a> for setting it up for me!)
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/debian">/note/debian</a>] 
+		<a href="http://www.asheesh.org/note/debian/hello.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Wed, 13 Aug 2008</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/sysop/mail-tunnel.html">Sending mail from a laptop</a>
+       </h1>
+		
+<p>I often find myself on what I would call "hostile" networks: They allow only very limited
+Internet access, like by blocking port 25 so I can't connect to my mail server.  Maybe for you,
+you're never on filtered Internet access, but your home ISP doesn't let you send mail out
+when you're not <em>at</em> home, but you want to send email directly from your laptop anyway.
+</p>
+
+<p><strong>Just do what I do!</strong>  Let me explain.</p>
+
+<h3>Summary</h3>
+
+<ul>
+<li> inetd listens on port 125
+</li><li> Connections to it go through an SSH tunnel that executes "nc localhost 25" on some mail server
+</li><li> (Optional) A real MTA runs on the laptop, so that I can send mail when offline; when mail delivery fails temporarily, Postfix queues the message until I get back online.</li>
+</ul>
+
+<h3>Justification</h3>
+
+<ul>
+<li><strong>Easy</strong>. Apps can be configured to use localhost port 25 (or port 125) with no password.
+</li><li><strong>Correct</strong>: Postfix (when using 25) handles sending mail when offline, and reattempts delivery for me.
+</li><li><strong>Secure</strong>: Encryption all the way through the network, with the icing on the cake that this all looks like SSH, so nosy networkers near your laptop can't even see that's what you're doing.
+</li></ul>
+
+<h3>Implementation in Three Steps</h3>
+
+<h4>Step 1: ssh tunnel</h4>
+
+This is the hardest part.  To make things simple, I create a dedicated user on each end.
+
+<h5>On the remote server (server)</h5>
+
+<pre>
+[me@laptop] $ ssh me@server
+[me@server] $ sudo adduser tunnelendpoint
+[me@server] $ sudo su - tunnelendpoint
+[tunnelendpoint@server] $ mkdir .ssh
+</pre>
+
+<h5>On the local machine (laptop)</h5>
+
+<pre>
+[me@laptop] $ sudo adduser tunnelclient
+[me@laptop] $ sudo su - tunnelclient
+[tunnelclient@laptop] $ ssh-keygen -t rsa # make it passwordless
+[tunnelclient@laptop] $ cat .ssh/id_rsa.pub | ssh tunnelendpoint@server 'mkdir -p .ssh ; chmod 0700 .ssh ; cat >> .ssh/authorized_keys'
+</pre>
+
+<h5>On the remote server</h5>
+
+<pre>
+[me@server] $ sudo su - tunnelendpoint
+[tunnelendpoint@server] $ nano -w .ssh/authorized_keys
+</pre>
+
+You'll see a key that starts with "ssh-dss".  Before that, add this string and leave a space before "ssh-dss":
+
+<blockquote>
+command="nc localhost 25",no-X11-forwarding,no-agent-forwarding,no-port-forwarding 
+</blockquote>
+
+<p>(Note: "nc" is in the <strong>netcat</strong> package.)</p>
+
+<h5>On the local machine (laptop)</h5>
+
+<pre>
+[tunnelclient@laptop] $ ssh tunnelendpoint@server
+220 rose.makesad.us ESMTP Postfix (Debian/GNU): "<a href="http://www.everything2.com/index.pl?node_id=1186356">every tragedy is a beauty that has passed</a>"
+</pre>
+
+<p>Hooray!  If you see a reply like mine that starts with "220", then all is well.</p>
+
+<p>You're done with the hard part.  Now the easy parts.</p>
+
+<h4>Step 2: inetd</h4>
+
+<pre>
+[me@laptop] $ sudo aptitude install openbsd-inetd
+</pre>
+
+<p>Now edit /etc/inetd.conf to have this line:</p>
+
+<pre>
+127.0.0.1:125 stream  tcp     nowait  tunnelclient    /usr/bin/ssh    -q -T tunnelendpoint@server
+</pre>
+
+<p>Now restart the inetd (<strong>sudo /etc/init.d/openbsd-inetd restart</strong>) and test 
+it:</p>
+
+<pre>
+[me@laptop] $ telnet localhost 125 
+220 rose.makesad.us ESMTP Postfix (Debian/GNU): "<a href="http://www.everything2.com/index.pl?node_id=1186356">every tragedy is a beauty that has passed</a>"
+</pre>
+
+<h4>Step 3: Postfix (optional)</h4>
+
+<p>This is my favorite part, but it's only necessary if you plan to send email when you're not 
+connected to the Internet.</p>
+
+<p>Just install Postfix, and add this to /etc/postfix/main.cf:</p>
+
+<pre>relayhost = 127.0.0.1:125</pre>
+
+<p>Restart Postfix and you should be set.  Try sending some mail!</p>
+
+<h3>Closing</h3>
+
+<p>I was inspired by a <a href="http://www.debian-administration.org/articles/487">Debian 
+Administration</a> post, except I had my own ideas about the best way to do it.  I still like
+my way best.</p>
+
+<p>One problem with the above approach is that it requires root on "server".  It would be 
+possible to do the ssh tunnel thing without using a separate "tunnelendpoint" account, but 
+instead to add that key to your regular username.</p>
+
+		<p style="text-align: right;">
+		<i>[<a href="/note/sysop">/note/sysop</a>] 
+		<a href="http://www.asheesh.org/note/sysop/mail-tunnel.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Tue, 12 Aug 2008</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/code/geocoding-location.html">Geocoding location
+</a>
+       </h1>
+		<p>Writes Aldon Hynes:
+</p>
+<blockquote>
+A random thought to muck up the works...  What about people posting
+locations from virtual worlds?
+</blockquote>
+<p><a href="http://mail.laconi.ca/pipermail/laconica-dev/2008-August/000228.html">Steve's head explodes.</a>
+</p><p><br />
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/scribble/code">/scribble/code</a>] 
+		<a href="http://www.asheesh.org/scribble/code/geocoding-location.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sat, 09 Aug 2008</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/software/duplicate-files.html">Finding duplicate files
+</a>
+       </h1>
+		<p>Every once in a while, I know one file is duplicated in many places. 
+This happens, for example, when I have imported photos from my camera 
+into a photo management program and also stored a copy of them somewhere 
+else. Sometimes I have downloaded files twice from the web.
+</p><p>Detecting duplicate files is not hard - you just compare the file 
+contents. The problem is that with large files, and a large number of 
+files, it can take a long time if you compare every file to every other 
+file.
+</p><p>Because I needed to do this for a few gigabytes of photos, and 
+everything I found I either didn't trust or ran too slowly, I wrote my 
+own.  Once you detect duplicate files, you generally want to either 
+delete all but one, or to "merge them" via hardlinks so that all the files
+exist, but they share storage space on disk.
+</p><p>Summary: I had a fairly good approach, but everyone should use rdfind 
+instead of my code.
+</p>
+<h3 id="w_my-approach">My approach</h3>
+<p>You can check out (using Subversion or a web browser) my code at 
+http://svn.asheesh.org/svn/public/code/merge_dups/ .
+</p>
+<ul><li> Organize all the files grouped by size (since only files of equal size can have equal contents).
+</li><li> For each size that contains more than one file, calculate a hash (MD5) of all the files.
+<ul><li> If any of the files have the same size and MD5, delete the one with a longer filename.
+</li><li> Continue to the next file size.
+</li></ul>
+</li></ul>
+<p>This approach has to stat() every file at least once, but many files 
+don't have to be read at all.  For my photos, this was a huge 
+time-saver.
+</p><p>(Why delete the one with a longer filename?  Usually that's the one in 
+some obscure directory named "camera-backup" or 
+"recovered-from-some-dying-computer".)
+</p><p>I trust my code.  Plus, it is verbose, printing out what it is doing and 
+why.  And the entire program with comments, status message print-outs, 
+and vertical spacing easily fits on my screen.
+</p>
+<h3 id="w_other-implementations">Other implementations</h3>
+<p>Today, I decided to go through Freshmeat to see if I could retire my code
+and just rely on someone else's.  So I checked out the reasonable contenders
+from <a href="http://freshmeat.net/search/?q=%2Bduplicate+%2Bfiles">this search</a>.
+</p>
+<h4 id="w_find-duplicates-by-fredrik-hubinette">find_duplicates by Fredrik Hubinette</h4>
+<ul><li> Homepage: http://fredrik.hubbe.net/hacks/
+</li><li> License: GPL v2 (good)
+</li><li> Efficiency: Good (uses file sizes the way I do)
+</li><li> Language: Pike (weird, but seems okay)
+</li><li> Strategy: Check sizes; hash; verify by reading file; merge via hardlinks
+</li><li> Sanity: High
+</li><li> Rating: Good
+</li></ul>
+<p>It uses the first few kilobytes of the string as a hash,
+which is probably more efficient that reading the whole thing.  It
+is safe and reads the whole files before marking them as duplicates.
+</p>
+<h4 id="w_dmerge-cpp-by-jonathan-h-lundquist">dmerge.cpp by Jonathan H Lundquist</h4>
+<ul><li> Homepage: http://www.fluxsmith.com/cgi-bin/twiki/view/Jonathan/DMerge
+</li><li> License: X11-like (good)
+</li><li> Efficiency: Good (uses file sizes the way I do)
+</li><li> Language: C++ (bearable)
+</li><li> Strategy: Check sizes; hash by calling an external program; verify by calling "cmp"; ...
+</li><li> Sanity: Low
+</li><li> Rating: Don't use
+</li></ul>
+<p>I stopped caring when I realized it calls external programs.  I doubt it 
+does it in a correct/secure way, so forget it.
+</p>
+<h4 id="w_duff-by-camilla-berglund">duff by Camilla Berglund</h4>
+<ul><li> Homepage: http://duff.sourceforge.net/
+</li><li> License: zlib/libpng (MIT-esque) (good)
+</li><li> Efficiency: Good
+</li><li> Language: C (okay)
+</li><li> Strategy: Check sizes; hash with first few bytes; verify by SHA1 or actual 
+</li><li> Sanity: High (comes with a man page; very tunable; great web site)
+</li><li> Rating: Don't use
+</li></ul>
+<p>This looks really good, but it doesn't actually do the merging. It 
+relies on a shell script to do the merging, and I don't trust the 
+correctness of the shell script's handling of filenames (due to the 
+whitespace-separated output format of duff itself).
+</p><p>Note to Camilla: If you provided a -z option (like find -print0) to 
+duff, and made sure the shell script respected it, then it would be 
+practically perfect.
+</p>
+<h4 id="w_fslint-2-14">fslint 2.14</h4>
+<ul><li> Efficiency: Seemed lame
+</li><li> Rating: Don't use
+</li><li> Explanation: I tried it, and then I said, "That's it, I'm writing my own."
+</li></ul>
+<p>It was so litlte fun to use I don't even want to talk about it.  The 
+benchmarks on the rdfind web page confirm this with data.
+</p>
+<h4 id="w_rdfind-by-paul-sundvall-winner">rdfind by Paul Sundvall (WINNER!)</h4>
+<ul><li> Homepage: http://www2.paulsundvall.net/rdfind/rdfind.html
+</li><li> License: GPL (v2, probably) (good)
+</li><li> Efficiency: Excellent
+</li><li> Language: C++ (okay)
+</li><li> Strategy: Check sizes; check first bytes; calculate SHA1s; delete dups or create symlinks or create hardlinks or print report
+</li><li> Sanity: High - object-oriented, well-commented, includes man page, includes benchmarks
+</li><li> Self-importance: High, but seems deserved
+</li><li> Rating: Excellent, use it
+</li></ul>
+<p>Finding software like this is why I look for software not written by me.
+</p>
+<h4 id="w_other-tools-i-didnt-fully-review">Other tools I didn't fully review</h4>
+<ul><li> finddup by Heiner Steven &lt;http://www.shelldorado.com/scripts/cmds/finddup&gt;
+<ul><li> Language: Shell, which probably means it has problems with complicated filenames
+</li></ul>
+</li><li> clink by Michael Opdenacker &lt;http://free-electrons.com/community/tools/utils/clink/&gt;
+<ul><li> Language: Python (yay!)
+</li><li> Does not support hard links, only symlinks, thereby (to the author's own admission) creates permissions problems
+</li></ul>
+</li><li> dupfinder by Matthias Böhm &lt;http://doubles.sourceforge.net/&gt;
+<ul><li> Sanity: Moderate to Low - thinks that not using hash functions makes it "much faster" than other programs
+</li></ul>
+</li><li> dupmerge2 by Rolf Freitag (continuation of work from Phil Karn) &lt;http://sourceforge.net/projects/dupmerge/&gt;
+<ul><li> Sanity: Moderate to Low: Bundles a pre-compiled binary, which is just weird
+</li></ul>
+</li><li> dupseek by Antonio Bellezza &lt;http://www.beautylabs.net/software/dupseek.html&gt;
+<ul><li> Focus on interactive duplicate file removal.  Probably good at that; I want correct, unattended operation.
+</li></ul>
+</li><li> freedup by William Stearns &lt;http://freedup.org/&gt;
+<ul><li> Looks fairly good, even though it's written in bash (freaks me out)
+</li><li> Offers an option to strip metadata and compare only file *contents* for MP3, MPEG4, MPC, JPEG, and Ogg (not FLAC, I guess), which is great.
+</li></ul>
+</li></ul>
+<h3 id="w_conclusion">Conclusion</h3>
+<p>rdfind looks great.  Every once in a while, two hours are better spent 
+doing research rather than re-inventing the wheel.  This is one of those 
+times where I was more useful to my life as a secretary rather than by 
+trying to be a programmer.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/software">/note/software</a>] 
+		<a href="http://www.asheesh.org/note/software/duplicate-files.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Mon, 04 Aug 2008</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/ba-2008/francisco.html">Francisco
+</a>
+       </h1>
+		<p>Francisco is the name of the very energetic hostel attendant at America del Sud El Calafate.
+</p><p>After offering me a key (literally) for the wireless, he told me the password.
+</p><p>"What are you doing there?," he asked me.  "It's email," I answered.
+</p><p>"Email?  And how can you see?  I can't see any letters."  (The fonts are pretty small on my laptop.)  "What program is that?"
+</p><p>"Pine," I said.  "It's called <a href="http://packages.debian.org/alpine">Alpine</a>."
+</p><p>He paused for a moment, and reported, "You look like a hacker with that."  He patted me on the shoulder and wandered off.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/ba-2008">/note/ba-2008</a>] 
+		<a href="http://www.asheesh.org/note/ba-2008/francisco.html">permanent link and comments</a></i>
+		</p>
+    
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/ba-2008/introduction.html">Argentina for two weeks
+</a>
+       </h1>
+		<p>For those of you I haven't told, I'm in Argentina.  I've been here since Friday July 31.  The idea is to take a week's vacation before heading to Mar del Plata for a week
+of the <a href="http://debconf8.debconf.org/">Debian conference, Debconf</a>.  This year, 
+Debconf is held that beach resort town in the winter.  From what I read, Mar del Plata is worth visiting even in this off season.  On August 17, I'll be back in the Untied States (*). 
+</p><p>The gracious <a href="http://www.canonical.org/~kragen/">Kragen Sitaker</a> and <a href="http://paisleychick.org/">Beatrice Murch</a> are hosting me and my brother for a week in Buenos Aires.  As a side note, right now I'm not in Buenos Aires but in
+a cold place called <a href="http://en.wikipedia.org/wiki/El_Calafate">El Calafate</a>.
+</p><p>On an overcast wintery day, B.A. looks like someone took a remix of Belgium and Paris and let it wear out a litte more than you'd expect from the Continentals.  On any sort of day, from Kragen's and Beatrice's roof,
+it looks like someone ported Blade Runner to Europe.
+</p><p>(*.) [sic]
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/ba-2008">/note/ba-2008</a>] 
+		<a href="http://www.asheesh.org/note/ba-2008/introduction.html">permanent link and comments</a></i>
+		</p>
+    
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/note/sysop/real-dos-virtual-disk.html">Real DOS on a virtual disk
+</a>
+       </h1>
+		<p>Sometimes you need to run DOS programs, like to flash BIOSs on your 
+laptop. Sometimes, if you're <a href="http://www.canonical.org/~kragen/">Kragen</a>, that lets you fix ACPI on your 
+BIOS, giving you a hope that X will boot up more often than 1 in 3, 
+sound will skip less, and the first PC card you insert will be assigned 
+a valid IRQ.  (The last one is particularly interesting: to get a 
+working PC card before the promised joy of the BIOS update, you have to 
+plug in one card, watch it get assigned the mostly broken IRQ 3, plug in 
+a second card, watch it get assigned the useful IRQ 4, and then you can 
+remove the first one.  This is a good way to get a wifi card working.)
+</p><p>Here's a simple HOWTO for getting that going on a Linux machine without
+repartitioning or booting off external media.
+</p><p>I'll refer to aptitude; I'm assuming you're using a Debian/Ubuntu machine
+so that makes sense.
+</p>
+<h2 id="w_step-1-install-syslinux">Step 1: Install syslinux</h2>
+<pre>$ sudo aptitude install syslinux
+</pre>
+<p>Now memdisk is in /usr/lib/syslinux/memdisk .
+</p><p>You should copy it to /boot/ in case your root filesystem is encrypted:
+<pre>$ sudo cp /usr/lib/syslinux/memdisk /boot/
+</pre>
+<h2 id="w_step-2-get-your-dos-floppy-in-boot">Step 2: Get your DOS floppy in /boot</h2>
+<p>Debian packages FreeDOS in dosemu-freedos.  Unfortunately that doesn't 
+include a floppy image.  Instead:
+<pre>$ cd /boot
+$ sudo wget http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.0/fdboot.img
+</pre>
+<h2 id="w_step-3-configure-grub">Step 3: Configure GRUB</h2>
+<p>Put this in your /boot/grub/menu.list and smoke it:
+<pre>title FreeDOS
+kernel /memdisk
+initrd /fdboot.img
+boot
+</pre>
+<h2 id="w_step-4-reboot-and-choose-freedos">Step 4: Reboot, and choose FreeDOS!</h2>
+<p>Ta-da, you're done.
+</p>
+<h2 id="w_more-options">More options</h2>
+<p>For bonus points, you can customize the floppy disk image.  
+The easiest way to modify is to mount it loopback:
+<pre>$ sudo mount -o loop,mode=777 /boot/fdboot.img /mnt/
+</pre>
+<p>Then you can copy files into /mnt/, and then when you're done:
+<pre>$ sudo umount /mnt/
+</pre>
+<p>Ta-da, the image has been changed!  (Thanks to Kragen for confirming that
+this actually works.)
+</p><p>The lame old way to customize the image is to use "<a href="http://www.gnu.org/software/mtools/mtools.html">mtools</a>."
+</p><p>P.S. Thanks to <a href="http://trisk.acm.jhu.edu/">Albert Lee</a> for explaining this trick to me in the first place!
+</p>
+		<p style="text-align: right;">
+		<i>[<a href="/note/sysop">/note/sysop</a>] 
+		<a href="http://www.asheesh.org/note/sysop/real-dos-virtual-disk.html">permanent link and comments</a></i>
+		</p>
+    
+</div> <!-- end main copy div  -->
+    <!-- ##### Footer ##### -->
+
+    <div id="footer">
+      <div class="doNotPrint">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" />
+</a>
+      </div>
+
+      <div>
+        Copyright &copy; <a href="http://www.asheesh.org/">Asheesh Laroia</a>.  This work is licensed under a 
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">by-sa</a>. <a href="http://www.openhatch.org/">Open Hatch</a> is my current project. You should enjoy my parents' <a href="http://amayabarandgrill.com/">Indian restaurant in Rochester</a>!
+      </div>
+    </div>
+  </body>
+</html>

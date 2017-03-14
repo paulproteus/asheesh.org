@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+  <head>
+   <link rel="openid.server" href="http://www.livejournal.com/openid/server.bml" />
+   <link rel="openid.delegate" href="http://paulproteus.livejournal.com/" />
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta name="author" content="root"/>
+    <meta name="generator" content="Bluefish 1.0.4"/>
+    <link rel="alternate" type="application/atom+xml" 
+    href="http://asheesh.org/index.atom" />
+
+    <!-- Navigational metadata for large websites (an accessibility feature): -->
+    <link rel="top"      href="./index.html" title="Homepage" />
+    <link rel="up"       href="./index.html" title="Up" />
+    <link rel="first"    href="./index.html" title="First page" />
+    <link rel="previous" href="./index.html" title="Previous page" />
+    <link rel="next"     href="./index.html" title="Next page" />
+    <link rel="last"     href="./index.html" title="Last page" />
+    <link rel="toc"      href="./index.html" title="Table of contents" />
+    <link rel="index"    href="./index.html" title="Site map" />
+
+<!-- Change the path to your .css file. This should reflect the weblocation -->
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-screen.css" media="screen" title="Gila (screen)" />
+    <link rel="stylesheet" type="text/css" href="/html.flav/gila-print.css" media="print" />
+	
+	<!--  title is pulled from blosxom -->
+    <title></title>
+  </head>
+
+  <body>
+    <!-- For non-visual user agents: -->
+      <div id="top"><a href="#main-copy" class="doNotDisplay doNotPrint">Skip to main content.</a></div>
+
+    <!-- ##### Header ##### -->
+
+    <div id="header">
+      <h1 class="headerTitle">
+     <!-- again the global variables are pulled from blosxom -->
+        <a href="/" title="Browse to homepage">Asheeshworld <span>Probably-boring scribbles</span></a>
+      </h1>
+
+      <div class="subHeader">
+        <span class="doNotDisplay">Navigation: </span>
+        <!-- change or add the following links to represent what you want -->
+        <a href="/about/">About</a> |
+        <a href="/mmm/">Mmm</a> |
+	<a href="/note/">Notes</a> |
+        <a href="/rmad/">RMAD</a> |
+        <a href="/dwad/">DWAD</a> |
+        <a href="/scribble/">Scribbles</a> |
+        <a href="/projects/">Projects</a>
+      </div>
+    </div>
+    <div id="side-bar">
+
+      <!-- ##### Left Sidebar ##### -->
+	<!-- If you want to use the Blosxom Plugin "menu" by Fletcher T. Penney, leave this area alone... put the menu file in your plugins dir-->
+      <div class="leftSideBar">
+        <p class="sideBarTitle">Menu</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li></li>
+        </ul>  
+        <p class="sideBarTitle">This section</p> 
+         <ul><li>Bits of text flying everywhere. A firehose of href. Stand clear.</li></ul>
+   
+        <p class="sideBarTitle">Recycling the past</p>
+        <span class="sideBarText">
+          
+        </span>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments are welcome.  Email me.
+        </span>
+      </div>
+
+	<!-- if you want to manually set up your menus.. commnet above .. and uncomment the following and manipulate to your liking. -->
+	<!--
+      <div class="leftSideBar">
+        <p class="sideBarTitle">This Page</p>
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#cross-browser" title="Improved cross-browser compatibility">Cross-browser</a></li>
+          <li><a href="#stylesheets" title="Modified stylesheets">Stylesheets</a></li>
+          <li><a href="#accessibility" title="Improved accessibility">Accessibility</a></li>
+        </ul>
+
+        <p class="sideBarTitle">Branch Navigation</p>
+        <ul>
+          <li><a href="http://www.oswd.org/index.phtml">OSWD Home</a></li>
+          <li><a href="http://www.oswd.org/browse.php">Browse Designs</a></li>
+          <li><a href="http://www.oswd.org/userinfo.phtml?user=haran">haran&rsquo;s Designs</a></li>
+          <li><span class="thisPage" title="That's this page!">Gila Homepage</span></li>
+        </ul>
+
+        <p class="sideBarTitle">Comments</p>
+        <span class="sideBarText">
+          Comments and constructive criticisms are welcome
+          <a href="http://www.oswd.org/email.phtml?user=haran" title="Email form">via email</a>.
+        </span>
+      </div>
+	-->
+
+
+      <!-- ##### Right Sidebar ##### 
+
+      <div class="rightSideBar">
+        
+
+        <p class="sideBarTitle">Downloads</p>
+
+        <div class="sideBarText"><strong>"Gila" Skin for Blosxom</strong><br />
+
+      </div>
+      -->
+
+    </div>  
+         <div id="main-copy">
+        <!-- <h1 id="introduction" style="border-top: none; padding-top: 0;"></h1>
+       </div>
+       -->
+<h2>Mon, 30 Sep 2013</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/code/linux-3.8-precise.html">Linux 3.8 (or newer) on Ubuntu Precise (12.04)</a>
+       </h1>
+		
+<p>At this time, the latest Linux kernel that has been specially prepared for use with Ubuntu 12.04 is based on Linux 3.8. The rest of this answer is about how to get Linux 3.8 within Ubuntu 12.04.</p>
+
+<p>(Before I get into that, first an aside: you've linked to the "mainline kernel" PPA, a collection of Linux kernel packages that have not been specially tested and prepared by the Ubuntu kernel team. You can read more about <a href="http://askubuntu.com/questions/162616/should-i-upgrade-to-the-mainline-kernels">mainline kernels here</a>. The mainline kernels are not suggested for installation, except if you are doing tests or you experience a major problem that it can be resolved with a specific mainline kernel.)</p>
+
+<p>The recommended way to get the latest kernel on Ubuntu 12.04 is to stay within Ubuntu 12.04, rather than enabling separate package archives like the PPA you linked to. The latest Ubuntu 12.04 provides special package names to install the more up-to-date packages.</p>
+
+<p>To install them, open a terminal (CTRL+ALT+T) and issue the following commands.</p>
+
+<pre><code>sudo apt-get install linux-image-generic-lts-raring
+sudo apt-get install linux-headers-generic-lts-raring
+</code></pre>
+
+<p>When the installation completes, you can reboot your system to boot from 3.8 kernel. (The above commands won't uninstall anything (unless your APT is somehow misconfigured), and definitely won't auto-reboot, so you can run the commands and then do the reboot at some later time.)</p>
+
+<p>The bootloader that Ubuntu uses (Grub) lists the newer kernel first, so it will boot from 3.8 automatically (except if you have installed a newer than 3.8) (and except if you know you've customized Grub somehow).</p>
+
+<p>A note about why 3.8: Because of the Long Term Support status of Ubuntu 12.04, many different kernels will be backported (aka specially prepared) from newer versions of Ubuntu. (Additionally, a backported graphics stack (X and related packages) is available.) The 12.04.3 version (that has been released on 22 August 2013) contains the latest kernel and graphics (X) packages from Ubuntu 13.04 (raring). Ubuntu raring has 3.8, so therefore the "backported" version of Linux from raring to precise is also 3.8.</p>
+
+<p>A note about the best way to get an even fresher version, like 3.11: Wait for Ubuntu Saucy (13.10) to come out, and then wait (not very long) for the Ubuntu Long Term Support process to backport that to Precise (12.04). Per the <a href="https://wiki.ubuntu.com/SaucySalamander/ReleaseSchedule" rel="nofollow">release schedule</a>, Saucy should be out on October 17. Then you will be able to install linux-image-generic-lts-saucy!</p>
+
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/scribble/code/linux-3.8-precise.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Mon, 29 Apr 2013</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/code/gpg-caff.html">How I just imported my signed keys
+</a>
+       </h1>
+		<p>First I set up GPG Agent. To do that I followed the <a href="http://www.gentoo.org/doc/en/gnupg-user.xml">Gentoo documentation</a>, with particular
+attention paid to section 4 and configuration files.
+</p><p>Within ~/Maildir/cur/ I just ran:
+</p>
+<pre>
+for thing in `grep -l -i 'Subject: .*signed'`           
+do              
+gpg --decrypt &lt; $thing | gpg --import
+done
+</pre>
+<p>As it happens, I synchronized all my email using Dovecot dsync,
+so I could do this on my laptop.
+</p><p>Then I just ran:
+</p>
+<pre>
+gpg --keyserver pgp.mit.edu --send-keys 37E1C17570096AD1
+gpg --keyserver pgp.mit.edu --send-keys EC4B033C70096AD1
+</pre>
+<p>to upload those to the keyservers.
+</p><p>Now I can delete all those three month old caff emails. Sorry everyone.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/scribble/code/gpg-caff.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Fri, 27 May 2011</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/code/fcgi.html">SpiderOak gives back
+</a>
+       </h1>
+		<blockquote>
+a FCGI/web-server embedded directly within GIMP
+</blockquote>
+<p>-- <a href="https://spideroak.com/code">open source libraries released by SpiderOak</a>.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/scribble/code/fcgi.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Thu, 21 Oct 2010</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/code/upgrade-virtualbox.html">Upgrade Virtualbox
+</a>
+       </h1>
+		<p>A snippet from the <a href="http://www.virtualbox.org/wiki/Changelog">VirtualBox Changelog</a>:
+</p>
+<blockquote>
+VirtualBox 3.2.2 (released 2010-06-02)<br />
+<br />
+This is a maintenance release. The following items were fixed and/or added:<br />
+<ul><li>...</li><li><strong>Teleportation: several fixes</strong></li><li>...</li></ul>
+</blockquote>
+<p>I guess I should upgrade.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/scribble/code/upgrade-virtualbox.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Sat, 09 Oct 2010</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/code/nano-for-nlp.html">Nano for natural language processing
+</a>
+       </h1>
+		<p>I just saw this great post on the nano-devel list:
+</p><p><img width="484" height="385" src="http://www.asheesh.org/pub/image/nano-devel/gettys.png" />
+</p><p>Owen <a href="http://lists.gnu.org/archive/html/nano-devel/2010-10/msg00000.html">writes</a>:
+</p>
+<blockquote>
+With
+ansi color there is a very limited range of parts of speech that I can label (the .nanorc that
+I'm using is here: http://ge.aihea.net/nanorc). This feature request is for 256 color support in nano.
+</blockquote>
+<p>I have a <a href="http://www.asheesh.org/pub/image/nano-devel/nanorc">local mirror of the nanorc</a>, too. (The image
+above is a local mirror of Owen's file.)
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/scribble/code/nano-for-nlp.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Tue, 31 Aug 2010</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/code/in-the-interest.html">Python and supercomputers
+</a>
+       </h1>
+		<p>"<a href="http://chrisfenton.com.nyud.net/non-von-1/">In the interest of promoting weird retro computer architectures, I’ve provided the python</a>....
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/scribble/code/in-the-interest.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Wed, 28 Jul 2010</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/code/blame-everyone.html">Oracle updates Java. Eclipse breaks. Who's to blame?
+</a>
+       </h1>
+		<p>Writes the wise Zancarius, <a href="http://it.slashdot.org/comments.pl?sid=1735848&cid=33062980">"Let's just blame everyone and get it over with."</a>
+</p><p><br />
+</p><p><br />
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/scribble/code/blame-everyone.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Tue, 27 Jul 2010</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/code/unpublished-proprietary-emptiness.html">Unpublished proprietary emptiness
+</a>
+       </h1>
+		<p>For a good time, check out the
+<a href="http://www.lifeaftercoffee.com/2006/03/08/unpublished-source-code/">unpublished proprietary source code</a>
+of AT&T, as shipped by Sun in Solaris.
+</p><p>It does nothing, successfully.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/scribble/code/unpublished-proprietary-emptiness.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Fri, 04 Dec 2009</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/code/behind-glass.html">Behind glass
+</a>
+       </h1>
+		<p>"To an engineer of the day, using valuable computer time to simply enter
+text in an interactive text editor was unthinkable. It was the hackers 
+who understood that interacting with the computer, rather than treating 
+it as a hands-off behind-glass computation resource, was the way of the 
+future."
+</p><p>-- "<a href="http://www.cs.utah.edu/~elb/folklore/afs-paper/node2.html">The Culture of the Programmer</a>".
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/scribble/code/behind-glass.html">permanent link and comments</a></i>
+		</p>
+    
+<h2>Thu, 11 Dec 2008</h2>
+       <h1 id="cross-browser" style="border-top: none; padding-top: 0; padding-bottom: 0;">
+        <a href="http://www.asheesh.org/scribble/code/svg-future.html">SVG and the future
+</a>
+       </h1>
+		<blockquote>
+clearly SVG is the wave of the future, but current h/w is the
+wave of the past.
+</blockquote>
+<p>-- paul <a href="http://lists.sugarlabs.org/archive/sugar-devel/2008-December/010263.html">on the sugar-devel list</a>.
+</p>
+		<p style="text-align: right;">
+		<i>[<a href=""></a>] 
+		<a href="http://www.asheesh.org/scribble/code/svg-future.html">permanent link and comments</a></i>
+		</p>
+    
+</div> <!-- end main copy div  -->
+    <!-- ##### Footer ##### -->
+
+    <div id="footer">
+      <div class="doNotPrint">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" />
+</a>
+      </div>
+
+      <div>
+        Copyright &copy; <a href="http://www.asheesh.org/">Asheesh Laroia</a>.  This work is licensed under a 
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">by-sa</a>. <a href="http://www.openhatch.org/">Open Hatch</a> is my current project. You should enjoy my parents' <a href="http://amayabarandgrill.com/">Indian restaurant in Rochester</a>!
+      </div>
+    </div>
+  </body>
+</html>
